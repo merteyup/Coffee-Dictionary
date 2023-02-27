@@ -40,8 +40,12 @@ class TipsViewController: UIViewController {
     func loadNewTip () {
         tips = realm.objects(Tip.self).filter("isViewed ==[cd] %@", 0)
         if let tips = tips {
-            currentTip = tips.first!
-            saveTipAsViewed(currentTip: currentTip)
+            if tips.count > 0 {
+                currentTip = tips.first!
+                saveTipAsViewed(currentTip: currentTip)
+            } else {
+#warning("This part breaks app when all tips are viewed. Should be find a solution.")
+            }
         } else {
 #warning("Tip couldn't found.")
         }
@@ -132,4 +136,7 @@ extension TipsViewController: GADFullScreenContentDelegate {
     func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         print("Ad did dismiss full screen content.")
     }
+    
+  
+    
 }

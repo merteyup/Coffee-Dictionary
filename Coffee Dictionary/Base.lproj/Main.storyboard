@@ -463,7 +463,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="83w-WB-Em5" customClass="FilterBg" customModule="Coffee_Dictionary" customModuleProvider="target">
-                                <rect key="frame" x="8" y="171" width="377" height="495"/>
+                                <rect key="frame" x="8" y="171" width="377" height="430"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WPc-69-S6S">
                                         <rect key="frame" x="60" y="37" width="240" height="52"/>
@@ -487,7 +487,7 @@
                                         </constraints>
                                     </view>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hwa-qo-4Yk">
-                                        <rect key="frame" x="8" y="97" width="361" height="367"/>
+                                        <rect key="frame" x="8" y="97" width="361" height="325"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="249" id="bSC-1c-7XA"/>
@@ -563,7 +563,7 @@
                                 </subviews>
                                 <color key="backgroundColor" name="appMainColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Hwa-qo-4Yk" secondAttribute="bottom" constant="31" id="2Wi-tV-T6T"/>
+                                    <constraint firstAttribute="bottom" secondItem="Hwa-qo-4Yk" secondAttribute="bottom" constant="8" id="2Wi-tV-T6T"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="377" id="3vo-eq-Zhp"/>
                                     <constraint firstItem="Hwa-qo-4Yk" firstAttribute="leading" secondItem="83w-WB-Em5" secondAttribute="leading" constant="8" id="6HC-uL-zeI"/>
                                     <constraint firstAttribute="trailing" secondItem="Hwa-qo-4Yk" secondAttribute="trailing" constant="8" id="77n-Ug-LgD"/>
@@ -571,7 +571,7 @@
                                     <constraint firstItem="WPc-69-S6S" firstAttribute="leading" secondItem="83w-WB-Em5" secondAttribute="leading" constant="60" id="b39-RT-t1e"/>
                                     <constraint firstItem="Hwa-qo-4Yk" firstAttribute="top" secondItem="WPc-69-S6S" secondAttribute="bottom" constant="8" id="f7v-6m-eOC"/>
                                     <constraint firstAttribute="trailing" secondItem="WPc-69-S6S" secondAttribute="trailing" constant="77" id="mOM-yR-oo6"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="495" id="zwB-LT-URw"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="430" id="zwB-LT-URw"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -579,7 +579,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6rf-s5-HGv" firstAttribute="trailing" secondItem="sFO-a5-iNt" secondAttribute="trailing" id="6Jd-96-wLI"/>
-                            <constraint firstItem="sFO-a5-iNt" firstAttribute="bottom" secondItem="83w-WB-Em5" secondAttribute="bottom" constant="152" id="Neq-xz-Oat"/>
+                            <constraint firstItem="sFO-a5-iNt" firstAttribute="bottom" secondItem="83w-WB-Em5" secondAttribute="bottom" constant="217" id="Neq-xz-Oat"/>
                             <constraint firstItem="6rf-s5-HGv" firstAttribute="top" secondItem="xGx-BS-Dib" secondAttribute="top" id="VXl-Yk-t7g"/>
                             <constraint firstItem="6rf-s5-HGv" firstAttribute="leading" secondItem="sFO-a5-iNt" secondAttribute="leading" id="acl-lc-UUE"/>
                             <constraint firstItem="83w-WB-Em5" firstAttribute="leading" secondItem="sFO-a5-iNt" secondAttribute="leading" constant="8" id="cZh-gR-M36"/>
@@ -782,7 +782,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
                                 <color key="backgroundColor" name="appBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MoreTableViewCellID" rowHeight="65" id="L1b-vL-hv8" customClass="MoreTableViewCell" customModule="Coffee_Dictionary" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MoreTableViewCellID" rowHeight="65" id="L1b-vL-hv8" customClass="MoreTableViewCell" customModule="Coffee_Dictionary" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L1b-vL-hv8" id="ggp-sS-4nK">
@@ -850,9 +850,6 @@
             <point key="canvasLocation" x="988.54961832061065" y="761.97183098591552"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="ukr-nT-hck"/>
-    </designables>
     <resources>
         <image name="arrowshape.turn.up.forward" catalog="system" width="128" height="104"/>
         <image name="checkmark.seal" catalog="system" width="128" height="124"/>
