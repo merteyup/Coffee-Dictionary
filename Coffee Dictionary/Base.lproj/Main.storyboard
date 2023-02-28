@@ -676,8 +676,39 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJh-2g-Vst" customClass="NextTipButtonBg" customModule="Coffee_Dictionary" customModuleProvider="target">
+                                                            <rect key="frame" x="72" y="175" width="249" height="50"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bim-rf-crs">
+                                                                    <rect key="frame" x="18" y="5" width="212" height="40"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="c92-E5-jXV"/>
+                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="212" id="p2E-sL-VNb"/>
+                                                                    </constraints>
+                                                                    <state key="normal" title="Button"/>
+                                                                    <buttonConfiguration key="configuration" style="plain" title="Start Listening"/>
+                                                                    <connections>
+                                                                        <action selector="listenTipPressed:" destination="fI6-Ua-2QI" eventType="touchUpInside" id="2mV-Yw-TGr"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                            <color key="backgroundColor" name="appMainColor"/>
+                                                            <color key="tintColor" name="appBackgroundColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="1HR-h3-ueX"/>
+                                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="3Ka-ne-syI"/>
+                                                                <constraint firstItem="bim-rf-crs" firstAttribute="top" secondItem="pJh-2g-Vst" secondAttribute="top" constant="5" id="LCu-Uy-6pS"/>
+                                                                <constraint firstAttribute="height" constant="50" id="Q4t-Ct-VDx"/>
+                                                                <constraint firstAttribute="bottom" secondItem="bim-rf-crs" secondAttribute="bottom" constant="5" id="SpS-VJ-9QH"/>
+                                                                <constraint firstAttribute="trailing" secondItem="bim-rf-crs" secondAttribute="trailing" constant="19" id="bTd-dr-qde"/>
+                                                                <constraint firstAttribute="width" constant="249" id="hva-EW-fBN"/>
+                                                                <constraint firstItem="bim-rf-crs" firstAttribute="leading" secondItem="pJh-2g-Vst" secondAttribute="leading" constant="18" id="ltw-iW-htd"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="212" id="r9X-f4-etx"/>
+                                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="249" id="zC5-1Z-JB9"/>
+                                                            </constraints>
+                                                        </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ub5-NQ-j6B" customClass="NextTipButtonBg" customModule="Coffee_Dictionary" customModuleProvider="target">
-                                                            <rect key="frame" x="70" y="169" width="249" height="50"/>
+                                                            <rect key="frame" x="72" y="242" width="249" height="50"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rk2-Pg-znP">
                                                                     <rect key="frame" x="18" y="5" width="212" height="40"/>
@@ -709,16 +740,19 @@
                                                     <color key="backgroundColor" name="appBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="152" id="1PN-4w-K7J"/>
+                                                        <constraint firstItem="Ub5-NQ-j6B" firstAttribute="top" secondItem="pJh-2g-Vst" secondAttribute="bottom" constant="17" id="5wF-I1-HKj"/>
                                                         <constraint firstItem="ZbA-Nw-hbM" firstAttribute="top" secondItem="73Z-ZN-qJc" secondAttribute="bottom" constant="8" symbolic="YES" id="DgU-rA-jdA"/>
+                                                        <constraint firstAttribute="trailing" secondItem="pJh-2g-Vst" secondAttribute="trailing" constant="72" id="EOw-i7-0Lu"/>
+                                                        <constraint firstItem="pJh-2g-Vst" firstAttribute="leading" secondItem="p9X-zk-QUH" secondAttribute="leading" constant="72" id="GtS-in-lgq"/>
                                                         <constraint firstAttribute="trailing" secondItem="ZbA-Nw-hbM" secondAttribute="trailing" constant="27" id="HCL-Wp-qgW"/>
                                                         <constraint firstAttribute="trailing" secondItem="73Z-ZN-qJc" secondAttribute="trailing" constant="8" id="QYy-9v-Zfl"/>
                                                         <constraint firstItem="73Z-ZN-qJc" firstAttribute="leading" secondItem="p9X-zk-QUH" secondAttribute="leading" constant="17" id="RBE-Dy-yDu"/>
+                                                        <constraint firstItem="pJh-2g-Vst" firstAttribute="top" secondItem="ZbA-Nw-hbM" secondAttribute="bottom" constant="31" id="WVT-Qd-huw"/>
                                                         <constraint firstAttribute="width" constant="393" id="fbg-Ag-f3A"/>
                                                         <constraint firstItem="ZbA-Nw-hbM" firstAttribute="leading" secondItem="p9X-zk-QUH" secondAttribute="leading" constant="27" id="hXU-Eo-AyU"/>
-                                                        <constraint firstItem="Ub5-NQ-j6B" firstAttribute="top" secondItem="ZbA-Nw-hbM" secondAttribute="bottom" constant="25" id="igJ-zs-uzN"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Ub5-NQ-j6B" secondAttribute="bottom" constant="81" id="j93-oG-5Io"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Ub5-NQ-j6B" secondAttribute="trailing" constant="74" id="nQ8-2Q-WRx"/>
-                                                        <constraint firstItem="Ub5-NQ-j6B" firstAttribute="leading" secondItem="p9X-zk-QUH" secondAttribute="leading" constant="70" id="qdf-Ry-0cf"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Ub5-NQ-j6B" secondAttribute="bottom" constant="8" id="j93-oG-5Io"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Ub5-NQ-j6B" secondAttribute="trailing" constant="72" id="nQ8-2Q-WRx"/>
+                                                        <constraint firstItem="Ub5-NQ-j6B" firstAttribute="leading" secondItem="p9X-zk-QUH" secondAttribute="leading" constant="72" id="qdf-Ry-0cf"/>
                                                         <constraint firstItem="73Z-ZN-qJc" firstAttribute="top" secondItem="p9X-zk-QUH" secondAttribute="top" constant="20" id="yaj-l8-d9m"/>
                                                     </constraints>
                                                 </view>
@@ -740,6 +774,7 @@
                                         <color key="backgroundColor" name="appBackgroundColor"/>
                                         <connections>
                                             <outlet property="bgTip" destination="p9X-zk-QUH" id="DtS-Fa-x7H"/>
+                                            <outlet property="btnListenTip" destination="bim-rf-crs" id="YJJ-8A-nRl"/>
                                             <outlet property="imgTip" destination="0bR-Sa-eWP" id="zUW-Sc-0Z8"/>
                                             <outlet property="lblTip" destination="ZbA-Nw-hbM" id="sRI-K1-I4L"/>
                                             <outlet property="lblTipHeader" destination="73Z-ZN-qJc" id="bLG-z7-70X"/>

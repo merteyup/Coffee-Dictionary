@@ -8,6 +8,8 @@
 import UIKit
 import RealmSwift
 import GoogleMobileAds
+import AVFoundation
+
 
 
 class TipsViewController: UIViewController {
@@ -17,6 +19,7 @@ class TipsViewController: UIViewController {
     var tips : Results<Tip>?
     var currentTip = Tip()
     private var rewardedInterstitialAd: GADRewardedInterstitialAd?
+    let synthesizer = AVSpeechSynthesizer()
     
     
     
@@ -27,12 +30,18 @@ class TipsViewController: UIViewController {
     // MARK: - Statements
     override func viewDidLoad() {
         super.viewDidLoad()
+        synthesizer.delegate = self
         loadNewTip()
         
         loadRewardedAd()
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+       super.viewWillDisappear(animated)
+        synthesizer.stopSpeaking(at: .immediate)
+     }
+     
     
     
     
@@ -104,9 +113,18 @@ extension TipsViewController : UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TipsTableViewCellID", for: indexPath) as! TipsTableViewCell
         cell.tipsTableViewCellDelegate = self
         
-        cell.imgTip.image = UIImage(named: imageNamesArray[Int.random(in: 0..<imageNamesArray.count)])
         cell.lblTipHeader.text = currentTip.tip
         cell.lblTip.text = currentTip.tipDescription
+        
+        if synthesizer.isSpeaking != true || synthesizer.isPaused {
+            if synthesizer.isSpeaking != true {
+                cell.btnListenTip.setTitle("Start Listening", for: UIControl.State.normal)
+            } else {
+                cell.btnListenTip.setTitle("Stop Listening", for: UIControl.State.normal)
+            }
+        } else {
+            cell.btnListenTip.setTitle("Start Listening", for: UIControl.State.normal)
+        }
         
         return cell
         
@@ -117,6 +135,27 @@ extension TipsViewController : UITableViewDelegate, UITableViewDataSource {
 extension TipsViewController : TipsTableViewCellDelegate {
     func showNextTip() {
         showRewardedAd()
+    }
+    
+    func toggleListening() {
+
+        let utterance = AVSpeechUtterance(string: currentTip.tipDescription)
+        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+        utterance.rate = 0.4
+        if synthesizer.isSpeaking != true || synthesizer.isPaused {
+            if synthesizer.isPaused {
+                synthesizer.continueSpeaking()
+            } else {
+                synthesizer.speak(utterance)
+            }
+        } else {
+            synthesizer.pauseSpeaking(at: AVSpeechBoundary.word)
+
+            // synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
+        }
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }
 
@@ -137,6 +176,12 @@ extension TipsViewController: GADFullScreenContentDelegate {
         print("Ad did dismiss full screen content.")
     }
     
+    
+    
+}
+
+
+extension TipsViewController : AVSpeechSynthesizerDelegate {
   
     
 }
