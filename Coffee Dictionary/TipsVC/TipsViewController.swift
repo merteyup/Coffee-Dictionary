@@ -12,7 +12,7 @@ import AVFoundation
 
 
 
-class TipsViewController: UIViewController {
+class TipsViewController: UIViewController, AVSpeechSynthesizerDelegate {
     
     // MARK: - Variables
     let realm = try! Realm()
@@ -38,10 +38,10 @@ class TipsViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-       super.viewWillDisappear(animated)
+        super.viewWillDisappear(animated)
         synthesizer.stopSpeaking(at: .immediate)
-     }
-     
+    }
+    
     
     
     
@@ -116,15 +116,7 @@ extension TipsViewController : UITableViewDelegate, UITableViewDataSource {
         cell.lblTipHeader.text = currentTip.tip
         cell.lblTip.text = currentTip.tipDescription
         
-        if synthesizer.isSpeaking != true || synthesizer.isPaused {
-            if synthesizer.isSpeaking != true {
-                cell.btnListenTip.setTitle("Start Listening", for: UIControl.State.normal)
-            } else {
-                cell.btnListenTip.setTitle("Stop Listening", for: UIControl.State.normal)
-            }
-        } else {
-            cell.btnListenTip.setTitle("Start Listening", for: UIControl.State.normal)
-        }
+ 
         
         return cell
         
@@ -137,21 +129,26 @@ extension TipsViewController : TipsTableViewCellDelegate {
         showRewardedAd()
     }
     
-    func toggleListening() {
-
+    func toggleListening(cell: TipsTableViewCell) {
+        
         let utterance = AVSpeechUtterance(string: currentTip.tipDescription)
         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
         utterance.rate = 0.4
         if synthesizer.isSpeaking != true || synthesizer.isPaused {
             if synthesizer.isPaused {
                 synthesizer.continueSpeaking()
+                cell.btnListenTip.setTitle("Stop", for: UIControl.State.normal)
+                cell.btnListenTip.setImage(UIImage(systemName: "speaker.slash"), for: UIControl.State.normal)
+
             } else {
+                cell.btnListenTip.setTitle("Stop", for: UIControl.State.normal)
+                cell.btnListenTip.setImage(UIImage(systemName: "speaker.slash"), for: UIControl.State.normal)
                 synthesizer.speak(utterance)
             }
         } else {
+            cell.btnListenTip.setTitle("Listen", for: UIControl.State.normal)
+            cell.btnListenTip.setImage(UIImage(systemName: "speaker"), for: UIControl.State.normal)
             synthesizer.pauseSpeaking(at: AVSpeechBoundary.word)
-
-            // synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
         }
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -180,8 +177,3 @@ extension TipsViewController: GADFullScreenContentDelegate {
     
 }
 
-
-extension TipsViewController : AVSpeechSynthesizerDelegate {
-  
-    
-}

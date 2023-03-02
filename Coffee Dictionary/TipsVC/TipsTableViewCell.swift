@@ -10,7 +10,7 @@ import UIKit
 protocol TipsTableViewCellDelegate : AnyObject {
     
     func showNextTip()
-    func toggleListening()
+    func toggleListening(cell: TipsTableViewCell)
     
 }
 
@@ -45,7 +45,7 @@ class TipsTableViewCell: UITableViewCell {
     }
     
     @IBAction func listenTipPressed(_ sender: UIButton) {
-        tipsTableViewCellDelegate?.toggleListening()
+        tipsTableViewCellDelegate?.toggleListening(cell: self)
     }
     
 }

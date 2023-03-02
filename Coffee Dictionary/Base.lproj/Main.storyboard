@@ -657,9 +657,9 @@
                                                     <rect key="frame" x="0.0" y="304" width="393" height="300"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily Tip" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73Z-ZN-qJc">
-                                                            <rect key="frame" x="17" y="20" width="368" height="46"/>
+                                                            <rect key="frame" x="17" y="20" width="263" height="83"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="364" id="f6W-qL-Oab"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="263" id="f6W-qL-Oab"/>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="xQf-vc-ucI"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -667,7 +667,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbA-Nw-hbM">
-                                                            <rect key="frame" x="27" y="74" width="339" height="70"/>
+                                                            <rect key="frame" x="27" y="111" width="339" height="78"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="6uO-qW-eYX"/>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="339" id="BBm-WQ-iXC"/>
@@ -676,39 +676,33 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJh-2g-Vst" customClass="NextTipButtonBg" customModule="Coffee_Dictionary" customModuleProvider="target">
-                                                            <rect key="frame" x="72" y="175" width="249" height="50"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XFY-Fd-p8x" customClass="NextTipButtonBg" customModule="Coffee_Dictionary" customModuleProvider="target">
+                                                            <rect key="frame" x="288" y="20" width="97" height="46"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bim-rf-crs">
-                                                                    <rect key="frame" x="18" y="5" width="212" height="40"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="c92-E5-jXV"/>
-                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="212" id="p2E-sL-VNb"/>
-                                                                    </constraints>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="97" height="46"/>
+                                                                    <color key="tintColor" name="appBackgroundColor"/>
                                                                     <state key="normal" title="Button"/>
-                                                                    <buttonConfiguration key="configuration" style="plain" title="Start Listening"/>
+                                                                    <buttonConfiguration key="configuration" style="plain" image="speaker" catalog="system" title="Listen"/>
                                                                     <connections>
                                                                         <action selector="listenTipPressed:" destination="fI6-Ua-2QI" eventType="touchUpInside" id="2mV-Yw-TGr"/>
                                                                     </connections>
                                                                 </button>
                                                             </subviews>
                                                             <color key="backgroundColor" name="appMainColor"/>
-                                                            <color key="tintColor" name="appBackgroundColor"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="1HR-h3-ueX"/>
-                                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="3Ka-ne-syI"/>
-                                                                <constraint firstItem="bim-rf-crs" firstAttribute="top" secondItem="pJh-2g-Vst" secondAttribute="top" constant="5" id="LCu-Uy-6pS"/>
-                                                                <constraint firstAttribute="height" constant="50" id="Q4t-Ct-VDx"/>
-                                                                <constraint firstAttribute="bottom" secondItem="bim-rf-crs" secondAttribute="bottom" constant="5" id="SpS-VJ-9QH"/>
-                                                                <constraint firstAttribute="trailing" secondItem="bim-rf-crs" secondAttribute="trailing" constant="19" id="bTd-dr-qde"/>
-                                                                <constraint firstAttribute="width" constant="249" id="hva-EW-fBN"/>
-                                                                <constraint firstItem="bim-rf-crs" firstAttribute="leading" secondItem="pJh-2g-Vst" secondAttribute="leading" constant="18" id="ltw-iW-htd"/>
-                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="212" id="r9X-f4-etx"/>
-                                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="249" id="zC5-1Z-JB9"/>
+                                                                <constraint firstAttribute="width" constant="97" id="9bj-JC-ubu"/>
+                                                                <constraint firstItem="bim-rf-crs" firstAttribute="leading" secondItem="XFY-Fd-p8x" secondAttribute="leading" id="B6S-OK-Evo"/>
+                                                                <constraint firstItem="bim-rf-crs" firstAttribute="top" secondItem="XFY-Fd-p8x" secondAttribute="top" id="Ddm-eb-j7e"/>
+                                                                <constraint firstAttribute="bottom" secondItem="bim-rf-crs" secondAttribute="bottom" id="Pck-KB-YpT"/>
+                                                                <constraint firstAttribute="height" constant="46" id="WOt-a6-AQS"/>
+                                                                <constraint firstAttribute="trailing" secondItem="bim-rf-crs" secondAttribute="trailing" id="fhw-9f-JfE"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="97" id="rMG-R9-rN3"/>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="tfF-Rk-8t6"/>
                                                             </constraints>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ub5-NQ-j6B" customClass="NextTipButtonBg" customModule="Coffee_Dictionary" customModuleProvider="target">
-                                                            <rect key="frame" x="72" y="242" width="249" height="50"/>
+                                                            <rect key="frame" x="72" y="225" width="249" height="50"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rk2-Pg-znP">
                                                                     <rect key="frame" x="18" y="5" width="212" height="40"/>
@@ -739,18 +733,19 @@
                                                     </subviews>
                                                     <color key="backgroundColor" name="appBackgroundColor"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="XFY-Fd-p8x" secondAttribute="trailing" constant="8" id="0bb-Zl-HIK"/>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="152" id="1PN-4w-K7J"/>
-                                                        <constraint firstItem="Ub5-NQ-j6B" firstAttribute="top" secondItem="pJh-2g-Vst" secondAttribute="bottom" constant="17" id="5wF-I1-HKj"/>
-                                                        <constraint firstItem="ZbA-Nw-hbM" firstAttribute="top" secondItem="73Z-ZN-qJc" secondAttribute="bottom" constant="8" symbolic="YES" id="DgU-rA-jdA"/>
-                                                        <constraint firstAttribute="trailing" secondItem="pJh-2g-Vst" secondAttribute="trailing" constant="72" id="EOw-i7-0Lu"/>
-                                                        <constraint firstItem="pJh-2g-Vst" firstAttribute="leading" secondItem="p9X-zk-QUH" secondAttribute="leading" constant="72" id="GtS-in-lgq"/>
+                                                        <constraint firstItem="XFY-Fd-p8x" firstAttribute="leading" secondItem="73Z-ZN-qJc" secondAttribute="trailing" constant="8" symbolic="YES" id="88n-JM-4J9"/>
+                                                        <constraint firstItem="ZbA-Nw-hbM" firstAttribute="top" secondItem="73Z-ZN-qJc" secondAttribute="bottom" constant="8" id="DgU-rA-jdA"/>
                                                         <constraint firstAttribute="trailing" secondItem="ZbA-Nw-hbM" secondAttribute="trailing" constant="27" id="HCL-Wp-qgW"/>
-                                                        <constraint firstAttribute="trailing" secondItem="73Z-ZN-qJc" secondAttribute="trailing" constant="8" id="QYy-9v-Zfl"/>
+                                                        <constraint firstItem="XFY-Fd-p8x" firstAttribute="top" secondItem="p9X-zk-QUH" secondAttribute="top" constant="20" symbolic="YES" id="Inf-16-0KI"/>
+                                                        <constraint firstItem="Ub5-NQ-j6B" firstAttribute="top" secondItem="ZbA-Nw-hbM" secondAttribute="bottom" constant="36" id="Put-ZB-Xe3"/>
+                                                        <constraint firstAttribute="trailing" secondItem="73Z-ZN-qJc" secondAttribute="trailing" constant="113" id="QYy-9v-Zfl"/>
                                                         <constraint firstItem="73Z-ZN-qJc" firstAttribute="leading" secondItem="p9X-zk-QUH" secondAttribute="leading" constant="17" id="RBE-Dy-yDu"/>
-                                                        <constraint firstItem="pJh-2g-Vst" firstAttribute="top" secondItem="ZbA-Nw-hbM" secondAttribute="bottom" constant="31" id="WVT-Qd-huw"/>
                                                         <constraint firstAttribute="width" constant="393" id="fbg-Ag-f3A"/>
                                                         <constraint firstItem="ZbA-Nw-hbM" firstAttribute="leading" secondItem="p9X-zk-QUH" secondAttribute="leading" constant="27" id="hXU-Eo-AyU"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Ub5-NQ-j6B" secondAttribute="bottom" constant="8" id="j93-oG-5Io"/>
+                                                        <constraint firstItem="ZbA-Nw-hbM" firstAttribute="top" secondItem="XFY-Fd-p8x" secondAttribute="bottom" constant="45" id="htc-qA-QkM"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Ub5-NQ-j6B" secondAttribute="bottom" constant="25" id="j93-oG-5Io"/>
                                                         <constraint firstAttribute="trailing" secondItem="Ub5-NQ-j6B" secondAttribute="trailing" constant="72" id="nQ8-2Q-WRx"/>
                                                         <constraint firstItem="Ub5-NQ-j6B" firstAttribute="leading" secondItem="p9X-zk-QUH" secondAttribute="leading" constant="72" id="qdf-Ry-0cf"/>
                                                         <constraint firstItem="73Z-ZN-qJc" firstAttribute="top" secondItem="p9X-zk-QUH" secondAttribute="top" constant="20" id="yaj-l8-d9m"/>
@@ -891,6 +886,7 @@
         <image name="doc.text.magnifyingglass" catalog="system" width="110" height="128"/>
         <image name="gear" catalog="system" width="128" height="122"/>
         <image name="list.bullet" catalog="system" width="128" height="87"/>
+        <image name="speaker" catalog="system" width="128" height="123"/>
         <image name="star.circle" catalog="system" width="128" height="123"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <namedColor name="appBackgroundColor">
