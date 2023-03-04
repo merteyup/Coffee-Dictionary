@@ -139,7 +139,6 @@ extension TipsViewController : TipsTableViewCellDelegate {
                 synthesizer.continueSpeaking()
                 cell.btnListenTip.setTitle("Stop", for: UIControl.State.normal)
                 cell.btnListenTip.setImage(UIImage(systemName: "speaker.slash"), for: UIControl.State.normal)
-
             } else {
                 cell.btnListenTip.setTitle("Stop", for: UIControl.State.normal)
                 cell.btnListenTip.setImage(UIImage(systemName: "speaker.slash"), for: UIControl.State.normal)

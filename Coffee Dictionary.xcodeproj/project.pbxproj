@@ -33,6 +33,13 @@
 		C4534743299D14870025BCAB /* Medium-drip.json in Resources */ = {isa = PBXBuildFile; fileRef = C4534742299D14870025BCAB /* Medium-drip.json */; };
 		C4534745299D16FD0025BCAB /* CoffeeDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4534744299D16FD0025BCAB /* CoffeeDetailCell.swift */; };
 		C4534747299D96F10025BCAB /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4534746299D96F10025BCAB /* GlobalFunctions.swift */; };
+		C48E624129B164B100342E5F /* BlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E624029B164B100342E5F /* BlogViewController.swift */; };
+		C48E624329B164C800342E5F /* BlogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E624229B164C800342E5F /* BlogTableViewCell.swift */; };
+		C48E624629B167BA00342E5F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C48E624529B167BA00342E5F /* GoogleService-Info.plist */; };
+		C48E624C29B3B8C600342E5F /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C48E624B29B3B8C600342E5F /* FirebaseAnalytics */; };
+		C48E624E29B3B8C600342E5F /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = C48E624D29B3B8C600342E5F /* FirebaseCrashlytics */; };
+		C48E625029B3B8C600342E5F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C48E624F29B3B8C600342E5F /* FirebaseFirestore */; };
+		C48E625229B3BA6F00342E5F /* Blog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E625129B3BA6F00342E5F /* Blog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +72,10 @@
 		C4534742299D14870025BCAB /* Medium-drip.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Medium-drip.json"; sourceTree = "<group>"; };
 		C4534744299D16FD0025BCAB /* CoffeeDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeDetailCell.swift; sourceTree = "<group>"; };
 		C4534746299D96F10025BCAB /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
+		C48E624029B164B100342E5F /* BlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogViewController.swift; sourceTree = "<group>"; };
+		C48E624229B164C800342E5F /* BlogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogTableViewCell.swift; sourceTree = "<group>"; };
+		C48E624529B167BA00342E5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C48E625129B3BA6F00342E5F /* Blog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blog.swift; sourceTree = "<group>"; };
 		C8C3772DF5BC4B7049B812E5 /* Pods-Coffee Dictionary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coffee Dictionary.debug.xcconfig"; path = "Target Support Files/Pods-Coffee Dictionary/Pods-Coffee Dictionary.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +84,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C48E624E29B3B8C600342E5F /* FirebaseCrashlytics in Frameworks */,
+				C48E625029B3B8C600342E5F /* FirebaseFirestore in Frameworks */,
+				C48E624C29B3B8C600342E5F /* FirebaseAnalytics in Frameworks */,
 				7B08895D9BAA311E520159CB /* Pods_Coffee_Dictionary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,6 +143,7 @@
 			children = (
 				C44A8EA0299A575B00F3FDB7 /* Coffee.swift */,
 				C41283B229A62B8B008830F8 /* Tip.swift */,
+				C48E625129B3BA6F00342E5F /* Blog.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -163,12 +178,14 @@
 				C44A8E92299A50B900F3FDB7 /* Main.storyboard */,
 				C44A8E95299A50B900F3FDB7 /* Assets.xcassets */,
 				C44A8E97299A50B900F3FDB7 /* LaunchScreen.storyboard */,
+				C48E624529B167BA00342E5F /* GoogleService-Info.plist */,
 				C44A8E9A299A50B900F3FDB7 /* Info.plist */,
 				C41283A729A40420008830F8 /* Model */,
 				C44F11CD29A76A4A0041C79A /* Globals */,
 				C44F11CE29A76A590041C79A /* CustomizeUI */,
 				C44F11CF29A76A640041C79A /* TipsVC */,
 				C44F11D029A76A700041C79A /* MoreVC */,
+				C48E624429B164D000342E5F /* BlogVC */,
 			);
 			path = "Coffee Dictionary";
 			sourceTree = "<group>";
@@ -212,6 +229,15 @@
 			path = MoreVC;
 			sourceTree = "<group>";
 		};
+		C48E624429B164D000342E5F /* BlogVC */ = {
+			isa = PBXGroup;
+			children = (
+				C48E624029B164B100342E5F /* BlogViewController.swift */,
+				C48E624229B164C800342E5F /* BlogTableViewCell.swift */,
+			);
+			path = BlogVC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -230,6 +256,11 @@
 			dependencies = (
 			);
 			name = "Coffee Dictionary";
+			packageProductDependencies = (
+				C48E624B29B3B8C600342E5F /* FirebaseAnalytics */,
+				C48E624D29B3B8C600342E5F /* FirebaseCrashlytics */,
+				C48E624F29B3B8C600342E5F /* FirebaseFirestore */,
+			);
 			productName = "Coffee Dictionary";
 			productReference = C44A8E89299A50B900F3FDB7 /* Coffee Dictionary.app */;
 			productType = "com.apple.product-type.application";
@@ -258,6 +289,9 @@
 				Base,
 			);
 			mainGroup = C44A8E80299A50B900F3FDB7;
+			packageReferences = (
+				C48E624A29B3B8C600342E5F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = C44A8E8A299A50B900F3FDB7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -274,6 +308,7 @@
 			files = (
 				C44A8E99299A50B900F3FDB7 /* LaunchScreen.storyboard in Resources */,
 				C4534743299D14870025BCAB /* Medium-drip.json in Resources */,
+				C48E624629B167BA00342E5F /* GoogleService-Info.plist in Resources */,
 				C44A8E96299A50B900F3FDB7 /* Assets.xcassets in Resources */,
 				C44A8E94299A50B900F3FDB7 /* Main.storyboard in Resources */,
 			);
@@ -330,17 +365,20 @@
 			files = (
 				C41283AD29A5763E008830F8 /* TipsViewController.swift in Sources */,
 				C41283B329A62B8B008830F8 /* Tip.swift in Sources */,
+				C48E624129B164B100342E5F /* BlogViewController.swift in Sources */,
 				C41283A929A41B74008830F8 /* FilterButtonBg.swift in Sources */,
 				C41283A329A382A1008830F8 /* FilterRoastCollectionViewCell.swift in Sources */,
 				C44A8E91299A50B900F3FDB7 /* CoffeeListViewController.swift in Sources */,
 				C44A8E8D299A50B900F3FDB7 /* AppDelegate.swift in Sources */,
 				C453473F299AE5820025BCAB /* CoffeeListTableViewCell.swift in Sources */,
 				C41283A129A2B628008830F8 /* FilterViewController.swift in Sources */,
+				C48E625229B3BA6F00342E5F /* Blog.swift in Sources */,
 				C41283AF29A5769D008830F8 /* TipsTableViewCell.swift in Sources */,
 				C41283B129A57C85008830F8 /* TipBg.swift in Sources */,
 				C4534745299D16FD0025BCAB /* CoffeeDetailCell.swift in Sources */,
 				C44F11D229A784D70041C79A /* Constants.swift in Sources */,
 				C41283B929A65D68008830F8 /* MoreViewController.swift in Sources */,
+				C48E624329B164C800342E5F /* BlogTableViewCell.swift in Sources */,
 				C4534747299D96F10025BCAB /* GlobalFunctions.swift in Sources */,
 				C41283AB29A4F8A8008830F8 /* FilterBg.swift in Sources */,
 				C44A8E8F299A50B900F3FDB7 /* SceneDelegate.swift in Sources */,
@@ -570,6 +608,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C48E624A29B3B8C600342E5F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C48E624B29B3B8C600342E5F /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C48E624A29B3B8C600342E5F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		C48E624D29B3B8C600342E5F /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C48E624A29B3B8C600342E5F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		C48E624F29B3B8C600342E5F /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C48E624A29B3B8C600342E5F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C44A8E81299A50B900F3FDB7 /* Project object */;
 }
