@@ -11,45 +11,39 @@ import FirebaseFirestore
 
 class BlogViewController: UIViewController {
     
-    
+    // MARK: - Variables
     let db = Firestore.firestore()
+    
     var blogsArray = [Blog]()
     
-    
+    // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
+    
+    
+    // MARK: - Statements
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        getBlogPosts()
+    }
+    
+    
+    // MARK: - Functions
         
+    fileprivate func getBlogPosts() {
         db.collection("blogs").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-                    
                     print("BlogPost: \(document.data())")
-
-                    
-                    if let blogPost = document.data()["blogPost"] as? String {
-                        if let title = document.data()["title"] as? String {
-                            if let createdAt = document.data()["createdAt"] as? Timestamp {
-                                let date = Date(timeIntervalSince1970: createdAt)
-
-
-                                let newBlogPost = Blog(title: title, blogPost: blogPost, createdAt: createdAt)
-                                self.blogsArray.append(newBlogPost)
-                                
-                                print("BlogPost: \(self.blogsArray)")
-                            }
-                        }
-                    }
+                    let newBlogPost = Blog.parseBlogPost(document)
+                    self.blogsArray.append(newBlogPost)
                 }
-                
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
-                
             }
         }
     }
@@ -66,16 +60,11 @@ class BlogViewController: UIViewController {
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "BlogTableViewCellID", for: indexPath) as! BlogTableViewCell
             
-            cell.lblTitle.text = blogsArray[indexPath.row].title
+            cell.updateCell(blogPost: blogsArray[indexPath.row])
             
             return cell
-            
-            
         }
         
         
-        
-        
-        
-        
     }
+
