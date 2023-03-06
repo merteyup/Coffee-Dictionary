@@ -45,7 +45,7 @@ class CoffeeDetailCell: UITableViewCell {
          
          
         playLottieAnimation()
-        backgroundInfo.roundedCorners()
+         backgroundInfo.roundedCorners(round: 10.0)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

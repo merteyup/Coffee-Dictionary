@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class BlogTableViewCell: UITableViewCell {
     
@@ -32,6 +34,24 @@ class BlogTableViewCell: UITableViewCell {
         lblTitle.text = blogPost.title
         lblDate.text = blogPost.createdAt
         lblReadingDuration.text = "\(countWords(blogPost: blogPost.blogPost)) min read"
+        imgBlogPost.roundedCorners(round: 10)
+
+        if let url = URL(string: blogPost.imageUrl) {
+            imgBlogPost.af_setImage(withURL: url, placeholderImage: nil, filter: nil,  imageTransition: .crossDissolve(0.2), runImageTransitionIfCached: false, completion: {response in
+
+            })
+        }
+
+    }
+    
+    static func getImage(_ url:String,handler: @escaping (UIImage?)->Void) {
+    
+        AF.request(url).responseImage { response in
+            debugPrint(response)
+            if case .success(let image) = response.result {
+                print("image downloaded: \(image)")
+            }
+        }
     }
     
     func countWords(blogPost: String) -> String {

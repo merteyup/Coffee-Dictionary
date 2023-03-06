@@ -610,7 +610,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="769"/>
                                 <color key="backgroundColor" name="appBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BlogTableViewCellID" rowHeight="182" id="upm-7v-2KU" customClass="BlogTableViewCell" customModule="Coffee_Dictionary" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="BlogTableViewCellID" rowHeight="182" id="upm-7v-2KU" customClass="BlogTableViewCell" customModule="Coffee_Dictionary" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="182"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="upm-7v-2KU" id="Cwu-sA-yqW">
@@ -656,22 +656,25 @@
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="225" id="rBk-tG-C3C"/>
                                                     </constraints>
                                                 </stackView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T3c-WO-m6q">
-                                                    <rect key="frame" x="253" y="11" width="120" height="117"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T3c-WO-m6q">
+                                                    <rect key="frame" x="253" y="31" width="120" height="77"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="117" id="3la-HP-bZ3"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="77" id="3la-HP-bZ3"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="DSE-Rk-YXd"/>
+                                                        <constraint firstAttribute="width" constant="120" id="HgB-ry-dX7"/>
+                                                        <constraint firstAttribute="height" constant="77" id="xul-4M-Ok1"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="T3c-WO-m6q" firstAttribute="top" secondItem="Cwu-sA-yqW" secondAttribute="topMargin" id="5wN-YI-HOQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="T3c-WO-m6q" secondAttribute="bottom" constant="74" id="4Mm-aJ-Ppg"/>
+                                                <constraint firstItem="T3c-WO-m6q" firstAttribute="top" secondItem="Cwu-sA-yqW" secondAttribute="topMargin" constant="20" id="5wN-YI-HOQ"/>
                                                 <constraint firstItem="07a-Fc-XVs" firstAttribute="leading" secondItem="Cwu-sA-yqW" secondAttribute="leadingMargin" id="Ht4-Vl-Cb9"/>
                                                 <constraint firstItem="T3c-WO-m6q" firstAttribute="trailing" secondItem="Cwu-sA-yqW" secondAttribute="trailingMargin" id="KUg-Kv-Gir"/>
                                                 <constraint firstItem="OJu-Ol-ge1" firstAttribute="top" secondItem="07a-Fc-XVs" secondAttribute="bottom" constant="8" symbolic="YES" id="NfE-Jo-coJ"/>
                                                 <constraint firstItem="OJu-Ol-ge1" firstAttribute="leading" secondItem="Cwu-sA-yqW" secondAttribute="leadingMargin" id="S7p-W0-rO7"/>
                                                 <constraint firstItem="07a-Fc-XVs" firstAttribute="top" secondItem="Cwu-sA-yqW" secondAttribute="topMargin" id="etb-ta-q7X"/>
-                                                <constraint firstItem="DnF-KF-F4w" firstAttribute="top" secondItem="T3c-WO-m6q" secondAttribute="bottom" constant="8" symbolic="YES" id="lxG-Sy-5qq"/>
+                                                <constraint firstItem="DnF-KF-F4w" firstAttribute="top" secondItem="T3c-WO-m6q" secondAttribute="bottom" constant="28" id="lxG-Sy-5qq"/>
                                                 <constraint firstItem="T3c-WO-m6q" firstAttribute="leading" secondItem="07a-Fc-XVs" secondAttribute="trailing" constant="8" symbolic="YES" id="oDR-so-Nh2"/>
                                                 <constraint firstAttribute="bottom" secondItem="OJu-Ol-ge1" secondAttribute="bottom" constant="25" id="rP4-lf-Hna"/>
                                             </constraints>

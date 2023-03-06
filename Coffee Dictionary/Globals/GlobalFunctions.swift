@@ -11,8 +11,8 @@ import UIKit
 
 extension UIView {
     //If you want only round corners
-    func roundedCorners() {
-        layer.cornerRadius = 10
+    func roundedCorners(round: Double) {
+        layer.cornerRadius = round
         layer.masksToBounds = true
     }
  

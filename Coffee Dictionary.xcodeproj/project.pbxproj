@@ -40,6 +40,7 @@
 		C48E624E29B3B8C600342E5F /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = C48E624D29B3B8C600342E5F /* FirebaseCrashlytics */; };
 		C48E625029B3B8C600342E5F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C48E624F29B3B8C600342E5F /* FirebaseFirestore */; };
 		C48E625229B3BA6F00342E5F /* Blog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E625129B3BA6F00342E5F /* Blog.swift */; };
+		C48E625429B5359E00342E5F /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = C48E625329B5359E00342E5F /* FirebaseStorage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 				C48E624E29B3B8C600342E5F /* FirebaseCrashlytics in Frameworks */,
 				C48E625029B3B8C600342E5F /* FirebaseFirestore in Frameworks */,
 				C48E624C29B3B8C600342E5F /* FirebaseAnalytics in Frameworks */,
+				C48E625429B5359E00342E5F /* FirebaseStorage in Frameworks */,
 				7B08895D9BAA311E520159CB /* Pods_Coffee_Dictionary.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +262,7 @@
 				C48E624B29B3B8C600342E5F /* FirebaseAnalytics */,
 				C48E624D29B3B8C600342E5F /* FirebaseCrashlytics */,
 				C48E624F29B3B8C600342E5F /* FirebaseFirestore */,
+				C48E625329B5359E00342E5F /* FirebaseStorage */,
 			);
 			productName = "Coffee Dictionary";
 			productReference = C44A8E89299A50B900F3FDB7 /* Coffee Dictionary.app */;
@@ -635,6 +638,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C48E624A29B3B8C600342E5F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
+		};
+		C48E625329B5359E00342E5F /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C48E624A29B3B8C600342E5F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

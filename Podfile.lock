@@ -1,4 +1,7 @@
 PODS:
+  - Alamofire (5.6.4)
+  - AlamofireImage (4.2.0):
+    - Alamofire (~> 5.4)
   - Google-Mobile-Ads-SDK (10.1.0):
     - GoogleAppMeasurement (< 11.0, >= 7.0)
     - GoogleUserMessagingPlatform (>= 1.1)
@@ -63,6 +66,7 @@ PODS:
     - Realm (= 10.35.1)
 
 DEPENDENCIES:
+  - AlamofireImage (~> 4.1)
   - Google-Mobile-Ads-SDK
   - L10n-swift (~> 5.10)
   - lottie-ios
@@ -70,6 +74,8 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Alamofire
+    - AlamofireImage
     - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
     - GoogleUserMessagingPlatform
@@ -82,6 +88,8 @@ SPEC REPOS:
     - RealmSwift
 
 SPEC CHECKSUMS:
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  AlamofireImage: 34a2d90b0e5fe6a5605f85ae4b7b01e784c60192
   Google-Mobile-Ads-SDK: 894be2e3e3e8281004bda14381f9af7ad73eeffd
   GoogleAppMeasurement: 40c70a7d89013f0eca72006c4b9732163ea4cdae
   GoogleUserMessagingPlatform: 5f8b30daf181805317b6b985bb51c1ff3beca054
@@ -93,6 +101,6 @@ SPEC CHECKSUMS:
   Realm: ee5a67274a2c338dec50f5e01a811b6b8d657a10
   RealmSwift: 82f822142caa1e6ab96d3ea30bc83233e3d78ea3
 
-PODFILE CHECKSUM: 01770f8e31c8dd069ee5d54b144f7bde6e242e5c
+PODFILE CHECKSUM: 9155fafbaee4d944017179c1ce5e8cbbe797917f
 
 COCOAPODS: 1.11.3
