@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GADMobileAds.sharedInstance().start(completionHandler: nil)
 
         // Realm file location.
-        print(Realm.Configuration.defaultConfiguration.fileURL)
+        print("RealmDBLocation: \(Realm.Configuration.defaultConfiguration.fileURL)")
         do {
             // Init realm and keep this for be able to see possible errors.
             // It's not in use so keep it as a _

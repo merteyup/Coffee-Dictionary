@@ -29,6 +29,10 @@ class BlogTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imgBlogPost.image = nil
+    }
     
     func updateCell(blogPost: Blog) {
         lblTitle.text = blogPost.title
@@ -42,16 +46,6 @@ class BlogTableViewCell: UITableViewCell {
             })
         }
 
-    }
-    
-    static func getImage(_ url:String,handler: @escaping (UIImage?)->Void) {
-    
-        AF.request(url).responseImage { response in
-            debugPrint(response)
-            if case .success(let image) = response.result {
-                print("image downloaded: \(image)")
-            }
-        }
     }
     
     func countWords(blogPost: String) -> String {

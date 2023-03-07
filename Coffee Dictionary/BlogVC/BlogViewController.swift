@@ -36,7 +36,7 @@ class BlogViewController: UIViewController {
     // MARK: - Functions
     
     fileprivate func getBlogPosts() {
-        db.collection("blogs").getDocuments() { (querySnapshot, err) in
+        db.collection("blogs").order(by: "createdAt", descending: true).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
@@ -70,6 +70,13 @@ extension BlogViewController : UITableViewDelegate, UITableViewDataSource {
         cell.updateCell(blogPost: blogsArray[indexPath.row])
         
         return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        openBlogDetailVC(selectedBlogPost: blogsArray[indexPath.row])
+        
     }
     
     

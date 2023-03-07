@@ -27,6 +27,14 @@ extension UIViewController {
         self.present(vc, animated: true, completion: nil);
     }
     
+    func openBlogDetailVC(selectedBlogPost: Blog) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil);
+        let vc: BlogDetailViewController = storyboard.instantiateViewController(withIdentifier: "BlogDetailViewControllerID") as! BlogDetailViewController;
+        vc.modalPresentationCapturesStatusBarAppearance = true
+        vc.selectedBlogPost = selectedBlogPost
+        self.present(vc, animated: true, completion: nil);
+    }
+    
     
     func openCoffeeDetailVC(viewController: CoffeeListViewController) {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil);
@@ -36,6 +44,9 @@ extension UIViewController {
         vc.modalPresentationStyle = .overCurrentContext
         self.present(vc, animated: true, completion: nil);
     }
+    
+    
+    
     
 }
 
