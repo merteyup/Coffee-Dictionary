@@ -88,7 +88,7 @@ extension CoffeeListViewController : UITableViewDelegate, UITableViewDataSource 
             cell.imgRoast.image = UIImage(named: coffee.roast)
             if coffee.isFavorite == 0 {
                 cell.btnFavorite.setImage(UIImage(systemName: "star.circle"), for: .normal)
-                cell.btnFavorite.tintColor = .systemGray2
+                cell.btnFavorite.tintColor = UIColor(named: "appMainColor")
             } else {
                 cell.btnFavorite.setImage(UIImage(systemName: "star.circle.fill"), for: .normal)
                 cell.btnFavorite.tintColor = .systemYellow

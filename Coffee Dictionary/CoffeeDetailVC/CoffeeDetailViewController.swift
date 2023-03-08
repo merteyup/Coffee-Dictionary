@@ -22,8 +22,8 @@ class CoffeeDetailViewController: UIViewController, GADBannerViewDelegate {
 // MARK: - Statements
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         bannerView = GADBannerView(adSize: GADAdSizeBanner)
-
         bannerView.adUnitID = Constants.bannerAdTestId
         bannerView.rootViewController = self
         bannerView.load(GADRequest())

@@ -6,22 +6,74 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class BlogDetailViewController: UIViewController {
+class BlogDetailViewController: UIViewController, GADBannerViewDelegate {
     
     
 
     @IBOutlet weak var tableView: UITableView!
     
     var selectedBlogPost = Blog()
-    
+    var bannerView: GADBannerView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        bannerView = GADBannerView(adSize: GADAdSizeBanner)
+        bannerView.adUnitID = Constants.bannerAdTestId
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        bannerView.delegate = self
+
+
     }
     
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bannerView)
+        view.addConstraints(
+          [NSLayoutConstraint(item: bannerView,
+                              attribute: .bottom,
+                              relatedBy: .equal,
+                              toItem: bottomLayoutGuide,
+                              attribute: .top,
+                              multiplier: 1,
+                              constant: 0),
+           NSLayoutConstraint(item: bannerView,
+                              attribute: .centerX,
+                              relatedBy: .equal,
+                              toItem: view,
+                              attribute: .centerX,
+                              multiplier: 1,
+                              constant: 0)
+          ])
+       }
+    
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+      print("bannerViewDidReceiveAd")
+        addBannerViewToView(bannerView)
+    }
 
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+      print("bannerView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+
+    func bannerViewDidRecordImpression(_ bannerView: GADBannerView) {
+      print("bannerViewDidRecordImpression")
+    }
+
+    func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
+      print("bannerViewWillPresentScreen")
+    }
+
+    func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
+      print("bannerViewWillDIsmissScreen")
+    }
+
+    func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
+      print("bannerViewDidDismissScreen")
+    }
 
 }
 
@@ -36,9 +88,14 @@ extension BlogDetailViewController : UITableViewDelegate, UITableViewDataSource 
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "BlogDetailTableViewCellID", for: indexPath) as! BlogDetailTableViewCell
         
-        cell.lblTitle.text = selectedBlogPost.title
-        cell.lblBlogPost.text = selectedBlogPost.blogPost
         
+        let sentence = selectedBlogPost.blogPost
+        let lines = sentence.split(whereSeparator: \.isNewline)
+        
+        cell.lblTitle.text = selectedBlogPost.title
+        cell.lblBlogPost.text = selectedBlogPost.blogPost.replacingOccurrences(of: "\\n", with: "\n")
+
+
         if let url = URL(string: selectedBlogPost.imageUrl) {
             cell.imgBlogPost.af_setImage(withURL: url, placeholderImage: nil, filter: nil,  imageTransition: .crossDissolve(0.2), runImageTransitionIfCached: false, completion: {response in
             })

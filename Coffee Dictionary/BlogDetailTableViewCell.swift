@@ -15,6 +15,7 @@ class BlogDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var lblBlogPost: UILabel!
     
     
+    @IBOutlet weak var testOutlet: UITextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
