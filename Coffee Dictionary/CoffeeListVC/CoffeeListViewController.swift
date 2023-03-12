@@ -97,7 +97,6 @@ extension CoffeeListViewController : UITableViewDelegate, UITableViewDataSource 
         return cell
     }
     
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let coffees = coffees {
             if let cell = self.tableView.cellForRow(at: indexPath) as? CoffeeListTableViewCell {
