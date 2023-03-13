@@ -10,11 +10,41 @@ import UIKit
 
 
 extension UIView {
-    //If you want only round corners
+    
     func roundedCorners(round: Double) {
         layer.cornerRadius = round
         layer.masksToBounds = true
     }
+    
+    func addProductBorder() {
+        clipsToBounds = true
+        layer.masksToBounds = false
+        layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        layer.borderWidth = 1
+        layer.cornerRadius = 10
+    }
+    
+    func removeProductBorder() {
+        layer.borderWidth = 0
+        
+    }
+    
+    func addBottomRoundedEdge() {
+          let offset: CGFloat = (self.frame.width * 1.5)
+          let bounds: CGRect = self.bounds
+
+          let rectBounds: CGRect = CGRect(x: bounds.origin.x, y: bounds.origin.y, width: bounds.size.width , height: bounds.size.height / 2)
+          let rectPath: UIBezierPath = UIBezierPath(rect: rectBounds)
+          let ovalBounds: CGRect = CGRect(x: bounds.origin.x - offset / 2, y: bounds.origin.y, width: bounds.size.width + offset , height: bounds.size.height)
+          let ovalPath: UIBezierPath = UIBezierPath(ovalIn: ovalBounds)
+          rectPath.append(ovalPath)
+
+          let maskLayer: CAShapeLayer = CAShapeLayer()
+          maskLayer.frame = bounds
+          maskLayer.path = rectPath.cgPath
+
+          self.layer.mask = maskLayer
+      }
  
 }
 

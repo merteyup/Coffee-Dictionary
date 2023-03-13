@@ -45,6 +45,9 @@
 		C48E625A29B7645100342E5F /* BlogDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E625929B7645100342E5F /* BlogDetailTableViewCell.swift */; };
 		C48E625D29BDFA5F00342E5F /* FirstPremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E625C29BDFA5F00342E5F /* FirstPremiumViewController.swift */; };
 		C48E626129BDFADC00342E5F /* FirstPremiumVcCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E626029BDFADC00342E5F /* FirstPremiumVcCell.swift */; };
+		C48E626429BE8CA000342E5F /* coffee-shop-barista.json in Resources */ = {isa = PBXBuildFile; fileRef = C48E626329BE8CA000342E5F /* coffee-shop-barista.json */; };
+		C4F575A629BF543300D7B504 /* SecondPremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F575A529BF543300D7B504 /* SecondPremiumViewController.swift */; };
+		C4F575A829BF545400D7B504 /* SecondPremiumVcCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F575A729BF545400D7B504 /* SecondPremiumVcCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +88,9 @@
 		C48E625929B7645100342E5F /* BlogDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogDetailTableViewCell.swift; sourceTree = "<group>"; };
 		C48E625C29BDFA5F00342E5F /* FirstPremiumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPremiumViewController.swift; sourceTree = "<group>"; };
 		C48E626029BDFADC00342E5F /* FirstPremiumVcCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPremiumVcCell.swift; sourceTree = "<group>"; };
+		C48E626329BE8CA000342E5F /* coffee-shop-barista.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "coffee-shop-barista.json"; sourceTree = "<group>"; };
+		C4F575A529BF543300D7B504 /* SecondPremiumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPremiumViewController.swift; sourceTree = "<group>"; };
+		C4F575A729BF545400D7B504 /* SecondPremiumVcCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPremiumVcCell.swift; sourceTree = "<group>"; };
 		C8C3772DF5BC4B7049B812E5 /* Pods-Coffee Dictionary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coffee Dictionary.debug.xcconfig"; path = "Target Support Files/Pods-Coffee Dictionary/Pods-Coffee Dictionary.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,13 +185,18 @@
 		C44A8E8B299A50B900F3FDB7 /* Coffee Dictionary */ = {
 			isa = PBXGroup;
 			children = (
-				C48E625B29BDFA2B00342E5F /* PremiumViewControllers */,
 				C4534742299D14870025BCAB /* Medium-drip.json */,
+				C48E626329BE8CA000342E5F /* coffee-shop-barista.json */,
 				C44A8E8C299A50B900F3FDB7 /* AppDelegate.swift */,
 				C44A8E8E299A50B900F3FDB7 /* SceneDelegate.swift */,
+				C48E625B29BDFA2B00342E5F /* PremiumViewControllers */,
 				C41283A629A40402008830F8 /* FilterVC */,
 				C41283A529A403EE008830F8 /* CoffeeDetailVC */,
 				C41283A429A403E1008830F8 /* CoffeeListVC */,
+				C44F11CF29A76A640041C79A /* TipsVC */,
+				C44F11D029A76A700041C79A /* MoreVC */,
+				C48E624429B164D000342E5F /* BlogVC */,
+				C48E626229BE877700342E5F /* BlogDetailVC */,
 				C44A8E92299A50B900F3FDB7 /* Main.storyboard */,
 				C44A8E95299A50B900F3FDB7 /* Assets.xcassets */,
 				C44A8E97299A50B900F3FDB7 /* LaunchScreen.storyboard */,
@@ -194,11 +205,6 @@
 				C41283A729A40420008830F8 /* Model */,
 				C44F11CD29A76A4A0041C79A /* Globals */,
 				C44F11CE29A76A590041C79A /* CustomizeUI */,
-				C44F11CF29A76A640041C79A /* TipsVC */,
-				C44F11D029A76A700041C79A /* MoreVC */,
-				C48E624429B164D000342E5F /* BlogVC */,
-				C48E625729B7643600342E5F /* BlogDetailViewController.swift */,
-				C48E625929B7645100342E5F /* BlogDetailTableViewCell.swift */,
 			);
 			path = "Coffee Dictionary";
 			sourceTree = "<group>";
@@ -254,10 +260,37 @@
 		C48E625B29BDFA2B00342E5F /* PremiumViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C4F575A329BF540800D7B504 /* FirstPremiumVC */,
+				C4F575A429BF541300D7B504 /* SecondPremiumVC */,
+			);
+			path = PremiumViewControllers;
+			sourceTree = "<group>";
+		};
+		C48E626229BE877700342E5F /* BlogDetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				C48E625729B7643600342E5F /* BlogDetailViewController.swift */,
+				C48E625929B7645100342E5F /* BlogDetailTableViewCell.swift */,
+			);
+			path = BlogDetailVC;
+			sourceTree = "<group>";
+		};
+		C4F575A329BF540800D7B504 /* FirstPremiumVC */ = {
+			isa = PBXGroup;
+			children = (
 				C48E625C29BDFA5F00342E5F /* FirstPremiumViewController.swift */,
 				C48E626029BDFADC00342E5F /* FirstPremiumVcCell.swift */,
 			);
-			path = PremiumViewControllers;
+			path = FirstPremiumVC;
+			sourceTree = "<group>";
+		};
+		C4F575A429BF541300D7B504 /* SecondPremiumVC */ = {
+			isa = PBXGroup;
+			children = (
+				C4F575A529BF543300D7B504 /* SecondPremiumViewController.swift */,
+				C4F575A729BF545400D7B504 /* SecondPremiumVcCell.swift */,
+			);
+			path = SecondPremiumVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,6 +364,7 @@
 			files = (
 				C44A8E99299A50B900F3FDB7 /* LaunchScreen.storyboard in Resources */,
 				C4534743299D14870025BCAB /* Medium-drip.json in Resources */,
+				C48E626429BE8CA000342E5F /* coffee-shop-barista.json in Resources */,
 				C48E624629B167BA00342E5F /* GoogleService-Info.plist in Resources */,
 				C44A8E96299A50B900F3FDB7 /* Assets.xcassets in Resources */,
 				C44A8E94299A50B900F3FDB7 /* Main.storyboard in Resources */,
@@ -391,6 +425,7 @@
 				C48E624129B164B100342E5F /* BlogViewController.swift in Sources */,
 				C41283A929A41B74008830F8 /* FilterButtonBg.swift in Sources */,
 				C41283A329A382A1008830F8 /* FilterRoastCollectionViewCell.swift in Sources */,
+				C4F575A629BF543300D7B504 /* SecondPremiumViewController.swift in Sources */,
 				C44A8E91299A50B900F3FDB7 /* CoffeeListViewController.swift in Sources */,
 				C44A8E8D299A50B900F3FDB7 /* AppDelegate.swift in Sources */,
 				C453473F299AE5820025BCAB /* CoffeeListTableViewCell.swift in Sources */,
@@ -403,6 +438,7 @@
 				C4534745299D16FD0025BCAB /* CoffeeDetailCell.swift in Sources */,
 				C48E625A29B7645100342E5F /* BlogDetailTableViewCell.swift in Sources */,
 				C44F11D229A784D70041C79A /* Constants.swift in Sources */,
+				C4F575A829BF545400D7B504 /* SecondPremiumVcCell.swift in Sources */,
 				C41283B929A65D68008830F8 /* MoreViewController.swift in Sources */,
 				C48E624329B164C800342E5F /* BlogTableViewCell.swift in Sources */,
 				C4534747299D96F10025BCAB /* GlobalFunctions.swift in Sources */,

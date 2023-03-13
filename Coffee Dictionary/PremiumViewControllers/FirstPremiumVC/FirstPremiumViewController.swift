@@ -9,14 +9,17 @@ import UIKit
 
 class FirstPremiumViewController: UIViewController {
 
+    // MARK: - Variables
+    
+    
+    // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     
     
-    
+    // MARK: - Statements
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
 
@@ -24,8 +27,8 @@ class FirstPremiumViewController: UIViewController {
 }
 
 
+    // MARK: - TableView Extension
 extension FirstPremiumViewController : UITableViewDelegate, UITableViewDataSource {
-    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
