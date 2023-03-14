@@ -29,22 +29,30 @@ extension UIView {
         
     }
     
-    func addBottomRoundedEdge() {
-          let offset: CGFloat = (self.frame.width * 1.5)
-          let bounds: CGRect = self.bounds
-
-          let rectBounds: CGRect = CGRect(x: bounds.origin.x, y: bounds.origin.y, width: bounds.size.width , height: bounds.size.height / 2)
-          let rectPath: UIBezierPath = UIBezierPath(rect: rectBounds)
-          let ovalBounds: CGRect = CGRect(x: bounds.origin.x - offset / 2, y: bounds.origin.y, width: bounds.size.width + offset , height: bounds.size.height)
-          let ovalPath: UIBezierPath = UIBezierPath(ovalIn: ovalBounds)
-          rectPath.append(ovalPath)
-
-          let maskLayer: CAShapeLayer = CAShapeLayer()
-          maskLayer.frame = bounds
-          maskLayer.path = rectPath.cgPath
-
-          self.layer.mask = maskLayer
-      }
+    func addBottomRoundedEdge(desiredCurve: CGFloat?, view: UIView) {
+            let offset: CGFloat = self.frame.width / desiredCurve!
+            let bounds: CGRect = self.bounds
+            
+            let rectBounds: CGRect = CGRect(x: bounds.origin.x, y: bounds.origin.y, width: bounds.size.width, height: bounds.size.height / 2)
+            let rectPath: UIBezierPath = UIBezierPath(rect: rectBounds)
+            let ovalBounds: CGRect = CGRect(x: bounds.origin.x - offset / 2, y: bounds.origin.y, width: bounds.size.width + offset, height: bounds.size.height)
+            let ovalPath: UIBezierPath = UIBezierPath(ovalIn: ovalBounds)
+            rectPath.append(ovalPath)
+            
+            // Create the shape layer and set its path
+            let maskLayer: CAShapeLayer = CAShapeLayer()
+            maskLayer.frame = bounds
+            maskLayer.path = rectPath.cgPath
+        
+       
+            
+            // Set the newly created shape layer as the mask for the view's layer
+            self.layer.mask = maskLayer
+        }
+    
+ 
+    
+    
  
 }
 

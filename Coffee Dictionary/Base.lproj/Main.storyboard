@@ -1490,7 +1490,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="k4u-cr-gbk">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="k4u-cr-gbk">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <color key="backgroundColor" name="appBackgroundColor"/>
                                 <prototypes>
@@ -1513,6 +1513,9 @@
                                                             <color key="tintColor" name="appBackgroundColor"/>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" image="xmark.circle.fill" catalog="system" title=" "/>
+                                                            <connections>
+                                                                <action selector="dismissPressed:" destination="Xbj-gn-H0I" eventType="touchUpInside" id="ClL-wF-6Nz"/>
+                                                            </connections>
                                                         </button>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bolt.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="g89-BQ-OYl">
                                                             <rect key="frame" x="159" y="39.666666666666671" width="75" height="75"/>
@@ -1580,23 +1583,23 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Vi-0K-dFa">
                                                             <rect key="frame" x="270" y="0.0" width="83" height="70"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nfg-LA-o83">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nfg-LA-o83">
                                                                     <rect key="frame" x="8" y="10" width="67" height="21"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="a8I-W7-OWA"/>
                                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="67" id="sgs-kP-xDA"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                     <color key="textColor" name="appMainColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ve4-7O-ecy">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="45%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ve4-7O-ecy">
                                                                     <rect key="frame" x="8" y="39" width="67" height="21"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="EGa-dW-gR9"/>
                                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="67" id="KLu-7b-Xlx"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                                     <color key="textColor" name="appMainColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -1614,23 +1617,23 @@
                                                                 <constraint firstItem="ve4-7O-ecy" firstAttribute="top" secondItem="Nfg-LA-o83" secondAttribute="bottom" constant="8" symbolic="YES" id="r1a-H2-sOG"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RwO-eS-l9v">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 days free" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RwO-eS-l9v">
                                                             <rect key="frame" x="16" y="10" width="246" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="246" id="20W-p2-rhf"/>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="mcv-LE-cxL"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                             <color key="textColor" name="appMainColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3O0-3Y-Nc2">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$19.99 annually ($1.66 / month)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3O0-3Y-Nc2">
                                                             <rect key="frame" x="16" y="39" width="246" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Lvm-48-v9R"/>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="246" id="yec-eC-4j5"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" name="appMainColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -1655,23 +1658,23 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OAV-n3-xsc">
                                                             <rect key="frame" x="270" y="0.0" width="83" height="70"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUB-Iu-qzQ">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUB-Iu-qzQ">
                                                                     <rect key="frame" x="8" y="10" width="67" height="21"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="67" id="BXd-MT-Zmf"/>
                                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="bAl-Az-0fo"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                     <color key="textColor" name="appMainColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIu-nb-dXN">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIu-nb-dXN">
                                                                     <rect key="frame" x="8" y="39" width="67" height="21"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="lel-2a-Rqb"/>
                                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="67" id="xSE-GG-ZA9"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                                     <color key="textColor" name="appMainColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -1689,23 +1692,23 @@
                                                                 <constraint firstAttribute="bottom" secondItem="aIu-nb-dXN" secondAttribute="bottom" constant="10" id="nbJ-nb-Alb"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88Z-jk-gct">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 days free" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88Z-jk-gct">
                                                             <rect key="frame" x="16" y="10" width="246" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="Yuf-yc-bkw"/>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="246" id="ojD-zW-7Xa"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                             <color key="textColor" name="appMainColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwM-U3-wlG">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$2.99 monthly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wwM-U3-wlG">
                                                             <rect key="frame" x="16" y="39" width="246" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="246" id="4w3-Hk-Y8i"/>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="KAa-mV-NjQ"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" name="appMainColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -1848,6 +1851,8 @@ Anytime</string>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="appBackgroundColor"/>
                                         <connections>
+                                            <outlet property="productView1" destination="LF7-cl-yey" id="2ip-he-uld"/>
+                                            <outlet property="productView2" destination="Dj3-fQ-wnK" id="HIf-xY-QdG"/>
                                             <outlet property="topViewBg" destination="MiQ-wT-OJr" id="s3T-fb-smU"/>
                                         </connections>
                                     </tableViewCell>
@@ -1876,10 +1881,6 @@ Anytime</string>
             <point key="canvasLocation" x="2383.969465648855" y="1910.5633802816903"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="UXs-zJ-meo"/>
-        <designable name="ukr-nT-hck"/>
-    </designables>
     <resources>
         <image name="arrowshape.turn.up.forward" catalog="system" width="128" height="104"/>
         <image name="bolt.fill" catalog="system" width="100" height="128"/>
