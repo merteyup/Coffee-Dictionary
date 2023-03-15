@@ -21,8 +21,6 @@ class FirstPremiumViewController: UIViewController {
         super.viewDidLoad()
 
     }
-    
-
 
 }
 
@@ -38,23 +36,21 @@ extension FirstPremiumViewController : UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "FirstPremiumVcCellID", for: indexPath) as! FirstPremiumVcCell
-        
         cell.firstPremiumVcCellDelegate = self
-        
         
         return cell
         
     }
     
     
-    
-    
 }
 
 
+    // MARK: - CellDelegateExtension
 extension FirstPremiumViewController : FirstPremiumVcCellDelegate {
     func dismissPressed() {
         print(" FirstPremiumVcCellDelegate DismissPressed: ")
+        dismiss(animated: true)
     }
     
     func productPressed(productTag: Int) {

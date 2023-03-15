@@ -82,17 +82,7 @@ extension CoffeeListViewController : UITableViewDelegate, UITableViewDataSource 
         cell.coffeeListTableViewCellDelegate = self
         
         if let coffee = coffees?[indexPath.row] {
-            cell.lblName.text = coffee.name
-            cell.lblRoaster.text = coffee.roaster
-            cell.lblRoast.text = coffee.roast
-            cell.imgRoast.image = UIImage(named: coffee.roast)
-            if coffee.isFavorite == 0 {
-                cell.btnFavorite.setImage(UIImage(systemName: "star.circle"), for: .normal)
-                cell.btnFavorite.tintColor = UIColor(named: "appMainColor")
-            } else {
-                cell.btnFavorite.setImage(UIImage(systemName: "star.circle.fill"), for: .normal)
-                cell.btnFavorite.tintColor = .systemYellow
-            }
+            cell.updateCell(coffee: coffee)
         }
         return cell
     }
@@ -166,9 +156,7 @@ extension CoffeeListViewController : FilterViewControllerDelegate {
             }
 
         }
-        
-
-        
+                
     }
     
     

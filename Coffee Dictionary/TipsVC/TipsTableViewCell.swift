@@ -18,14 +18,17 @@ protocol TipsTableViewCellDelegate : AnyObject {
 class TipsTableViewCell: UITableViewCell {
     
     
+    // MARK: - Variables
+    weak var tipsTableViewCellDelegate : TipsTableViewCellDelegate?
+
+    // MARK: - Outlets
     @IBOutlet weak var imgTip: UIImageView!
     @IBOutlet weak var bgTip: UIView!
     @IBOutlet weak var lblTipHeader: UILabel!
     @IBOutlet weak var lblTip: UILabel!
     @IBOutlet weak var btnListenTip: UIButton!
-    weak var tipsTableViewCellDelegate : TipsTableViewCellDelegate?
     
-    
+    // MARK: - Statements
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -40,6 +43,7 @@ class TipsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    // MARK: - Actions
     @IBAction func nextTipPressed(_ sender: UIButton) {
         tipsTableViewCellDelegate?.showNextTip()
     }

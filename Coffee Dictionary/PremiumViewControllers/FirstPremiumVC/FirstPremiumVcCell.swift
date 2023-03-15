@@ -23,10 +23,11 @@ protocol FirstPremiumVcCellDelegate : AnyObject {
 class FirstPremiumVcCell: UITableViewCell {
     
     
+    // MARK: - Variables
     weak var firstPremiumVcCellDelegate : FirstPremiumVcCellDelegate?
     
     
-    
+    // MARK: - Outlets
     @IBOutlet weak var animationView: LottieAnimationView!
     @IBOutlet weak var lblHeader: UILabel!
     @IBOutlet weak var lblInfo1: UILabel!
@@ -46,36 +47,44 @@ class FirstPremiumVcCell: UITableViewCell {
     @IBOutlet weak var btnFreeTrial: UIButton!
     
     
+  // MARK: - Statements
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        productView1.addProductBorder()
-        btnFreeTrial.roundedCorners(round: 10)
-        btnFreeTrial.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
-        btnFreeTrial.layer.shadowOffset = CGSize(width: -1.0, height: 4.0)
-        btnFreeTrial.layer.shadowOpacity = 0.8
-        btnFreeTrial.layer.shadowRadius = 0.5
-        btnFreeTrial.layer.masksToBounds = false
-        btnFreeTrial.layer.cornerRadius = 4.0
+        productView1.addProductBorder(round: 10)
+        addBtnShadow(button: btnFreeTrial)
 
 
         playLottieAnimation()
         updateCell()
     }
     
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    
+    // MARK: - Function
     func updateCell() {
         var lblInfos = [lblInfo1, lblInfo2, lblInfo3]
         for (index, info) in lblInfos.enumerated() {
             info?.text = paywallInfos[index]
         }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    fileprivate func playLottieAnimation() {
+        // 1. Set animation content mode
+        animationView.contentMode = .scaleAspectFit
+        // 2. Set animation loop mode
+        animationView.loopMode = .loop
+        // 3. Adjust animation speed
+        animationView.animationSpeed = 0.7
+        // 4. Play animation
+        animationView.play()
     }
 
+    // MARK: - Actions
     @IBAction func dismissPressed(_ sender: UIButton) {
         firstPremiumVcCellDelegate?.dismissPressed()
     }
@@ -85,12 +94,12 @@ class FirstPremiumVcCell: UITableViewCell {
         firstPremiumVcCellDelegate?.productPressed(productTag: sender.tag)
         
         if sender.tag == 0 {
-            productView1.addProductBorder()
+            productView1.addProductBorder(round: 10)
             productView2.removeProductBorder()
             imgCheck1.alpha = 1
             imgCheck2.alpha = 0
         } else if sender.tag == 1 {
-            productView2.addProductBorder()
+            productView2.addProductBorder(round: 10)
             productView1.removeProductBorder()
             imgCheck1.alpha = 0
             imgCheck2.alpha = 1
@@ -111,20 +120,7 @@ class FirstPremiumVcCell: UITableViewCell {
     @IBAction func termsPressed(_ sender: UIButton) {
         firstPremiumVcCellDelegate?.termsPressed()
     }
-    
-    
-    
-    fileprivate func playLottieAnimation() {
-        // 1. Set animation content mode
-        animationView.contentMode = .scaleAspectFit
-        // 2. Set animation loop mode
-        animationView.loopMode = .loop
-        // 3. Adjust animation speed
-        animationView.animationSpeed = 0.7
-        // 4. Play animation
-        animationView.play()
-    }
-    
+
 }
 
 

@@ -7,15 +7,21 @@
 
 import UIKit
 
+protocol BlogDetailTableViewCellDelegate : AnyObject {
+    
+    func listenPressed()
+    
+}
+
 class BlogDetailTableViewCell: UITableViewCell {
     
+    // MARK: - Variables
+    weak var blogDetailTableViewCellDelegate: BlogDetailTableViewCellDelegate?
     
+    // MARK: - Outlets
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var imgBlogPost: UIImageView!
     @IBOutlet weak var lblBlogPost: UILabel!
-    
-    
-    @IBOutlet weak var testOutlet: UITextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,5 +33,11 @@ class BlogDetailTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
+    @IBAction func listenPressed(_ sender: UIButton) {
+        blogDetailTableViewCellDelegate?.listenPressed()
+    }
+    
 
 }

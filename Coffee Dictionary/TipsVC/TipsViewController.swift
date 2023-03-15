@@ -98,6 +98,10 @@ class TipsViewController: UIViewController, AVSpeechSynthesizerDelegate {
         }
     }
     
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        synthesizer.stopSpeaking(at: .immediate)
+        showRewardedAd()
+       }
     
 }
 
@@ -116,14 +120,12 @@ extension TipsViewController : UITableViewDelegate, UITableViewDataSource {
         cell.lblTipHeader.text = currentTip.tip
         cell.lblTip.text = currentTip.tipDescription
         
- 
-        
         return cell
         
     }
     
 }
-
+// MARK: - CellDelegateExtension
 extension TipsViewController : TipsTableViewCellDelegate {
     func showNextTip() {
         showRewardedAd()
@@ -133,7 +135,7 @@ extension TipsViewController : TipsTableViewCellDelegate {
         
         let utterance = AVSpeechUtterance(string: currentTip.tipDescription)
         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-        utterance.rate = 0.4
+        utterance.rate = 0.45
         if synthesizer.isSpeaking != true || synthesizer.isPaused {
             if synthesizer.isPaused {
                 synthesizer.continueSpeaking()
@@ -155,6 +157,7 @@ extension TipsViewController : TipsTableViewCellDelegate {
     }
 }
 
+// MARK: - BannerAdExtension
 extension TipsViewController: GADFullScreenContentDelegate {
     
     /// Tells the delegate that the ad failed to present full screen content.

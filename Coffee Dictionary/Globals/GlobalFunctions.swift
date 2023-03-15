@@ -16,16 +16,23 @@ extension UIView {
         layer.masksToBounds = true
     }
     
-    func addProductBorder() {
+    func addProductBorder(round: Double) {
         clipsToBounds = true
         layer.masksToBounds = false
         layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         layer.borderWidth = 1
-        layer.cornerRadius = 10
+        layer.cornerRadius = round
     }
     
     func removeProductBorder() {
         layer.borderWidth = 0
+        
+    }
+    
+    func addRightRoundCorners(round: Double) {
+        clipsToBounds = true
+        layer.cornerRadius = round
+        layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
         
     }
     
@@ -51,6 +58,15 @@ extension UIView {
         }
     
  
+    func addBtnShadow(button: UIButton) {
+        button.roundedCorners(round: 10)
+        button.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        button.layer.shadowOffset = CGSize(width: -1.0, height: 4.0)
+        button.layer.shadowOpacity = 0.8
+        button.layer.shadowRadius = 0.5
+        button.layer.masksToBounds = false
+        button.layer.cornerRadius = 4.0
+    }
     
     
  
@@ -73,6 +89,20 @@ extension UIViewController {
         self.present(vc, animated: true, completion: nil);
     }
     
+    func openPremiumPage(premiumPageId: Int) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil);
+        if premiumPageId == 1 {
+            let vc: FirstPremiumViewController = storyboard.instantiateViewController(withIdentifier: "FirstPremiumViewControllerID") as! FirstPremiumViewController;
+            vc.modalPresentationCapturesStatusBarAppearance = true
+            vc.modalPresentationStyle = .overCurrentContext
+            self.present(vc, animated: true, completion: nil);
+        } else if premiumPageId == 2 {
+            let vc: SecondPremiumViewController = storyboard.instantiateViewController(withIdentifier: "SecondPremiumViewControllerID") as! SecondPremiumViewController;
+            vc.modalPresentationCapturesStatusBarAppearance = true
+            vc.modalPresentationStyle = .overCurrentContext
+            self.present(vc, animated: true, completion: nil);
+        }
+    }
     
     func openCoffeeDetailVC(viewController: CoffeeListViewController) {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil);

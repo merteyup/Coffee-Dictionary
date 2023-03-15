@@ -10,13 +10,14 @@ import GoogleMobileAds
 
 class BlogDetailViewController: UIViewController, GADBannerViewDelegate {
     
-    
-
-    @IBOutlet weak var tableView: UITableView!
-    
+    // MARK: - Variables
     var selectedBlogPost = Blog()
     var bannerView: GADBannerView!
 
+    // MARK: - Outlets
+    @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: - Statements
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +30,7 @@ class BlogDetailViewController: UIViewController, GADBannerViewDelegate {
 
     }
     
+    // MARK: - Functions
     func addBannerViewToView(_ bannerView: GADBannerView) {
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(bannerView)
@@ -77,6 +79,7 @@ class BlogDetailViewController: UIViewController, GADBannerViewDelegate {
 
 }
 
+// MARK: - TableViewExtension
 extension BlogDetailViewController : UITableViewDelegate, UITableViewDataSource {
    
     
@@ -87,8 +90,7 @@ extension BlogDetailViewController : UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "BlogDetailTableViewCellID", for: indexPath) as! BlogDetailTableViewCell
-        
-        
+        cell.blogDetailTableViewCellDelegate = self
         let sentence = selectedBlogPost.blogPost
         let lines = sentence.split(whereSeparator: \.isNewline)
         
@@ -100,19 +102,16 @@ extension BlogDetailViewController : UITableViewDelegate, UITableViewDataSource 
             cell.imgBlogPost.af_setImage(withURL: url, placeholderImage: nil, filter: nil,  imageTransition: .crossDissolve(0.2), runImageTransitionIfCached: false, completion: {response in
             })
         }
-        
-        
-        
-     //   cell.imgBlogPost.image = selectedBlogPost.image
-        
-        
+    
         return cell
         
+    }
+}
+
+extension BlogDetailViewController : BlogDetailTableViewCellDelegate {
+    
+    func listenPressed() {
         
     }
-    
-    
-    
-    
     
 }

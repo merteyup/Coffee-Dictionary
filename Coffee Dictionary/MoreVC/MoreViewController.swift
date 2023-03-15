@@ -88,9 +88,10 @@ extension MoreViewController : UITableViewDelegate, UITableViewDataSource {
             
         } else if indexPath.row == 3 {
             askForNotification()
-            
         } else if indexPath.row == 4 {
             shareApplication()
+        } else if indexPath.row == 5 {
+            openPremiumPage(premiumPageId: 1)
         }
         
         

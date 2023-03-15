@@ -9,10 +9,11 @@ import UIKit
 
 class MoreTableViewCell: UITableViewCell {
     
-    
+    // MARK: - Outlets
     @IBOutlet weak var lblMore: UILabel!
     @IBOutlet weak var imgMore: UIImageView!
     
+    // MARK: - Statements
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

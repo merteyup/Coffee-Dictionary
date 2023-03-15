@@ -12,21 +12,19 @@ import AlamofireImage
 class BlogTableViewCell: UITableViewCell {
     
     
-    
+    // MARK: - Outlets
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var lblReadingDuration: UILabel!
     @IBOutlet weak var imgBlogPost: UIImageView!
     
+    // MARK: - Statements
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     override func prepareForReuse() {
@@ -34,6 +32,7 @@ class BlogTableViewCell: UITableViewCell {
         imgBlogPost.image = nil
     }
     
+    // MARK: - Functions
     func updateCell(blogPost: Blog) {
         lblTitle.text = blogPost.title
         lblDate.text = blogPost.createdAt

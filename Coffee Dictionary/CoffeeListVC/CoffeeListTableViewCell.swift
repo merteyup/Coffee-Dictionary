@@ -38,5 +38,22 @@ class CoffeeListTableViewCell: UITableViewCell {
         coffeeListTableViewCellDelegate?.cell(self, didTap: sender)
     }
     
+    // MARK: - Functions
+    
+    func updateCell(coffee: Coffee) {
+        
+        lblName.text = coffee.name
+        lblRoaster.text = coffee.roaster
+        lblRoast.text = coffee.roast
+        imgRoast.image = UIImage(named: coffee.roast)
+        if coffee.isFavorite == 0 {
+            btnFavorite.setImage(UIImage(systemName: "star.circle"), for: .normal)
+            btnFavorite.tintColor = UIColor(named: "appMainColor")
+        } else {
+            btnFavorite.setImage(UIImage(systemName: "star.circle.fill"), for: .normal)
+            btnFavorite.tintColor = .systemYellow
+        }
+        
+    }
 
 }
