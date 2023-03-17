@@ -56,7 +56,7 @@ class BlogViewController: UIViewController {
 
 
 
-// MARK: - TableViewExtension
+    // MARK: - TableViewExtension
 extension BlogViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

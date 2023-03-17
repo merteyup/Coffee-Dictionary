@@ -7,12 +7,14 @@
 
 import UIKit
 import GoogleMobileAds
+import AVFoundation
 
-class BlogDetailViewController: UIViewController, GADBannerViewDelegate {
+class BlogDetailViewController: UIViewController, GADBannerViewDelegate, AVSpeechSynthesizerDelegate {
     
     // MARK: - Variables
     var selectedBlogPost = Blog()
     var bannerView: GADBannerView!
+    let synthesizer = AVSpeechSynthesizer()
 
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -21,16 +23,26 @@ class BlogDetailViewController: UIViewController, GADBannerViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        bannerView = GADBannerView(adSize: GADAdSizeBanner)
-        bannerView.adUnitID = Constants.bannerAdTestId
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
-        bannerView.delegate = self
-
+        loadBanner()
 
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        synthesizer.stopSpeaking(at: .immediate)
+    }
+    
     // MARK: - Functions
+    fileprivate func loadBanner() {
+        if !isVipMember {
+            bannerView = GADBannerView(adSize: GADAdSizeBanner)
+            bannerView.adUnitID = Constants.bannerAdTestId
+            bannerView.rootViewController = self
+            bannerView.load(GADRequest())
+            bannerView.delegate = self
+        }
+    }
+    
     func addBannerViewToView(_ bannerView: GADBannerView) {
         bannerView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(bannerView)
@@ -76,10 +88,34 @@ class BlogDetailViewController: UIViewController, GADBannerViewDelegate {
     func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
       print("bannerViewDidDismissScreen")
     }
+    
+    fileprivate func changeButtonAppearance(_ cell: BlogDetailTableViewCell, title: String, imageName: String) {
+        cell.btnListenTip.setTitle(title, for: UIControl.State.normal)
+        cell.btnListenTip.setImage(UIImage(systemName: imageName), for: UIControl.State.normal)
+    }
+    
+    func clearSynthesizerForNextUtterance() {
+       do {
+           try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord, mode: .default, options: .defaultToSpeaker)
+           try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+       } catch {
+           print("audioSession properties weren't set because of an error.")
+       }
+   }
+    
+    
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        let indexPath = IndexPath(row: 0, section: 0)
+        if let cell = self.tableView.cellForRow(at: indexPath) as? BlogDetailTableViewCell {
+            changeButtonAppearance(cell, title: "Listen", imageName: "speaker")
+        }
+        synthesizer.stopSpeaking(at: .immediate)
+       }
+
 
 }
 
-// MARK: - TableViewExtension
+    // MARK: - TableViewExtension
 extension BlogDetailViewController : UITableViewDelegate, UITableViewDataSource {
    
     
@@ -91,16 +127,8 @@ extension BlogDetailViewController : UITableViewDelegate, UITableViewDataSource 
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "BlogDetailTableViewCellID", for: indexPath) as! BlogDetailTableViewCell
         cell.blogDetailTableViewCellDelegate = self
-        let sentence = selectedBlogPost.blogPost
-        let lines = sentence.split(whereSeparator: \.isNewline)
         
-        cell.lblTitle.text = selectedBlogPost.title
-        cell.lblBlogPost.text = selectedBlogPost.blogPost.replacingOccurrences(of: "\\n", with: "\n")
-
-        if let url = URL(string: selectedBlogPost.imageUrl) {
-            cell.imgBlogPost.af_setImage(withURL: url, placeholderImage: nil, filter: nil,  imageTransition: .crossDissolve(0.2), runImageTransitionIfCached: false, completion: {response in
-            })
-        }
+        cell.updateCell(blogPost: selectedBlogPost)
     
         return cell
         
@@ -109,7 +137,26 @@ extension BlogDetailViewController : UITableViewDelegate, UITableViewDataSource 
 
 extension BlogDetailViewController : BlogDetailTableViewCellDelegate {
     
-    func listenPressed() {
+    func listenPressed(cell: BlogDetailTableViewCell) {
+        if let blogPostText = cell.lblBlogPost.text {
+            let utterance = AVSpeechUtterance(string: blogPostText)
+            utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+            utterance.rate = 0.45
+            if synthesizer.isSpeaking != true || synthesizer.isPaused {
+                changeButtonAppearance(cell, title: "Stop", imageName: "speaker.slash")
+                if synthesizer.isPaused {
+                    synthesizer.continueSpeaking()
+                } else {
+                    clearSynthesizerForNextUtterance()
+                    synthesizer.speak(utterance)
+                }
+            } else {
+                changeButtonAppearance(cell, title: "Listen", imageName: "speaker")
+                synthesizer.pauseSpeaking(at: AVSpeechBoundary.word)
+            }
+        } else {
+            #warning("Utterance couldn't created.")
+        }
         
     }
     

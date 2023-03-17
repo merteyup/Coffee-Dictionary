@@ -21,12 +21,24 @@ class MoreViewController: UIViewController {
     }
     
     
+
+    
     // MARK: - Functions
     fileprivate func shareApplication() {
 #warning("Correct this with real appID")
         let url = URL(string: "https://apps.apple.com/us/app/xxxxxxxxx")!
-        let vc = UIActivityViewController(activityItems: [url], applicationActivities: nil)
-        present(vc, animated: true)
+        let activityController = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+        let scenes = UIApplication.shared.connectedScenes
+        let windowScene = scenes.first as? UIWindowScene
+        let window = windowScene?.windows.first
+        if UIDevice.current.userInterfaceIdiom == .pad{
+            activityController.popoverPresentationController?.sourceView = window
+            activityController.popoverPresentationController?.sourceRect = CGRect(x:  UIScreen.main.bounds.width / 4,
+                                                                                  y:  UIScreen.main.bounds.height / 1.5,
+                                                                                  width: UIScreen.main.bounds.width / 2,
+                                                                                  height: UIScreen.main.bounds.height / 3)
+        }
+        window?.rootViewController!.present(activityController, animated: true)
     }
     
     fileprivate func askForNotification() {

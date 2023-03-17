@@ -70,7 +70,7 @@ class CoffeeListViewController: UIViewController {
     }
 }
 
-// MARK: - TableView Extension
+    // MARK: - TableView Extension
 extension CoffeeListViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -97,7 +97,7 @@ extension CoffeeListViewController : UITableViewDelegate, UITableViewDataSource 
     }
 }
 
-// MARK: - SearchBar Extension
+    // MARK: - SearchBar Extension
 extension CoffeeListViewController : UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -120,7 +120,7 @@ extension CoffeeListViewController : UISearchBarDelegate {
     
 }
 
-// MARK: - CoffeeListCell Delegate
+    // MARK: - CoffeeListCell Delegate
 extension CoffeeListViewController: CoffeeListTableViewCellDelegate {
     func cell(_ cell: CoffeeListTableViewCell, didTap button: UIButton) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }

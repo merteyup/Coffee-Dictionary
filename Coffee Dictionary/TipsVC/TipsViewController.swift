@@ -47,6 +47,7 @@ class TipsViewController: UIViewController, AVSpeechSynthesizerDelegate {
     
     // MARK: - Functions
     func loadNewTip () {
+        synthesizer.stopSpeaking(at: .immediate)
         tips = realm.objects(Tip.self).filter("isViewed ==[cd] %@", 0)
         if let tips = tips {
             if tips.count > 0 {
@@ -109,14 +110,15 @@ class TipsViewController: UIViewController, AVSpeechSynthesizerDelegate {
         if let cell = self.tableView.cellForRow(at: indexPath) as? TipsTableViewCell {
             changeButtonAppearance(cell, title: "Listen", imageName: "speaker")
         }
-
         synthesizer.stopSpeaking(at: .immediate)
-        showRewardedAd()
+        if !isVipMember {
+            showRewardedAd()
+        }
        }
     
 }
 
-// MARK: - TableViewExtension
+    // MARK: - TableViewExtension
 extension TipsViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -136,14 +138,19 @@ extension TipsViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
 }
-// MARK: - CellDelegateExtension
+    // MARK: - CellDelegateExtension
 extension TipsViewController : TipsTableViewCellDelegate {
     func showNextTip() {
-        showRewardedAd()
+        if !isVipMember {
+            showRewardedAd()
+        } else {
+            loadNewTip()
+        }
     }
     
     func toggleListening(cell: TipsTableViewCell) {
         
+                
         let utterance = AVSpeechUtterance(string: currentTip.tipDescription)
         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
         utterance.rate = 0.45
@@ -174,7 +181,7 @@ extension TipsViewController : TipsTableViewCellDelegate {
     }
 }
 
-// MARK: - BannerAdExtension
+    // MARK: - BannerAdExtension
 extension TipsViewController: GADFullScreenContentDelegate {
     
     /// Tells the delegate that the ad failed to present full screen content.

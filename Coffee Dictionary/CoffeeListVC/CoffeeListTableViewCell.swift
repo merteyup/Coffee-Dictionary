@@ -13,17 +13,17 @@ protocol CoffeeListTableViewCellDelegate: AnyObject {
 
 class CoffeeListTableViewCell: UITableViewCell {
     
-// MARK: - Variables
+    // MARK: - Variables
     weak var coffeeListTableViewCellDelegate: CoffeeListTableViewCellDelegate?
 
-// MARK: - Outlets
+    // MARK: - Outlets
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblRoaster: UILabel!
     @IBOutlet weak var lblRoast: UILabel!
     @IBOutlet weak var imgRoast: UIImageView!
     @IBOutlet weak var btnFavorite: UIButton!
     
-// MARK: - Statements
+    // MARK: - Statements
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -33,7 +33,7 @@ class CoffeeListTableViewCell: UITableViewCell {
     }
     
  
-// MARK: - Actions
+    // MARK: - Actions
     @IBAction func favoritePressed(_ sender: UIButton) {
         coffeeListTableViewCellDelegate?.cell(self, didTap: sender)
     }

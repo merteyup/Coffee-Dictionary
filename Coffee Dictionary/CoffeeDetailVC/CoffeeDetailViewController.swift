@@ -11,25 +11,36 @@ import GoogleMobileAds
 
 class CoffeeDetailViewController: UIViewController, GADBannerViewDelegate {
     
-// MARK: - Variables
+    // MARK: - Variables
     var selectedCoffee : Coffee?
     var bannerView: GADBannerView!
     
-// MARK: - Outlets
+    // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     
     
-// MARK: - Statements
+    // MARK: - Statements
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bannerView = GADBannerView(adSize: GADAdSizeBanner)
-        bannerView.adUnitID = Constants.bannerAdTestId
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
-        bannerView.delegate = self
+        loadBanner()
+      
 
 
+    }
+    
+    // MARK: - Functions
+    
+    fileprivate func loadBanner() {
+        if !isVipMember {
+            bannerView = GADBannerView(adSize: GADAdSizeBanner)
+            bannerView.adUnitID = Constants.bannerAdTestId
+            bannerView.rootViewController = self
+            bannerView.load(GADRequest())
+            bannerView.delegate = self
+        }
     }
     
     func addBannerViewToView(_ bannerView: GADBannerView) {

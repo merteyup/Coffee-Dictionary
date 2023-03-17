@@ -10,7 +10,7 @@ import Lottie
 
 class CoffeeDetailCell: UITableViewCell {
     
-// MARK: - Outlets
+    // MARK: - Outlets
     @IBOutlet weak var animationView: LottieAnimationView!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblRoaster: UILabel!
@@ -82,7 +82,7 @@ class CoffeeDetailCell: UITableViewCell {
         }        
     }
     
-// MARK: - Functions
+    // MARK: - Functions
     fileprivate func playLottieAnimation() {
         // 1. Set animation content mode
         animationView.contentMode = .scaleAspectFit

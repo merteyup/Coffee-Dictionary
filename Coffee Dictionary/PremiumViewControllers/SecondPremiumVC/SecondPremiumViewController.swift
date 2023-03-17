@@ -22,7 +22,7 @@ class SecondPremiumViewController: UIViewController {
 }
 
 
-// MARK: - TableViewExtension
+    // MARK: - TableViewExtension
 extension SecondPremiumViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -38,7 +38,7 @@ extension SecondPremiumViewController : UITableViewDelegate, UITableViewDataSour
 }
 
 
-// MARK: - CellDelegateExtension
+    // MARK: - CellDelegateExtension
 extension SecondPremiumViewController : SecondPremiumVcCellDelegate {
     func dismissPressed() {
         dismiss(animated: true)

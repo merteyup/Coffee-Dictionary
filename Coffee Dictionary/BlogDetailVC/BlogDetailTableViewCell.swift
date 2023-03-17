@@ -9,7 +9,7 @@ import UIKit
 
 protocol BlogDetailTableViewCellDelegate : AnyObject {
     
-    func listenPressed()
+    func listenPressed(cell: BlogDetailTableViewCell)
     
 }
 
@@ -22,10 +22,22 @@ class BlogDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var imgBlogPost: UIImageView!
     @IBOutlet weak var lblBlogPost: UILabel!
+    @IBOutlet weak var btnListenTip: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
+    }
+    
+    func updateCell(blogPost: Blog) {
+        let sentence = blogPost.blogPost
+        let lines = sentence.split(whereSeparator: \.isNewline)
+        lblTitle.text = blogPost.title
+        lblBlogPost.text = blogPost.blogPost.replacingOccurrences(of: "\\n", with: "\n")
+        if let url = URL(string: blogPost.imageUrl) {
+            imgBlogPost.af_setImage(withURL: url, placeholderImage: nil, filter: nil,  imageTransition: .crossDissolve(0.2), runImageTransitionIfCached: false, completion: {response in
+            })
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -36,7 +48,8 @@ class BlogDetailTableViewCell: UITableViewCell {
     
     
     @IBAction func listenPressed(_ sender: UIButton) {
-        blogDetailTableViewCellDelegate?.listenPressed()
+        blogDetailTableViewCellDelegate?.listenPressed(cell: self)
+        
     }
     
 
