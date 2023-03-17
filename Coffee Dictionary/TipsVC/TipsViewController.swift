@@ -74,6 +74,7 @@ class TipsViewController: UIViewController, AVSpeechSynthesizerDelegate {
             print(error)
         }
     }
+    
     fileprivate func loadRewardedAd() {
         GADRewardedInterstitialAd.load(withAdUnitID: Constants.rewardedAdTestId,
                                        request: GADRequest()) { ad, error in
@@ -98,7 +99,17 @@ class TipsViewController: UIViewController, AVSpeechSynthesizerDelegate {
         }
     }
     
+    fileprivate func changeButtonAppearance(_ cell: TipsTableViewCell, title: String, imageName: String) {
+        cell.btnListenTip.setTitle(title, for: UIControl.State.normal)
+        cell.btnListenTip.setImage(UIImage(systemName: imageName), for: UIControl.State.normal)
+    }
+    
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        let indexPath = IndexPath(row: 0, section: 0)
+        if let cell = self.tableView.cellForRow(at: indexPath) as? TipsTableViewCell {
+            changeButtonAppearance(cell, title: "Listen", imageName: "speaker")
+        }
+
         synthesizer.stopSpeaking(at: .immediate)
         showRewardedAd()
        }
@@ -137,22 +148,28 @@ extension TipsViewController : TipsTableViewCellDelegate {
         utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
         utterance.rate = 0.45
         if synthesizer.isSpeaking != true || synthesizer.isPaused {
+            changeButtonAppearance(cell, title: "Stop", imageName: "speaker.slash")
             if synthesizer.isPaused {
                 synthesizer.continueSpeaking()
-                cell.btnListenTip.setTitle("Stop", for: UIControl.State.normal)
-                cell.btnListenTip.setImage(UIImage(systemName: "speaker.slash"), for: UIControl.State.normal)
             } else {
-                cell.btnListenTip.setTitle("Stop", for: UIControl.State.normal)
-                cell.btnListenTip.setImage(UIImage(systemName: "speaker.slash"), for: UIControl.State.normal)
+                clearSynthesizerForNextUtterance()
                 synthesizer.speak(utterance)
             }
         } else {
-            cell.btnListenTip.setTitle("Listen", for: UIControl.State.normal)
-            cell.btnListenTip.setImage(UIImage(systemName: "speaker"), for: UIControl.State.normal)
+            changeButtonAppearance(cell, title: "Listen", imageName: "speaker")
             synthesizer.pauseSpeaking(at: AVSpeechBoundary.word)
         }
         DispatchQueue.main.async {
             self.tableView.reloadData()
+        }
+    }
+    
+    fileprivate func clearSynthesizerForNextUtterance() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playAndRecord, mode: .default, options: .defaultToSpeaker)
+            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
+        } catch {
+            print("audioSession properties weren't set because of an error.")
         }
     }
 }

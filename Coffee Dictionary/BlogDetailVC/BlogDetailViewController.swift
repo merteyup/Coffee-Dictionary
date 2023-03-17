@@ -97,7 +97,6 @@ extension BlogDetailViewController : UITableViewDelegate, UITableViewDataSource 
         cell.lblTitle.text = selectedBlogPost.title
         cell.lblBlogPost.text = selectedBlogPost.blogPost.replacingOccurrences(of: "\\n", with: "\n")
 
-
         if let url = URL(string: selectedBlogPost.imageUrl) {
             cell.imgBlogPost.af_setImage(withURL: url, placeholderImage: nil, filter: nil,  imageTransition: .crossDissolve(0.2), runImageTransitionIfCached: false, completion: {response in
             })
