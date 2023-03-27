@@ -34,8 +34,8 @@ class BlogViewController: UIViewController {
     
     
     // MARK: - Functions
-    
     fileprivate func getBlogPosts() {
+        openLoadingVC()
         db.collection("blogs").order(by: "createdAt", descending: true).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -47,6 +47,7 @@ class BlogViewController: UIViewController {
                 }
             }
             DispatchQueue.main.async {
+                NotificationCenter.default.post(name: Notification.Name("dismissLoadingVC"), object: nil)
                 self.tableView.reloadData()
             }
         }

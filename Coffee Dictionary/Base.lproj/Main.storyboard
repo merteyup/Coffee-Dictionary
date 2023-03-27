@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Details-->
+        <!--Roasts-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="CoffeeListViewController" customModule="Coffee_Dictionary" customModuleProvider="target" sceneMemberID="viewController">
@@ -170,7 +170,7 @@
                             <constraint firstItem="YQq-Kx-zJG" firstAttribute="top" secondItem="l18-ZW-i3V" secondAttribute="bottom" id="zUo-Dr-Gzy"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Details" image="list.bullet" catalog="system" id="kXv-Su-rsA"/>
+                    <tabBarItem key="tabBarItem" title="Roasts" image="list.bullet" catalog="system" id="kXv-Su-rsA"/>
                     <connections>
                         <outlet property="btnFavorites" destination="l18-ZW-i3V" id="ZgC-JQ-bR7"/>
                         <outlet property="searchBar" destination="YQq-Kx-zJG" id="MMa-Kr-Dbd"/>
@@ -1117,7 +1117,7 @@
             </objects>
             <point key="canvasLocation" x="1707.6335877862596" y="2138.7323943661972"/>
         </scene>
-        <!--Item-->
+        <!--Learn-->
         <scene sceneID="5c4-qR-JKk">
             <objects>
                 <viewController id="u9w-n2-gWg" customClass="BlogViewController" customModule="Coffee_Dictionary" customModuleProvider="target" sceneMemberID="viewController">
@@ -1222,7 +1222,7 @@
                             <constraint firstItem="KUt-fG-qWr" firstAttribute="leading" secondItem="t51-fz-OeB" secondAttribute="leading" id="tJt-SU-MVX"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="book" catalog="system" id="uv7-Gf-Tk7"/>
+                    <tabBarItem key="tabBarItem" title="Learn" image="book" catalog="system" id="uv7-Gf-Tk7"/>
                     <connections>
                         <outlet property="tableView" destination="KUt-fG-qWr" id="fb7-hj-mcZ"/>
                     </connections>
@@ -1230,6 +1230,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fwn-Tp-hMe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1672.5190839694656" y="761.97183098591552"/>
+        </scene>
+        <!--Loading View Controller-->
+        <scene sceneID="9CC-lR-5Pj">
+            <objects>
+                <viewController storyboardIdentifier="LoadingViewControllerID" id="o6N-6T-igf" customClass="LoadingViewController" customModule="Coffee_Dictionary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IHo-ue-bmD">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WLL-N6-7Mj" customClass="LottieAnimationView" customModule="Lottie">
+                                <rect key="frame" x="16" y="266" width="361" height="289"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="289" id="YtT-Ez-gc5"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="361" id="kJE-9S-AKn"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="loadingcoffee"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Irq-im-bcD"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="0.65304221854304634" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WLL-N6-7Mj" firstAttribute="top" secondItem="Irq-im-bcD" secondAttribute="top" constant="207" id="8va-cv-XFv"/>
+                            <constraint firstItem="Irq-im-bcD" firstAttribute="trailing" secondItem="WLL-N6-7Mj" secondAttribute="trailing" constant="16" id="Fl7-gG-NTH"/>
+                            <constraint firstItem="Irq-im-bcD" firstAttribute="bottom" secondItem="WLL-N6-7Mj" secondAttribute="bottom" constant="263" id="gTQ-c3-PXR"/>
+                            <constraint firstItem="WLL-N6-7Mj" firstAttribute="leading" secondItem="Irq-im-bcD" secondAttribute="leading" constant="16" id="iME-Lg-3E5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="animationView" destination="WLL-N6-7Mj" id="X2j-NK-KHh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xZu-92-X5k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3052.6717557251909" y="1910.5633802816903"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="LeG-lB-Kny">
@@ -1435,7 +1472,7 @@
             </objects>
             <point key="canvasLocation" x="316.79389312977099" y="761.97183098591552"/>
         </scene>
-        <!--Item-->
+        <!--More-->
         <scene sceneID="ra2-Hr-b0J">
             <objects>
                 <viewController id="V52-Yy-BHC" customClass="MoreViewController" customModule="Coffee_Dictionary" customModuleProvider="target" sceneMemberID="viewController">
@@ -1505,7 +1542,7 @@
                             <constraint firstItem="ZEH-80-BKW" firstAttribute="bottom" secondItem="TQx-dH-Kp4" secondAttribute="bottom" id="iUm-vO-9y3"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="gear" catalog="system" id="DIE-Hc-v5r"/>
+                    <tabBarItem key="tabBarItem" title="More" image="gear" catalog="system" id="DIE-Hc-v5r"/>
                     <connections>
                         <outlet property="tableView" destination="TQx-dH-Kp4" id="O2o-G5-PjA"/>
                     </connections>
@@ -1954,6 +1991,11 @@ Anytime</string>
             <point key="canvasLocation" x="2383.969465648855" y="1910.5633802816903"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="UXs-zJ-meo"/>
+        <designable name="WLL-N6-7Mj"/>
+        <designable name="ukr-nT-hck"/>
+    </designables>
     <resources>
         <image name="arrowshape.turn.up.forward" catalog="system" width="128" height="104"/>
         <image name="bolt.fill" catalog="system" width="100" height="128"/>

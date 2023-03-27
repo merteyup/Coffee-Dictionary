@@ -46,9 +46,6 @@ struct Blog {
 
     }
     
-
-    
-    
     
     
     static func formatDate(dateToFormat: Date) -> String {

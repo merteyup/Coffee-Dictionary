@@ -46,8 +46,11 @@
 		C48E625D29BDFA5F00342E5F /* FirstPremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E625C29BDFA5F00342E5F /* FirstPremiumViewController.swift */; };
 		C48E626129BDFADC00342E5F /* FirstPremiumVcCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E626029BDFADC00342E5F /* FirstPremiumVcCell.swift */; };
 		C48E626429BE8CA000342E5F /* coffee-shop-barista.json in Resources */ = {isa = PBXBuildFile; fileRef = C48E626329BE8CA000342E5F /* coffee-shop-barista.json */; };
+		C4D6CDA329CFDE7400BD3B69 /* default.realm in Resources */ = {isa = PBXBuildFile; fileRef = C4D6CDA229CFDE7400BD3B69 /* default.realm */; };
 		C4F575A629BF543300D7B504 /* SecondPremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F575A529BF543300D7B504 /* SecondPremiumViewController.swift */; };
 		C4F575A829BF545400D7B504 /* SecondPremiumVcCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F575A729BF545400D7B504 /* SecondPremiumVcCell.swift */; };
+		C4F575AC29C5F9F100D7B504 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F575AB29C5F9F100D7B504 /* LoadingViewController.swift */; };
+		C4F575AE29C5FB5A00D7B504 /* loadingcoffee.json in Resources */ = {isa = PBXBuildFile; fileRef = C4F575AD29C5FB5A00D7B504 /* loadingcoffee.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,8 +92,11 @@
 		C48E625C29BDFA5F00342E5F /* FirstPremiumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPremiumViewController.swift; sourceTree = "<group>"; };
 		C48E626029BDFADC00342E5F /* FirstPremiumVcCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPremiumVcCell.swift; sourceTree = "<group>"; };
 		C48E626329BE8CA000342E5F /* coffee-shop-barista.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "coffee-shop-barista.json"; sourceTree = "<group>"; };
+		C4D6CDA229CFDE7400BD3B69 /* default.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = default.realm; sourceTree = "<group>"; };
 		C4F575A529BF543300D7B504 /* SecondPremiumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPremiumViewController.swift; sourceTree = "<group>"; };
 		C4F575A729BF545400D7B504 /* SecondPremiumVcCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPremiumVcCell.swift; sourceTree = "<group>"; };
+		C4F575AB29C5F9F100D7B504 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		C4F575AD29C5FB5A00D7B504 /* loadingcoffee.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingcoffee.json; sourceTree = "<group>"; };
 		C8C3772DF5BC4B7049B812E5 /* Pods-Coffee Dictionary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coffee Dictionary.debug.xcconfig"; path = "Target Support Files/Pods-Coffee Dictionary/Pods-Coffee Dictionary.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,6 +193,7 @@
 			children = (
 				C4534742299D14870025BCAB /* Medium-drip.json */,
 				C48E626329BE8CA000342E5F /* coffee-shop-barista.json */,
+				C4F575AD29C5FB5A00D7B504 /* loadingcoffee.json */,
 				C44A8E8C299A50B900F3FDB7 /* AppDelegate.swift */,
 				C44A8E8E299A50B900F3FDB7 /* SceneDelegate.swift */,
 				C48E625B29BDFA2B00342E5F /* PremiumViewControllers */,
@@ -201,10 +208,12 @@
 				C44A8E95299A50B900F3FDB7 /* Assets.xcassets */,
 				C44A8E97299A50B900F3FDB7 /* LaunchScreen.storyboard */,
 				C48E624529B167BA00342E5F /* GoogleService-Info.plist */,
+				C4D6CDA229CFDE7400BD3B69 /* default.realm */,
 				C44A8E9A299A50B900F3FDB7 /* Info.plist */,
 				C41283A729A40420008830F8 /* Model */,
 				C44F11CD29A76A4A0041C79A /* Globals */,
 				C44F11CE29A76A590041C79A /* CustomizeUI */,
+				C4F575AB29C5F9F100D7B504 /* LoadingViewController.swift */,
 			);
 			path = "Coffee Dictionary";
 			sourceTree = "<group>";
@@ -363,10 +372,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C44A8E99299A50B900F3FDB7 /* LaunchScreen.storyboard in Resources */,
+				C4D6CDA329CFDE7400BD3B69 /* default.realm in Resources */,
 				C4534743299D14870025BCAB /* Medium-drip.json in Resources */,
 				C48E626429BE8CA000342E5F /* coffee-shop-barista.json in Resources */,
 				C48E624629B167BA00342E5F /* GoogleService-Info.plist in Resources */,
 				C44A8E96299A50B900F3FDB7 /* Assets.xcassets in Resources */,
+				C4F575AE29C5FB5A00D7B504 /* loadingcoffee.json in Resources */,
 				C44A8E94299A50B900F3FDB7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,6 +456,7 @@
 				C41283AB29A4F8A8008830F8 /* FilterBg.swift in Sources */,
 				C44A8E8F299A50B900F3FDB7 /* SceneDelegate.swift in Sources */,
 				C4534741299BCEAB0025BCAB /* CoffeeDetailViewController.swift in Sources */,
+				C4F575AC29C5F9F100D7B504 /* LoadingViewController.swift in Sources */,
 				C48E626129BDFADC00342E5F /* FirstPremiumVcCell.swift in Sources */,
 				C41283BB29A65DAD008830F8 /* MoreTableViewCell.swift in Sources */,
 				C44A8EA1299A575B00F3FDB7 /* Coffee.swift in Sources */,
@@ -600,6 +612,7 @@
 				DEVELOPMENT_TEAM = 4CX3G85ALP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Coffee Dictionary/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Coffeem;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -610,8 +623,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "braveapplicationsteam.Coffee-Dictionary";
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = eyupmert.Coffeem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -630,6 +643,7 @@
 				DEVELOPMENT_TEAM = 4CX3G85ALP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Coffee Dictionary/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Coffeem;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -640,8 +654,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "braveapplicationsteam.Coffee-Dictionary";
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = eyupmert.Coffeem;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

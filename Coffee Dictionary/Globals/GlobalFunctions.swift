@@ -74,6 +74,15 @@ extension UIView {
 }
 
 extension UIViewController {
+    
+    func openLoadingVC() {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil);
+        let vc: LoadingViewController = storyboard.instantiateViewController(withIdentifier: "LoadingViewControllerID") as! LoadingViewController;
+        vc.modalPresentationCapturesStatusBarAppearance = true
+        vc.modalPresentationStyle = .overFullScreen
+        self.present(vc, animated: true, completion: nil);
+    }
+    
     func openCoffeeDetailVC(coffee: Coffee) {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil);
         let vc: CoffeeDetailViewController = storyboard.instantiateViewController(withIdentifier: "CoffeeDetailViewControllerID") as! CoffeeDetailViewController;

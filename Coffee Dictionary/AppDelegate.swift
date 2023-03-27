@@ -23,19 +23,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         GADMobileAds.sharedInstance().start(completionHandler: nil)
 
+        openRealm()
         // Realm file location.
         print("RealmDBLocation: \(Realm.Configuration.defaultConfiguration.fileURL)")
-        do {
-            // Init realm and keep this for be able to see possible errors.
-            // It's not in use so keep it as a _
-            _ = try Realm()
-        } catch {
-            print("Error initializing new realm : \(error)")
-        }
-        
+   
         
         
         return true
+    }
+    
+    func openRealm() {
+        let bundlePath = Bundle.main.path(forResource: "default", ofType: "realm")!
+        let defaultPath = Realm.Configuration.defaultConfiguration.fileURL!.path
+        let fileManager = FileManager.default
+
+        if !fileManager.fileExists(atPath: defaultPath){
+            print("use pre-populated database")
+            do {
+                try fileManager.copyItem(atPath: bundlePath, toPath: defaultPath)
+                print("Copied")
+            } catch {
+                print(error)
+            }
+        }
+
     }
 
     // MARK: UISceneSession Lifecycle
