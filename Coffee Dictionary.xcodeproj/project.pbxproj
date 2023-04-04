@@ -20,6 +20,10 @@
 		C41283B729A654C3008830F8 /* NextTipButtonBg.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41283B629A654C3008830F8 /* NextTipButtonBg.swift */; };
 		C41283B929A65D68008830F8 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41283B829A65D68008830F8 /* MoreViewController.swift */; };
 		C41283BB29A65DAD008830F8 /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41283BA29A65DAD008830F8 /* MoreTableViewCell.swift */; };
+		C423629429DA596E004161F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C423629329DA596E004161F8 /* GoogleService-Info.plist */; };
+		C423629629DA5B5E004161F8 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C423629529DA5B5E004161F8 /* NetworkMonitor.swift */; };
+		C423629829DB90C0004161F8 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C423629729DB90C0004161F8 /* QuizViewController.swift */; };
+		C44078C629DB98BF007C4882 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44078C529DB98BF007C4882 /* Question.swift */; };
 		C44A8E8D299A50B900F3FDB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A8E8C299A50B900F3FDB7 /* AppDelegate.swift */; };
 		C44A8E8F299A50B900F3FDB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A8E8E299A50B900F3FDB7 /* SceneDelegate.swift */; };
 		C44A8E91299A50B900F3FDB7 /* CoffeeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A8E90299A50B900F3FDB7 /* CoffeeListViewController.swift */; };
@@ -33,9 +37,9 @@
 		C4534743299D14870025BCAB /* Medium-drip.json in Resources */ = {isa = PBXBuildFile; fileRef = C4534742299D14870025BCAB /* Medium-drip.json */; };
 		C4534745299D16FD0025BCAB /* CoffeeDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4534744299D16FD0025BCAB /* CoffeeDetailCell.swift */; };
 		C4534747299D96F10025BCAB /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4534746299D96F10025BCAB /* GlobalFunctions.swift */; };
+		C4579BB029DB937E004A63D2 /* QuizTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4579BAF29DB937E004A63D2 /* QuizTableViewCell.swift */; };
 		C48E624129B164B100342E5F /* BlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E624029B164B100342E5F /* BlogViewController.swift */; };
 		C48E624329B164C800342E5F /* BlogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E624229B164C800342E5F /* BlogTableViewCell.swift */; };
-		C48E624629B167BA00342E5F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C48E624529B167BA00342E5F /* GoogleService-Info.plist */; };
 		C48E624C29B3B8C600342E5F /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C48E624B29B3B8C600342E5F /* FirebaseAnalytics */; };
 		C48E624E29B3B8C600342E5F /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = C48E624D29B3B8C600342E5F /* FirebaseCrashlytics */; };
 		C48E625029B3B8C600342E5F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C48E624F29B3B8C600342E5F /* FirebaseFirestore */; };
@@ -47,6 +51,7 @@
 		C48E626129BDFADC00342E5F /* FirstPremiumVcCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E626029BDFADC00342E5F /* FirstPremiumVcCell.swift */; };
 		C48E626429BE8CA000342E5F /* coffee-shop-barista.json in Resources */ = {isa = PBXBuildFile; fileRef = C48E626329BE8CA000342E5F /* coffee-shop-barista.json */; };
 		C4D6CDA329CFDE7400BD3B69 /* default.realm in Resources */ = {isa = PBXBuildFile; fileRef = C4D6CDA229CFDE7400BD3B69 /* default.realm */; };
+		C4D6CDA729D2647C00BD3B69 /* MasterEducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6CDA629D2647C00BD3B69 /* MasterEducationViewController.swift */; };
 		C4F575A629BF543300D7B504 /* SecondPremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F575A529BF543300D7B504 /* SecondPremiumViewController.swift */; };
 		C4F575A829BF545400D7B504 /* SecondPremiumVcCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F575A729BF545400D7B504 /* SecondPremiumVcCell.swift */; };
 		C4F575AC29C5F9F100D7B504 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F575AB29C5F9F100D7B504 /* LoadingViewController.swift */; };
@@ -68,6 +73,10 @@
 		C41283B629A654C3008830F8 /* NextTipButtonBg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextTipButtonBg.swift; sourceTree = "<group>"; };
 		C41283B829A65D68008830F8 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		C41283BA29A65DAD008830F8 /* MoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewCell.swift; sourceTree = "<group>"; };
+		C423629329DA596E004161F8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C423629529DA5B5E004161F8 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		C423629729DB90C0004161F8 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		C44078C529DB98BF007C4882 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		C44A8E89299A50B900F3FDB7 /* Coffee Dictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coffee Dictionary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C44A8E8C299A50B900F3FDB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C44A8E8E299A50B900F3FDB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,9 +92,9 @@
 		C4534742299D14870025BCAB /* Medium-drip.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Medium-drip.json"; sourceTree = "<group>"; };
 		C4534744299D16FD0025BCAB /* CoffeeDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeDetailCell.swift; sourceTree = "<group>"; };
 		C4534746299D96F10025BCAB /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
+		C4579BAF29DB937E004A63D2 /* QuizTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTableViewCell.swift; sourceTree = "<group>"; };
 		C48E624029B164B100342E5F /* BlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogViewController.swift; sourceTree = "<group>"; };
 		C48E624229B164C800342E5F /* BlogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogTableViewCell.swift; sourceTree = "<group>"; };
-		C48E624529B167BA00342E5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C48E625129B3BA6F00342E5F /* Blog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blog.swift; sourceTree = "<group>"; };
 		C48E625729B7643600342E5F /* BlogDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogDetailViewController.swift; sourceTree = "<group>"; };
 		C48E625929B7645100342E5F /* BlogDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -93,6 +102,7 @@
 		C48E626029BDFADC00342E5F /* FirstPremiumVcCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPremiumVcCell.swift; sourceTree = "<group>"; };
 		C48E626329BE8CA000342E5F /* coffee-shop-barista.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "coffee-shop-barista.json"; sourceTree = "<group>"; };
 		C4D6CDA229CFDE7400BD3B69 /* default.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = default.realm; sourceTree = "<group>"; };
+		C4D6CDA629D2647C00BD3B69 /* MasterEducationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterEducationViewController.swift; sourceTree = "<group>"; };
 		C4F575A529BF543300D7B504 /* SecondPremiumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPremiumViewController.swift; sourceTree = "<group>"; };
 		C4F575A729BF545400D7B504 /* SecondPremiumVcCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPremiumVcCell.swift; sourceTree = "<group>"; };
 		C4F575AB29C5F9F100D7B504 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +176,7 @@
 				C44A8EA0299A575B00F3FDB7 /* Coffee.swift */,
 				C41283B229A62B8B008830F8 /* Tip.swift */,
 				C48E625129B3BA6F00342E5F /* Blog.swift */,
+				C44078C529DB98BF007C4882 /* Question.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,16 +215,19 @@
 				C44F11D029A76A700041C79A /* MoreVC */,
 				C48E624429B164D000342E5F /* BlogVC */,
 				C48E626229BE877700342E5F /* BlogDetailVC */,
+				C4579BB129DB9383004A63D2 /* QuizVC */,
 				C44A8E92299A50B900F3FDB7 /* Main.storyboard */,
 				C44A8E95299A50B900F3FDB7 /* Assets.xcassets */,
+				C423629329DA596E004161F8 /* GoogleService-Info.plist */,
 				C44A8E97299A50B900F3FDB7 /* LaunchScreen.storyboard */,
-				C48E624529B167BA00342E5F /* GoogleService-Info.plist */,
 				C4D6CDA229CFDE7400BD3B69 /* default.realm */,
 				C44A8E9A299A50B900F3FDB7 /* Info.plist */,
 				C41283A729A40420008830F8 /* Model */,
 				C44F11CD29A76A4A0041C79A /* Globals */,
 				C44F11CE29A76A590041C79A /* CustomizeUI */,
 				C4F575AB29C5F9F100D7B504 /* LoadingViewController.swift */,
+				C4D6CDA629D2647C00BD3B69 /* MasterEducationViewController.swift */,
+				C423629529DA5B5E004161F8 /* NetworkMonitor.swift */,
 			);
 			path = "Coffee Dictionary";
 			sourceTree = "<group>";
@@ -255,6 +269,15 @@
 				C41283BA29A65DAD008830F8 /* MoreTableViewCell.swift */,
 			);
 			path = MoreVC;
+			sourceTree = "<group>";
+		};
+		C4579BB129DB9383004A63D2 /* QuizVC */ = {
+			isa = PBXGroup;
+			children = (
+				C423629729DB90C0004161F8 /* QuizViewController.swift */,
+				C4579BAF29DB937E004A63D2 /* QuizTableViewCell.swift */,
+			);
+			path = QuizVC;
 			sourceTree = "<group>";
 		};
 		C48E624429B164D000342E5F /* BlogVC */ = {
@@ -372,10 +395,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C44A8E99299A50B900F3FDB7 /* LaunchScreen.storyboard in Resources */,
+				C423629429DA596E004161F8 /* GoogleService-Info.plist in Resources */,
 				C4D6CDA329CFDE7400BD3B69 /* default.realm in Resources */,
 				C4534743299D14870025BCAB /* Medium-drip.json in Resources */,
 				C48E626429BE8CA000342E5F /* coffee-shop-barista.json in Resources */,
-				C48E624629B167BA00342E5F /* GoogleService-Info.plist in Resources */,
 				C44A8E96299A50B900F3FDB7 /* Assets.xcassets in Resources */,
 				C4F575AE29C5FB5A00D7B504 /* loadingcoffee.json in Resources */,
 				C44A8E94299A50B900F3FDB7 /* Main.storyboard in Resources */,
@@ -432,6 +455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C41283AD29A5763E008830F8 /* TipsViewController.swift in Sources */,
+				C423629829DB90C0004161F8 /* QuizViewController.swift in Sources */,
 				C41283B329A62B8B008830F8 /* Tip.swift in Sources */,
 				C48E624129B164B100342E5F /* BlogViewController.swift in Sources */,
 				C41283A929A41B74008830F8 /* FilterButtonBg.swift in Sources */,
@@ -444,18 +468,22 @@
 				C48E625229B3BA6F00342E5F /* Blog.swift in Sources */,
 				C41283AF29A5769D008830F8 /* TipsTableViewCell.swift in Sources */,
 				C48E625D29BDFA5F00342E5F /* FirstPremiumViewController.swift in Sources */,
+				C4D6CDA729D2647C00BD3B69 /* MasterEducationViewController.swift in Sources */,
 				C48E625829B7643600342E5F /* BlogDetailViewController.swift in Sources */,
 				C41283B129A57C85008830F8 /* TipBg.swift in Sources */,
 				C4534745299D16FD0025BCAB /* CoffeeDetailCell.swift in Sources */,
 				C48E625A29B7645100342E5F /* BlogDetailTableViewCell.swift in Sources */,
 				C44F11D229A784D70041C79A /* Constants.swift in Sources */,
 				C4F575A829BF545400D7B504 /* SecondPremiumVcCell.swift in Sources */,
+				C44078C629DB98BF007C4882 /* Question.swift in Sources */,
 				C41283B929A65D68008830F8 /* MoreViewController.swift in Sources */,
 				C48E624329B164C800342E5F /* BlogTableViewCell.swift in Sources */,
+				C423629629DA5B5E004161F8 /* NetworkMonitor.swift in Sources */,
 				C4534747299D96F10025BCAB /* GlobalFunctions.swift in Sources */,
 				C41283AB29A4F8A8008830F8 /* FilterBg.swift in Sources */,
 				C44A8E8F299A50B900F3FDB7 /* SceneDelegate.swift in Sources */,
 				C4534741299BCEAB0025BCAB /* CoffeeDetailViewController.swift in Sources */,
+				C4579BB029DB937E004A63D2 /* QuizTableViewCell.swift in Sources */,
 				C4F575AC29C5F9F100D7B504 /* LoadingViewController.swift in Sources */,
 				C48E626129BDFADC00342E5F /* FirstPremiumVcCell.swift in Sources */,
 				C41283BB29A65DAD008830F8 /* MoreTableViewCell.swift in Sources */,
@@ -624,7 +652,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = eyupmert.Coffeem;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eyupmert.coffeemapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -655,7 +683,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = eyupmert.Coffeem;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eyupmert.coffeemapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

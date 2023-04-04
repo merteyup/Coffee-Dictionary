@@ -31,7 +31,6 @@ struct Blog {
                 if let imageUrl = document.data()["imageUrl"] as? String {
                     if let createdAt = document.data()["createdAt"] as? Timestamp {
                         let date = self.formatDate(dateToFormat: createdAt.dateValue())
-                
                         
                         newBlogPost = Blog(title: title,
                                            blogPost: blogPost,

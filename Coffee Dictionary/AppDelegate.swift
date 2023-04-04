@@ -22,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let db = Firestore.firestore()
 
         GADMobileAds.sharedInstance().start(completionHandler: nil)
+        NetworkMonitor.shared.startMonitoring { status in
+            
+        }
 
         openRealm()
         // Realm file location.

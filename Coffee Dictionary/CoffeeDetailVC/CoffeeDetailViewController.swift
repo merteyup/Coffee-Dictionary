@@ -36,7 +36,7 @@ class CoffeeDetailViewController: UIViewController, GADBannerViewDelegate {
     fileprivate func loadBanner() {
         if !isVipMember {
             bannerView = GADBannerView(adSize: GADAdSizeBanner)
-            bannerView.adUnitID = Constants.bannerAdTestId
+            bannerView.adUnitID = Constants.bannerAdId
             bannerView.rootViewController = self
             bannerView.load(GADRequest())
             bannerView.delegate = self

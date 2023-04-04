@@ -25,15 +25,37 @@ class BlogViewController: UIViewController {
     
     
     // MARK: - Statements
+  
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        checkInternetConnection()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        getBlogPosts()
     }
     
     
     // MARK: - Functions
+    fileprivate func checkInternetConnection() {
+        #warning("This part could be tested in real device.")
+        if NetworkMonitor.shared.isConnected {
+            getBlogPosts()
+        } else {
+            let alertbox = UIAlertController(title: "You're Offline", message: "Please check your internet connection", preferredStyle: UIAlertController.Style.alert)
+            let okAction = UIAlertAction(title: "Go to settings", style: UIAlertAction.Style.default) { (result : UIAlertAction) -> Void in
+                UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
+            }
+            let closeAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default) {_ in 
+                alertbox.dismiss(animated: true)
+            }
+            alertbox.addAction(okAction)
+            alertbox.addAction(closeAction)
+            DispatchQueue.main.async {
+                self.present(alertbox, animated: true, completion: nil)
+            }
+        }
+    }
     fileprivate func getBlogPosts() {
         openLoadingVC()
         db.collection("blogs").order(by: "createdAt", descending: true).getDocuments() { (querySnapshot, err) in

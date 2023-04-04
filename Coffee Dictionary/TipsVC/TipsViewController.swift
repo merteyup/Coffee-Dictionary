@@ -77,7 +77,7 @@ class TipsViewController: UIViewController, AVSpeechSynthesizerDelegate {
     }
     
     fileprivate func loadRewardedAd() {
-        GADRewardedInterstitialAd.load(withAdUnitID: Constants.rewardedAdTestId,
+        GADRewardedInterstitialAd.load(withAdUnitID: Constants.rewardedAdId,
                                        request: GADRequest()) { ad, error in
             if let error = error {
                 return print("Failed to load rewarded interstitial ad with error: \(error.localizedDescription)")
