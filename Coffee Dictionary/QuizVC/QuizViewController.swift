@@ -11,6 +11,7 @@ import FirebaseFirestore
 class QuizViewController: UIViewController {
     
     let db = Firestore.firestore()
+    var currentQuestionsArray = [Question]()
 
 
     @IBOutlet weak var tableView: UITableView!
@@ -37,14 +38,14 @@ class QuizViewController: UIViewController {
                 print("Error getting documents: \(err)")
             } else {
                 for document in querySnapshot!.documents {
-                    let newQuestions = Question.getQuestionFromObject(object: document.data())
-                    print("newQuestions: \(newQuestions)")
-
+                    if let incomingQuestions = Question.getQuestionFromObject(object: document.data()) {
+                        self.currentQuestionsArray = incomingQuestions
+                    }
                 }
             }
             DispatchQueue.main.async {
               //  NotificationCenter.default.post(name: Notification.Name("dismissLoadingVC"), object: nil)
-              //  self.tableView.reloadData()
+                self.tableView.reloadData()
             }
         }
     }
@@ -65,6 +66,11 @@ extension QuizViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "QuizTableViewCellID", for: indexPath) as! QuizTableViewCell
+        cell.quizTableViewCellDelegate = self
+        
+        if let index = currentQuestionsArray.firstIndex(where: { $0.isAnswered == nil}){
+            cell.updateCell(currentQuestion: currentQuestionsArray[index])
+        }
         
         
         return cell
@@ -74,5 +80,28 @@ extension QuizViewController : UITableViewDelegate, UITableViewDataSource {
     
     
     
+    
+}
+
+extension QuizViewController : QuizTableViewCellDelegate {
+    func answerPressed(currentQuestion: Question, selectedAnswer: String) {
+
+        if let index = currentQuestionsArray.firstIndex(where: { $0.isAnswered == nil}){
+            currentQuestionsArray[index].isAnswered = true
+        }
+        
+        if currentQuestion.correctAnswer == selectedAnswer {
+            print("Correct Answer Selected")
+        } else {
+            print("False Answer Selected")
+        }
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        
+    }
+ 
+    
+
     
 }

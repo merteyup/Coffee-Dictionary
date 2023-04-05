@@ -12,6 +12,8 @@ target 'Coffee Dictionary' do
   pod 'L10n-swift', '~> 5.10'
   pod 'Google-Mobile-Ads-SDK'
   pod 'AlamofireImage', '~> 4.1'
+  pod 'GradientProgressBar', '~> 3.0'
+
 
  
 

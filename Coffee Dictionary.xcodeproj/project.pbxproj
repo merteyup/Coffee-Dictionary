@@ -24,6 +24,7 @@
 		C423629629DA5B5E004161F8 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C423629529DA5B5E004161F8 /* NetworkMonitor.swift */; };
 		C423629829DB90C0004161F8 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C423629729DB90C0004161F8 /* QuizViewController.swift */; };
 		C44078C629DB98BF007C4882 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44078C529DB98BF007C4882 /* Question.swift */; };
+		C44078C829DD0DCC007C4882 /* CircleViewBg.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44078C729DD0DCC007C4882 /* CircleViewBg.swift */; };
 		C44A8E8D299A50B900F3FDB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A8E8C299A50B900F3FDB7 /* AppDelegate.swift */; };
 		C44A8E8F299A50B900F3FDB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A8E8E299A50B900F3FDB7 /* SceneDelegate.swift */; };
 		C44A8E91299A50B900F3FDB7 /* CoffeeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A8E90299A50B900F3FDB7 /* CoffeeListViewController.swift */; };
@@ -77,6 +78,7 @@
 		C423629529DA5B5E004161F8 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		C423629729DB90C0004161F8 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		C44078C529DB98BF007C4882 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		C44078C729DD0DCC007C4882 /* CircleViewBg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleViewBg.swift; sourceTree = "<group>"; };
 		C44A8E89299A50B900F3FDB7 /* Coffee Dictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coffee Dictionary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C44A8E8C299A50B900F3FDB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C44A8E8E299A50B900F3FDB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				C41283AA29A4F8A8008830F8 /* FilterBg.swift */,
 				C41283B029A57C85008830F8 /* TipBg.swift */,
 				C41283B629A654C3008830F8 /* NextTipButtonBg.swift */,
+				C44078C729DD0DCC007C4882 /* CircleViewBg.swift */,
 			);
 			path = CustomizeUI;
 			sourceTree = "<group>";
@@ -489,6 +492,7 @@
 				C41283BB29A65DAD008830F8 /* MoreTableViewCell.swift in Sources */,
 				C44A8EA1299A575B00F3FDB7 /* Coffee.swift in Sources */,
 				C41283B529A652E7008830F8 /* GlobalVariables.swift in Sources */,
+				C44078C829DD0DCC007C4882 /* CircleViewBg.swift in Sources */,
 				C41283B729A654C3008830F8 /* NextTipButtonBg.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
