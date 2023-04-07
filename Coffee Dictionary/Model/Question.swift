@@ -14,6 +14,15 @@ struct QuestionsArray {
     
 }
 
+struct Quiz {
+    
+    var singleQuiz : [Question]?
+    var id : String?
+    var isSolved : Bool?
+    var quizTopic : String?
+    
+}
+
 struct Question {
     
     
@@ -21,17 +30,49 @@ struct Question {
     var answers : [String]?
     var correctAnswer : String?
     var isAnswered : Bool?
+    var isCorrectAnswered : Bool?
     
-    public static func getQuestionFromObject(object : [String : Any]) -> [Question]? {
+    public static func getQuizzesFromObject(object : [String : Any]) -> Quiz? {
+        
+        var returningQuiz = Quiz()
+        
+            
+            if let newQuizes = object["questionsArray"] as? [[String : Any]] {
+                
+                    
+                    let newQuiz = Quiz(singleQuiz: getQuestionFromObject(object: newQuizes),
+                                       id: nil,
+                                       isSolved: nil,
+                                       quizTopic: "Coffe")                    
+                    
+                   returningQuiz = newQuiz
+
+                print("CountCount1: \(returningQuiz)")
+
+                
+            }
+        
+        
+        return returningQuiz
+    }
+    
+    public static func getQuestionFromObject(object : [[String : Any]]) -> [Question]? {
         
         var returningQuestions = [Question]()
-        let questionsArray = object["questionsArray"] != nil ? object["questionsArray"] as! [[String : Any]] : []
-        for question in questionsArray {
-            let newQuestion = Question(questionText: question["questionText"] != nil ? question["questionText"] as! String : "",
-                                       answers: question["answers"] != nil ? question["answers"] as! [String] : [""],
-                                       correctAnswer: question["correctAnswer"] != nil ? question["correctAnswer"] as! String : "")
+            
+        for singleObject in object {
+            print("CountCount2: \(singleObject)")
+
+            let newQuestion = Question(questionText: singleObject["questionText"] != nil ? singleObject["questionText"] as! String : "",
+                                       answers: singleObject["answers"] != nil ? singleObject["answers"] as! [String] : [""],
+                                       correctAnswer: singleObject["correctAnswer"] != nil ? singleObject["correctAnswer"] as! String : "")
             returningQuestions.append(newQuestion)
+          
         }
+
+         
+        
+        
         return returningQuestions
     }
     

@@ -43,6 +43,7 @@ PODS:
   - "GoogleUtilities/NSData+zlib (7.11.0)"
   - GoogleUtilities/Reachability (7.11.0):
     - GoogleUtilities/Logger
+  - GradientProgressBar (3.0.0)
   - L10n-swift (5.10.2):
     - L10n-swift/Core (= 5.10.2)
     - L10n-swift/Extension (= 5.10.2)
@@ -68,6 +69,7 @@ PODS:
 DEPENDENCIES:
   - AlamofireImage (~> 4.1)
   - Google-Mobile-Ads-SDK
+  - GradientProgressBar (~> 3.0)
   - L10n-swift (~> 5.10)
   - lottie-ios
   - RealmSwift (~> 10)
@@ -80,6 +82,7 @@ SPEC REPOS:
     - GoogleAppMeasurement
     - GoogleUserMessagingPlatform
     - GoogleUtilities
+    - GradientProgressBar
     - L10n-swift
     - lottie-ios
     - nanopb
@@ -94,6 +97,7 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: 40c70a7d89013f0eca72006c4b9732163ea4cdae
   GoogleUserMessagingPlatform: 5f8b30daf181805317b6b985bb51c1ff3beca054
   GoogleUtilities: c2bdc4cf2ce786c4d2e6b3bcfd599a25ca78f06f
+  GradientProgressBar: 5447e7686fed1bd363507d817d533db8d43cb29e
   L10n-swift: 55773890db57d1efe367434751018ab6ceb058b0
   lottie-ios: b3846a9fa8ca1a1a3bebfa256ebe8b6fd4aaaaad
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
@@ -101,6 +105,6 @@ SPEC CHECKSUMS:
   Realm: ee5a67274a2c338dec50f5e01a811b6b8d657a10
   RealmSwift: 82f822142caa1e6ab96d3ea30bc83233e3d78ea3
 
-PODFILE CHECKSUM: 9155fafbaee4d944017179c1ce5e8cbbe797917f
+PODFILE CHECKSUM: 55b7fa9f2a1e07a33f20049514e1f377ad6b9638
 
 COCOAPODS: 1.11.3

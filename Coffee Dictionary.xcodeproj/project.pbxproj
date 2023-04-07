@@ -20,6 +20,8 @@
 		C41283B729A654C3008830F8 /* NextTipButtonBg.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41283B629A654C3008830F8 /* NextTipButtonBg.swift */; };
 		C41283B929A65D68008830F8 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41283B829A65D68008830F8 /* MoreViewController.swift */; };
 		C41283BB29A65DAD008830F8 /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41283BA29A65DAD008830F8 /* MoreTableViewCell.swift */; };
+		C41A90CB29DE347000414674 /* QuizListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41A90CA29DE347000414674 /* QuizListViewController.swift */; };
+		C41A90CD29DE34B700414674 /* QuizListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41A90CC29DE34B700414674 /* QuizListCollectionViewCell.swift */; };
 		C423629429DA596E004161F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C423629329DA596E004161F8 /* GoogleService-Info.plist */; };
 		C423629629DA5B5E004161F8 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C423629529DA5B5E004161F8 /* NetworkMonitor.swift */; };
 		C423629829DB90C0004161F8 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C423629729DB90C0004161F8 /* QuizViewController.swift */; };
@@ -74,6 +76,8 @@
 		C41283B629A654C3008830F8 /* NextTipButtonBg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextTipButtonBg.swift; sourceTree = "<group>"; };
 		C41283B829A65D68008830F8 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		C41283BA29A65DAD008830F8 /* MoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewCell.swift; sourceTree = "<group>"; };
+		C41A90CA29DE347000414674 /* QuizListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizListViewController.swift; sourceTree = "<group>"; };
+		C41A90CC29DE34B700414674 /* QuizListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizListCollectionViewCell.swift; sourceTree = "<group>"; };
 		C423629329DA596E004161F8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C423629529DA5B5E004161F8 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		C423629729DB90C0004161F8 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +187,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		C41A90C929DE345300414674 /* QuizListVC */ = {
+			isa = PBXGroup;
+			children = (
+				C41A90CA29DE347000414674 /* QuizListViewController.swift */,
+				C41A90CC29DE34B700414674 /* QuizListCollectionViewCell.swift */,
+			);
+			path = QuizListVC;
+			sourceTree = "<group>";
+		};
 		C44A8E80299A50B900F3FDB7 = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +217,7 @@
 		C44A8E8B299A50B900F3FDB7 /* Coffee Dictionary */ = {
 			isa = PBXGroup;
 			children = (
+				C41A90C929DE345300414674 /* QuizListVC */,
 				C4534742299D14870025BCAB /* Medium-drip.json */,
 				C48E626329BE8CA000342E5F /* coffee-shop-barista.json */,
 				C4F575AD29C5FB5A00D7B504 /* loadingcoffee.json */,
@@ -474,6 +488,7 @@
 				C4D6CDA729D2647C00BD3B69 /* MasterEducationViewController.swift in Sources */,
 				C48E625829B7643600342E5F /* BlogDetailViewController.swift in Sources */,
 				C41283B129A57C85008830F8 /* TipBg.swift in Sources */,
+				C41A90CB29DE347000414674 /* QuizListViewController.swift in Sources */,
 				C4534745299D16FD0025BCAB /* CoffeeDetailCell.swift in Sources */,
 				C48E625A29B7645100342E5F /* BlogDetailTableViewCell.swift in Sources */,
 				C44F11D229A784D70041C79A /* Constants.swift in Sources */,
@@ -486,6 +501,7 @@
 				C41283AB29A4F8A8008830F8 /* FilterBg.swift in Sources */,
 				C44A8E8F299A50B900F3FDB7 /* SceneDelegate.swift in Sources */,
 				C4534741299BCEAB0025BCAB /* CoffeeDetailViewController.swift in Sources */,
+				C41A90CD29DE34B700414674 /* QuizListCollectionViewCell.swift in Sources */,
 				C4579BB029DB937E004A63D2 /* QuizTableViewCell.swift in Sources */,
 				C4F575AC29C5F9F100D7B504 /* LoadingViewController.swift in Sources */,
 				C48E626129BDFADC00342E5F /* FirstPremiumVcCell.swift in Sources */,
