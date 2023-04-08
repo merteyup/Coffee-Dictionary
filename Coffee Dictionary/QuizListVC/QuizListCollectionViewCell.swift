@@ -9,4 +9,14 @@ import UIKit
 
 class QuizListCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var lblQuizTopic: UILabel!
+    
+    @IBOutlet weak var bgQuiz: UIView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        bgQuiz.roundedCorners(round: 10)
+    }
+    
+    
 }

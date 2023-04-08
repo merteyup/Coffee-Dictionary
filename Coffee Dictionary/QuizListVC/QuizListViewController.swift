@@ -7,11 +7,14 @@
 
 import UIKit
 import FirebaseFirestore
+import Lottie
+
 
 class QuizListViewController: UIViewController {
         
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var animationView: LottieAnimationView!
     
     let db = Firestore.firestore()
     
@@ -23,7 +26,19 @@ class QuizListViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         getQuestions()
+        playLottieAnimation()
 
+    }
+    
+    fileprivate func playLottieAnimation() {
+        // 1. Set animation content mode
+        animationView.contentMode = .scaleAspectFit
+        // 2. Set animation loop mode
+        animationView.loopMode = .loop
+        // 3. Adjust animation speed
+        animationView.animationSpeed = 0.85
+        // 4. Play animation
+        animationView.play()
     }
     
     
@@ -69,11 +84,16 @@ extension QuizListViewController : UICollectionViewDelegate, UICollectionViewDat
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QuizListCollectionViewCellID", for: indexPath) as! QuizListCollectionViewCell
         
+        cell.lblQuizTopic.text = currentQuizzes[indexPath.row].quizTopic
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if let singleQuiz = currentQuizzes[indexPath.row].singleQuiz {
+            openQuizVC(currentQuestionsArray: singleQuiz)
+        }
         
         
     }

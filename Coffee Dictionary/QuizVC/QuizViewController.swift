@@ -21,6 +21,9 @@ class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("SelectedQuiz:1 \(currentQuestionsArray)")
+
+        
     }
     
     
@@ -83,6 +86,12 @@ extension QuizViewController : QuizTableViewCellDelegate {
             self.tableView.reloadData()
         }
         
+    }
+    
+    func dismissPage() {
+        DispatchQueue.main.async {
+            self.dismiss(animated: true)
+        }
     }
  
     

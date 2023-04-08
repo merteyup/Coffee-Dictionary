@@ -123,7 +123,13 @@ extension UIViewController {
         self.present(vc, animated: true, completion: nil);
     }
     
-    
+    func openQuizVC(currentQuestionsArray: [Question]) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil);
+        let vc: QuizViewController = storyboard.instantiateViewController(withIdentifier: "QuizViewControllerID") as! QuizViewController;
+        vc.modalPresentationCapturesStatusBarAppearance = true
+        vc.currentQuestionsArray = currentQuestionsArray
+        self.present(vc, animated: true, completion: nil);
+    }
     
     
 }

@@ -38,14 +38,19 @@ struct Question {
         
             
             if let newQuizes = object["questionsArray"] as? [[String : Any]] {
-                
+                 let quizTopic = object["quizTopic"] != nil ? object["quizTopic"] as! String : ""
                     
                     let newQuiz = Quiz(singleQuiz: getQuestionFromObject(object: newQuizes),
                                        id: nil,
                                        isSolved: nil,
-                                       quizTopic: "Coffe")                    
+                                       quizTopic: quizTopic)
                     
                    returningQuiz = newQuiz
+                    
+                
+                
+                    
+                
 
                 print("CountCount1: \(returningQuiz)")
 

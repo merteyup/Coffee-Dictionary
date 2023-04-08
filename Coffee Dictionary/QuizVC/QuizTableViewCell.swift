@@ -11,6 +11,7 @@ import GradientProgressBar
 protocol QuizTableViewCellDelegate : AnyObject {
     
     func answerPressed(currentQuestion: Question, selectedAnswer: String)
+    func dismissPage()
     
 }
 
@@ -54,6 +55,11 @@ class QuizTableViewCell: UITableViewCell {
         buttonBgCollection[sender.tag].backgroundColor = .systemYellow
        
         
+    }
+    
+    
+    @IBAction func dismissPage(_ sender: UIButton) {
+        quizTableViewCellDelegate?.dismissPage()
     }
     
     @IBAction func answerPressed(_ sender: UIButton) {
