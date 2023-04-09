@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		7B08895D9BAA311E520159CB /* Pods_Coffee_Dictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C928A7ED3B55C008C3C4B4F /* Pods_Coffee_Dictionary.framework */; };
 		C408D0C929E0E97C00F1578E /* question-mark.json in Resources */ = {isa = PBXBuildFile; fileRef = C408D0C829E0E97C00F1578E /* question-mark.json */; };
+		C408D0CC29E0FC1F00F1578E /* QuizResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C408D0CB29E0FC1F00F1578E /* QuizResultViewController.swift */; };
+		C408D0CE29E0FC5B00F1578E /* QuizResultTableViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C408D0CD29E0FC5B00F1578E /* QuizResultTableViewCell1.swift */; };
+		C408D0D029E1055100F1578E /* QuizResultTableViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C408D0CF29E1055100F1578E /* QuizResultTableViewCell2.swift */; };
+		C408D0D229E1055C00F1578E /* QuizResultTableViewCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = C408D0D129E1055C00F1578E /* QuizResultTableViewCell3.swift */; };
+		C408D0D629E1065900F1578E /* failure.json in Resources */ = {isa = PBXBuildFile; fileRef = C408D0D529E1065900F1578E /* failure.json */; };
 		C41283A129A2B628008830F8 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41283A029A2B628008830F8 /* FilterViewController.swift */; };
 		C41283A329A382A1008830F8 /* FilterRoastCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41283A229A382A1008830F8 /* FilterRoastCollectionViewCell.swift */; };
 		C41283A929A41B74008830F8 /* FilterButtonBg.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41283A829A41B74008830F8 /* FilterButtonBg.swift */; };
@@ -42,6 +47,7 @@
 		C4534745299D16FD0025BCAB /* CoffeeDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4534744299D16FD0025BCAB /* CoffeeDetailCell.swift */; };
 		C4534747299D96F10025BCAB /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4534746299D96F10025BCAB /* GlobalFunctions.swift */; };
 		C4579BB029DB937E004A63D2 /* QuizTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4579BAF29DB937E004A63D2 /* QuizTableViewCell.swift */; };
+		C47D876129E10E5200AC5E1B /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = C47D876029E10E5200AC5E1B /* success.json */; };
 		C48E624129B164B100342E5F /* BlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E624029B164B100342E5F /* BlogViewController.swift */; };
 		C48E624329B164C800342E5F /* BlogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E624229B164C800342E5F /* BlogTableViewCell.swift */; };
 		C48E624C29B3B8C600342E5F /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C48E624B29B3B8C600342E5F /* FirebaseAnalytics */; };
@@ -66,6 +72,11 @@
 		1C928A7ED3B55C008C3C4B4F /* Pods_Coffee_Dictionary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Coffee_Dictionary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC7DD6D0AD14DA69E22122A9 /* Pods-Coffee Dictionary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Coffee Dictionary.release.xcconfig"; path = "Target Support Files/Pods-Coffee Dictionary/Pods-Coffee Dictionary.release.xcconfig"; sourceTree = "<group>"; };
 		C408D0C829E0E97C00F1578E /* question-mark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "question-mark.json"; sourceTree = "<group>"; };
+		C408D0CB29E0FC1F00F1578E /* QuizResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultViewController.swift; sourceTree = "<group>"; };
+		C408D0CD29E0FC5B00F1578E /* QuizResultTableViewCell1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultTableViewCell1.swift; sourceTree = "<group>"; };
+		C408D0CF29E1055100F1578E /* QuizResultTableViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultTableViewCell2.swift; sourceTree = "<group>"; };
+		C408D0D129E1055C00F1578E /* QuizResultTableViewCell3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultTableViewCell3.swift; sourceTree = "<group>"; };
+		C408D0D529E1065900F1578E /* failure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = failure.json; sourceTree = "<group>"; };
 		C41283A029A2B628008830F8 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		C41283A229A382A1008830F8 /* FilterRoastCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterRoastCollectionViewCell.swift; sourceTree = "<group>"; };
 		C41283A829A41B74008830F8 /* FilterButtonBg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButtonBg.swift; sourceTree = "<group>"; };
@@ -101,6 +112,7 @@
 		C4534744299D16FD0025BCAB /* CoffeeDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeDetailCell.swift; sourceTree = "<group>"; };
 		C4534746299D96F10025BCAB /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
 		C4579BAF29DB937E004A63D2 /* QuizTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTableViewCell.swift; sourceTree = "<group>"; };
+		C47D876029E10E5200AC5E1B /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
 		C48E624029B164B100342E5F /* BlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogViewController.swift; sourceTree = "<group>"; };
 		C48E624229B164C800342E5F /* BlogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogTableViewCell.swift; sourceTree = "<group>"; };
 		C48E625129B3BA6F00342E5F /* Blog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blog.swift; sourceTree = "<group>"; };
@@ -149,6 +161,17 @@
 				1C928A7ED3B55C008C3C4B4F /* Pods_Coffee_Dictionary.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C408D0CA29E0FC0700F1578E /* QuizResultVC */ = {
+			isa = PBXGroup;
+			children = (
+				C408D0CB29E0FC1F00F1578E /* QuizResultViewController.swift */,
+				C408D0CD29E0FC5B00F1578E /* QuizResultTableViewCell1.swift */,
+				C408D0CF29E1055100F1578E /* QuizResultTableViewCell2.swift */,
+				C408D0D129E1055C00F1578E /* QuizResultTableViewCell3.swift */,
+			);
+			path = QuizResultVC;
 			sourceTree = "<group>";
 		};
 		C41283A429A403E1008830F8 /* CoffeeListVC */ = {
@@ -219,13 +242,16 @@
 		C44A8E8B299A50B900F3FDB7 /* Coffee Dictionary */ = {
 			isa = PBXGroup;
 			children = (
-				C41A90C929DE345300414674 /* QuizListVC */,
+				C408D0CA29E0FC0700F1578E /* QuizResultVC */,
 				C4534742299D14870025BCAB /* Medium-drip.json */,
 				C48E626329BE8CA000342E5F /* coffee-shop-barista.json */,
+				C408D0D529E1065900F1578E /* failure.json */,
+				C47D876029E10E5200AC5E1B /* success.json */,
 				C408D0C829E0E97C00F1578E /* question-mark.json */,
 				C4F575AD29C5FB5A00D7B504 /* loadingcoffee.json */,
 				C44A8E8C299A50B900F3FDB7 /* AppDelegate.swift */,
 				C44A8E8E299A50B900F3FDB7 /* SceneDelegate.swift */,
+				C41A90C929DE345300414674 /* QuizListVC */,
 				C48E625B29BDFA2B00342E5F /* PremiumViewControllers */,
 				C41283A629A40402008830F8 /* FilterVC */,
 				C41283A529A403EE008830F8 /* CoffeeDetailVC */,
@@ -418,7 +444,9 @@
 				C423629429DA596E004161F8 /* GoogleService-Info.plist in Resources */,
 				C4D6CDA329CFDE7400BD3B69 /* default.realm in Resources */,
 				C4534743299D14870025BCAB /* Medium-drip.json in Resources */,
+				C408D0D629E1065900F1578E /* failure.json in Resources */,
 				C48E626429BE8CA000342E5F /* coffee-shop-barista.json in Resources */,
+				C47D876129E10E5200AC5E1B /* success.json in Resources */,
 				C44A8E96299A50B900F3FDB7 /* Assets.xcassets in Resources */,
 				C408D0C929E0E97C00F1578E /* question-mark.json in Resources */,
 				C4F575AE29C5FB5A00D7B504 /* loadingcoffee.json in Resources */,
@@ -480,6 +508,7 @@
 				C41283B329A62B8B008830F8 /* Tip.swift in Sources */,
 				C48E624129B164B100342E5F /* BlogViewController.swift in Sources */,
 				C41283A929A41B74008830F8 /* FilterButtonBg.swift in Sources */,
+				C408D0D229E1055C00F1578E /* QuizResultTableViewCell3.swift in Sources */,
 				C41283A329A382A1008830F8 /* FilterRoastCollectionViewCell.swift in Sources */,
 				C4F575A629BF543300D7B504 /* SecondPremiumViewController.swift in Sources */,
 				C44A8E91299A50B900F3FDB7 /* CoffeeListViewController.swift in Sources */,
@@ -491,6 +520,7 @@
 				C48E625D29BDFA5F00342E5F /* FirstPremiumViewController.swift in Sources */,
 				C4D6CDA729D2647C00BD3B69 /* MasterEducationViewController.swift in Sources */,
 				C48E625829B7643600342E5F /* BlogDetailViewController.swift in Sources */,
+				C408D0CC29E0FC1F00F1578E /* QuizResultViewController.swift in Sources */,
 				C41283B129A57C85008830F8 /* TipBg.swift in Sources */,
 				C41A90CB29DE347000414674 /* QuizListViewController.swift in Sources */,
 				C4534745299D16FD0025BCAB /* CoffeeDetailCell.swift in Sources */,
@@ -506,12 +536,14 @@
 				C44A8E8F299A50B900F3FDB7 /* SceneDelegate.swift in Sources */,
 				C4534741299BCEAB0025BCAB /* CoffeeDetailViewController.swift in Sources */,
 				C41A90CD29DE34B700414674 /* QuizListCollectionViewCell.swift in Sources */,
+				C408D0D029E1055100F1578E /* QuizResultTableViewCell2.swift in Sources */,
 				C4579BB029DB937E004A63D2 /* QuizTableViewCell.swift in Sources */,
 				C4F575AC29C5F9F100D7B504 /* LoadingViewController.swift in Sources */,
 				C48E626129BDFADC00342E5F /* FirstPremiumVcCell.swift in Sources */,
 				C41283BB29A65DAD008830F8 /* MoreTableViewCell.swift in Sources */,
 				C44A8EA1299A575B00F3FDB7 /* Coffee.swift in Sources */,
 				C41283B529A652E7008830F8 /* GlobalVariables.swift in Sources */,
+				C408D0CE29E0FC5B00F1578E /* QuizResultTableViewCell1.swift in Sources */,
 				C44078C829DD0DCC007C4882 /* CircleViewBg.swift in Sources */,
 				C41283B729A654C3008830F8 /* NextTipButtonBg.swift in Sources */,
 			);

@@ -9,26 +9,16 @@ import UIKit
 
 class QuizViewController: UIViewController {
     
+    // MARK: - Variables
     var currentQuestionsArray = [Question]()
 
-
+    // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
+    // MARK: - Statements
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("SelectedQuiz:1 \(currentQuestionsArray)")
-
-        
     }
-    
-    
-    
-
 }
 
 
@@ -38,54 +28,26 @@ extension QuizViewController : UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
-    
-    
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "QuizTableViewCellID", for: indexPath) as! QuizTableViewCell
         cell.quizTableViewCellDelegate = self
-        
         if let index = currentQuestionsArray.firstIndex(where: { $0.isAnswered == nil}){
             cell.updateCell(currentQuestion: currentQuestionsArray[index], questionIndex: index)
         }
-        
-        
         return cell
 
     }
     
-    
-    
-    
-    
 }
 
 extension QuizViewController : QuizTableViewCellDelegate {
+    
     func answerPressed(currentQuestion: Question, selectedAnswer: String) {
-        
-
-        if let index = currentQuestionsArray.firstIndex(where: { $0.isAnswered == nil}){
-            currentQuestionsArray[index].isAnswered = true
-            if currentQuestion.correctAnswer == selectedAnswer {
-                currentQuestionsArray[index].isCorrectAnswered = true
-            } else {
-                currentQuestionsArray[index].isCorrectAnswered = false
-            }
-        } else {
-            
-            // Show result screen
-
-        }
-        
-        for answer in currentQuestionsArray {
-            print(answer.isCorrectAnswered)
-        }
-       
+        answeredOperations(currentQuestion, selectedAnswer)
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
-        
     }
     
     func dismissPage() {
@@ -94,7 +56,27 @@ extension QuizViewController : QuizTableViewCellDelegate {
         }
     }
  
-    
+    /// Description This works for answered questions. Set value of object as answered and checks is answer correct or false.
+    /// - Parameters:
+    ///   - currentQuestion: Question displayed on the screen.
+    ///   - selectedAnswer: Answer selected by user.
+    fileprivate func answeredOperations(_ currentQuestion: Question, _ selectedAnswer: String) {
+        if let index = currentQuestionsArray.firstIndex(where: { $0.isAnswered == nil}){
+            /// Check answer is correct and also set current question as answered.
+            currentQuestionsArray[index].isAnswered = true
+            if currentQuestion.correctAnswer == selectedAnswer {
+                currentQuestionsArray[index].isCorrectAnswered = true
+            } else {
+                currentQuestionsArray[index].isCorrectAnswered = false
+            }
+            /// Added one to index for preventing last question to appear twice.
+            if index + 1 == currentQuestionsArray.count {
+
+                openQuizResultVC(currentQuestionsArray: currentQuestionsArray)
+            }
+        }
+    }
+
 
     
 }

@@ -78,14 +78,12 @@ class QuizTableViewCell: UITableViewCell {
     
     
     // MARK: - Functions
-    func buttonBgHandle() {
-    }
+ 
     
     fileprivate func prepareUI() {
         gradientProgressBar.progress = 0.10
         gradientProgressBar.roundedCorners(round: 10)
         btnNext.roundedCorners(round: 10)
-        
         gradientProgressBar.gradientColors = [
             .systemYellow,
             .systemGreen
