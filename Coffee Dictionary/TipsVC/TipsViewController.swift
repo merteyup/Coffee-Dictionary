@@ -181,7 +181,7 @@ extension TipsViewController : TipsTableViewCellDelegate {
     }
 }
 
-    // MARK: - BannerAdExtension
+    // MARK: - Interstitial Extension
 extension TipsViewController: GADFullScreenContentDelegate {
     
     /// Tells the delegate that the ad failed to present full screen content.

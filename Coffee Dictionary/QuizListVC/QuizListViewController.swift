@@ -54,7 +54,6 @@ class QuizListViewController: UIViewController {
             } else {
 
                 for document in querySnapshot!.documents {
-                                        
                     if let quizzes = Question.getQuizzesFromObject(object: document.data()) {
                         print("CountCount3: \(quizzes)")
                         self.currentQuizzes.append(quizzes)
@@ -77,25 +76,50 @@ class QuizListViewController: UIViewController {
 
 extension QuizListViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return currentQuizzes.count
+        
+        #warning("Must be cleared after adding more quizzes")
+        if !isVipMember {
+            return currentQuizzes.count + 6
+        } else {
+            return currentQuizzes.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QuizListCollectionViewCellID", for: indexPath) as! QuizListCollectionViewCell
+        cell.lblQuizIndex.text = "Quiz: \(indexPath.row + 1)"
         
-        cell.lblQuizTopic.text = currentQuizzes[indexPath.row].quizTopic
-        
+        #warning("Must be added more quizes")
+        if !isVipMember {
+            if indexPath.row >= currentQuizzes.count {
+                cell.imgLock.alpha = 0.8
+            } else {
+                cell.imgLock.alpha = 0
+                cell.lblQuizTopic.text = currentQuizzes[indexPath.row].quizTopic
+            }
+        } else {
+            cell.lblQuizTopic.text = currentQuizzes[indexPath.row].quizTopic
+        }
+       
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        if let singleQuiz = currentQuizzes[indexPath.row].singleQuiz {
-            openQuizVC(currentQuestionsArray: singleQuiz)
+        if !isVipMember {
+            if indexPath.row >= currentQuizzes.count {
+                openPremiumPage(premiumPageId: 1)
+            } else {
+                if let singleQuiz = currentQuizzes[indexPath.row].singleQuiz {
+                    openQuizVC(currentQuestionsArray: singleQuiz)
+                }
+            }
+        } else {
+            if let singleQuiz = currentQuizzes[indexPath.row].singleQuiz {
+                openQuizVC(currentQuestionsArray: singleQuiz)
+            }
         }
-        
-        
     }
     
     

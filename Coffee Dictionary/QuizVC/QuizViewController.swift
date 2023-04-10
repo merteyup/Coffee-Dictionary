@@ -7,11 +7,13 @@
 
 import UIKit
 
+
 class QuizViewController: UIViewController {
     
     // MARK: - Variables
     var currentQuestionsArray = [Question]()
-
+    
+    
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     
@@ -19,7 +21,11 @@ class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+  
+    
 }
+
 
 
 extension QuizViewController : UITableViewDelegate, UITableViewDataSource {
@@ -36,7 +42,7 @@ extension QuizViewController : UITableViewDelegate, UITableViewDataSource {
             cell.updateCell(currentQuestion: currentQuestionsArray[index], questionIndex: index)
         }
         return cell
-
+        
     }
     
 }
@@ -55,7 +61,7 @@ extension QuizViewController : QuizTableViewCellDelegate {
             self.dismiss(animated: true)
         }
     }
- 
+    
     /// Description This works for answered questions. Set value of object as answered and checks is answer correct or false.
     /// - Parameters:
     ///   - currentQuestion: Question displayed on the screen.
@@ -69,14 +75,13 @@ extension QuizViewController : QuizTableViewCellDelegate {
             } else {
                 currentQuestionsArray[index].isCorrectAnswered = false
             }
+            /// Quiz finished. Show results
             /// Added one to index for preventing last question to appear twice.
             if index + 1 == currentQuestionsArray.count {
-
                 openQuizResultVC(currentQuestionsArray: currentQuestionsArray)
             }
         }
     }
-
-
-    
 }
+
+

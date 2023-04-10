@@ -36,7 +36,7 @@ class BlogDetailViewController: UIViewController, GADBannerViewDelegate, AVSpeec
     fileprivate func loadBanner() {
         if !isVipMember {
             bannerView = GADBannerView(adSize: GADAdSizeBanner)
-            bannerView.adUnitID = Constants.bannerAdId
+            bannerView.adUnitID = Constants.bannerAdId2
             bannerView.rootViewController = self
             bannerView.load(GADRequest())
             bannerView.delegate = self

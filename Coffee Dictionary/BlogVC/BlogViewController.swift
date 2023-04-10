@@ -57,20 +57,22 @@ class BlogViewController: UIViewController {
         }
     }
     fileprivate func getBlogPosts() {
-        openLoadingVC()
-        db.collection("blogs").order(by: "createdAt", descending: true).getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    print("BlogPost: \(document.data())")
-                    let newBlogPost = Blog.parseBlogPost(document)
-                    self.blogsArray.append(newBlogPost)
+        if blogsArray.count == 0 {
+            openLoadingVC()
+            db.collection("blogs").order(by: "createdAt", descending: true).getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        print("BlogPost: \(document.data())")
+                        let newBlogPost = Blog.parseBlogPost(document)
+                        self.blogsArray.append(newBlogPost)
+                    }
                 }
-            }
-            DispatchQueue.main.async {
-                NotificationCenter.default.post(name: Notification.Name("dismissLoadingVC"), object: nil)
-                self.tableView.reloadData()
+                DispatchQueue.main.async {
+                    NotificationCenter.default.post(name: Notification.Name("dismissLoadingVC"), object: nil)
+                    self.tableView.reloadData()
+                }
             }
         }
     }
