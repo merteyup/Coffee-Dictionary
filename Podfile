@@ -13,6 +13,8 @@ target 'Coffee Dictionary' do
   pod 'Google-Mobile-Ads-SDK'
   pod 'AlamofireImage', '~> 4.1'
   pod 'GradientProgressBar', '~> 3.0'
+  pod 'RevenueCat'
+
 
 
  

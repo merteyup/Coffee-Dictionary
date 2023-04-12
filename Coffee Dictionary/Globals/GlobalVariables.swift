@@ -12,4 +12,4 @@ let imageNamesArray = ["coffee0", "coffee1", "coffee2", "coffee3", "coffee4", "c
 let moreMenuItems = ["Rate us in App Store", "Privacy Policy", "Terms & Conditions", "Notifications", "Share", "Premium"]
 let moreMenuImages = ["star.square", "shield", "book", "bell", "arrowshape.turn.up.forward", "crown"]
 let paywallInfos = ["Remove ads", "Get all blog posts", "Save favorite coffees"]
-var isVipMember = false
+var isVipMember = true 

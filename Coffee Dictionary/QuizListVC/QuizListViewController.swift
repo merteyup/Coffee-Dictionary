@@ -76,13 +76,7 @@ class QuizListViewController: UIViewController {
 
 extension QuizListViewController : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        #warning("Must be cleared after adding more quizzes")
-        if !isVipMember {
-            return currentQuizzes.count + 6
-        } else {
-            return currentQuizzes.count
-        }
+        return currentQuizzes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -90,25 +84,22 @@ extension QuizListViewController : UICollectionViewDelegate, UICollectionViewDat
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QuizListCollectionViewCellID", for: indexPath) as! QuizListCollectionViewCell
         cell.lblQuizIndex.text = "Quiz: \(indexPath.row + 1)"
         
-        #warning("Must be added more quizes")
         if !isVipMember {
-            if indexPath.row >= currentQuizzes.count {
+            if indexPath.row >= 3 {
                 cell.imgLock.alpha = 0.8
             } else {
                 cell.imgLock.alpha = 0
-                cell.lblQuizTopic.text = currentQuizzes[indexPath.row].quizTopic
             }
-        } else {
-            cell.lblQuizTopic.text = currentQuizzes[indexPath.row].quizTopic
         }
-       
+        cell.lblQuizTopic.text = currentQuizzes[indexPath.row].quizTopic
+
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if !isVipMember {
-            if indexPath.row >= currentQuizzes.count {
+            if indexPath.row >= 3 {
                 openPremiumPage(premiumPageId: 1)
             } else {
                 if let singleQuiz = currentQuizzes[indexPath.row].singleQuiz {
