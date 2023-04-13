@@ -33,6 +33,7 @@ class FirstPremiumVcCell: UITableViewCell {
     @IBOutlet weak var lblInfo1: UILabel!
     @IBOutlet weak var lblInfo2: UILabel!
     @IBOutlet weak var lblInfo3: UILabel!
+    @IBOutlet weak var lblInfo4: UILabel!
     
     @IBOutlet weak var lblFree1: UILabel!
     @IBOutlet weak var lblPrice1: UILabel!
@@ -48,12 +49,11 @@ class FirstPremiumVcCell: UITableViewCell {
     
     
   // MARK: - Statements
+ 
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        productView1.addProductBorder(round: 10)
-        addBtnShadow(button: btnFreeTrial)
-
+        prepareUI()
 
         playLottieAnimation()
         updateCell()
@@ -67,10 +67,20 @@ class FirstPremiumVcCell: UITableViewCell {
     
     // MARK: - Function
     func updateCell() {
-        var lblInfos = [lblInfo1, lblInfo2, lblInfo3]
+        var lblInfos = [lblInfo1, lblInfo2, lblInfo3, lblInfo4]
         for (index, info) in lblInfos.enumerated() {
             info?.text = paywallInfos[index]
         }
+    }
+    
+    fileprivate func prepareUI() {
+        // Initialization code
+        productView1.addProductBorder(round: 10)
+        addBtnShadow(button: btnFreeTrial)
+        productView2.addProductBorder(round: 10)
+        productView1.removeProductBorder()
+        imgCheck1.alpha = 0
+        imgCheck2.alpha = 1
     }
     
     fileprivate func playLottieAnimation() {
@@ -91,19 +101,10 @@ class FirstPremiumVcCell: UITableViewCell {
     
     
     @IBAction func productPressed(_ sender: UIButton) {
+        #warning("Product should be selected, test in real device.")
+        
         firstPremiumVcCellDelegate?.productPressed(productTag: sender.tag)
         
-        if sender.tag == 0 {
-            productView1.addProductBorder(round: 10)
-            productView2.removeProductBorder()
-            imgCheck1.alpha = 1
-            imgCheck2.alpha = 0
-        } else if sender.tag == 1 {
-            productView2.addProductBorder(round: 10)
-            productView1.removeProductBorder()
-            imgCheck1.alpha = 0
-            imgCheck2.alpha = 1
-        }
         
     }
     

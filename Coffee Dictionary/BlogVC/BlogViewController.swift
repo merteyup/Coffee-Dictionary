@@ -92,6 +92,15 @@ extension BlogViewController : UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "BlogTableViewCellID", for: indexPath) as! BlogTableViewCell
         
+        
+        if !isVipMember {
+            if indexPath.row >= 3 {
+                cell.imgLock.alpha = 0.8
+            } else {
+                cell.imgLock.alpha = 0
+            }
+        }
+        
         cell.updateCell(blogPost: blogsArray[indexPath.row])
         
         return cell
@@ -100,7 +109,16 @@ extension BlogViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        openBlogDetailVC(selectedBlogPost: blogsArray[indexPath.row])
+        
+        if !isVipMember {
+            if indexPath.row >= 3 {
+                openPremiumPage(premiumPageId: 1)
+            } else {
+                openBlogDetailVC(selectedBlogPost: blogsArray[indexPath.row])
+            }
+        } else {
+            openBlogDetailVC(selectedBlogPost: blogsArray[indexPath.row])
+        }
         
     }
     

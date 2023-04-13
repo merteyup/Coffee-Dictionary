@@ -10,6 +10,7 @@ import RealmSwift
 import GoogleMobileAds
 import FirebaseCore
 import FirebaseFirestore
+import RevenueCat
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         let db = Firestore.firestore()
+        
+        Purchases.logLevel = .debug
+        Purchases.configure(withAPIKey: "appl_dnHuAKRTHYyfXpfHGZquiFtmyBR")
 
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         NetworkMonitor.shared.startMonitoring { status in

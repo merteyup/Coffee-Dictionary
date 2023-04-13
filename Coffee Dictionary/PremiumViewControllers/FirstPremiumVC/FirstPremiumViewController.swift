@@ -6,11 +6,11 @@
 //
 
 import UIKit
+import RevenueCat
 
 class FirstPremiumViewController: UIViewController {
 
     // MARK: - Variables
-    
     
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -20,6 +20,26 @@ class FirstPremiumViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        Purchases.shared.getOfferings { (offerings, error) in
+            if let offerings = offerings {
+                
+                print("CurrentOfferings: \(offerings)")
+
+            } else {
+                print("CurrentNoOfferings:")
+
+            }
+        }
+        
+        Purchases.shared.getOfferings { (offerings, error) in
+            if let packages = offerings?.current?.availablePackages {
+
+                print("CurrentOfferings1: \(offerings)")
+
+            }
+        }
+        
+        
     }
 
 }
@@ -55,6 +75,7 @@ extension FirstPremiumViewController : FirstPremiumVcCellDelegate {
     
     func productPressed(productTag: Int) {
         print(" FirstPremiumVcCellDelegate productPressed: \(productTag)")
+#warning("Product should be selected, test in real device.")
     }
     
     func buyPressed() {
@@ -63,11 +84,12 @@ extension FirstPremiumViewController : FirstPremiumVcCellDelegate {
     
     func privacyPressed() {
         print(" FirstPremiumVcCellDelegate privacyPressed: ")
+#warning("Add privacy policy.")
     }
     
     func termsPressed() {
         print(" FirstPremiumVcCellDelegate termsPressed: ")
-
+#warning("Add terms of usage.")
     }
     
     

@@ -65,6 +65,7 @@ PODS:
   - Realm/Headers (10.35.1)
   - RealmSwift (10.35.1):
     - Realm (= 10.35.1)
+  - RevenueCat (4.17.9)
 
 DEPENDENCIES:
   - AlamofireImage (~> 4.1)
@@ -73,6 +74,7 @@ DEPENDENCIES:
   - L10n-swift (~> 5.10)
   - lottie-ios
   - RealmSwift (~> 10)
+  - RevenueCat
 
 SPEC REPOS:
   trunk:
@@ -89,6 +91,7 @@ SPEC REPOS:
     - PromisesObjC
     - Realm
     - RealmSwift
+    - RevenueCat
 
 SPEC CHECKSUMS:
   Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
@@ -104,7 +107,8 @@ SPEC CHECKSUMS:
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
   Realm: ee5a67274a2c338dec50f5e01a811b6b8d657a10
   RealmSwift: 82f822142caa1e6ab96d3ea30bc83233e3d78ea3
+  RevenueCat: 8cc3e93a5e29a5bac443d38a0973a317e841f3f1
 
-PODFILE CHECKSUM: 55b7fa9f2a1e07a33f20049514e1f377ad6b9638
+PODFILE CHECKSUM: da8a1c24b6bea5bb2c5b0ab9b134f6d77b1cf94b
 
 COCOAPODS: 1.11.3

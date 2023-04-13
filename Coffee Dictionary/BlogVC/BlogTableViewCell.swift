@@ -17,10 +17,12 @@ class BlogTableViewCell: UITableViewCell {
     @IBOutlet weak var lblDate: UILabel!
     @IBOutlet weak var lblReadingDuration: UILabel!
     @IBOutlet weak var imgBlogPost: UIImageView!
+    @IBOutlet weak var imgLock: UIImageView!
     
     // MARK: - Statements
     override func awakeFromNib() {
         super.awakeFromNib()
+        imgLock.roundedCorners(round: 10)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

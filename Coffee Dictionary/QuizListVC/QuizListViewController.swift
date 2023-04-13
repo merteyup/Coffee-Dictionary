@@ -91,7 +91,11 @@ extension QuizListViewController : UICollectionViewDelegate, UICollectionViewDat
                 cell.imgLock.alpha = 0
             }
         }
-        cell.lblQuizTopic.text = currentQuizzes[indexPath.row].quizTopic
+        
+        if let quizTopic = currentQuizzes[indexPath.row].quizTopic {
+            cell.updateCell(quizTopic: quizTopic)
+        }
+        
 
         return cell
     }
