@@ -49,18 +49,32 @@ class TipsViewController: UIViewController, AVSpeechSynthesizerDelegate {
     func loadNewTip () {
         synthesizer.stopSpeaking(at: .immediate)
         tips = realm.objects(Tip.self).filter("isViewed ==[cd] %@", 0)
-        if let tips = tips {
-            if tips.count > 0 {
-                currentTip = tips.first!
+        if let currentTips = tips {
+            if currentTips.count > 0 {
+                currentTip = currentTips.first!
                 saveTipAsViewed(currentTip: currentTip)
             } else {
-#warning("This part breaks app when all tips are viewed. Should be find a solution.")
+        tips = realm.objects(Tip.self).filter("isViewed ==[cd] %@", 1)
+                if let emptyTips = tips {
+                    for tip in emptyTips {
+                        clearTipViewHistory(tip: tip)
+                        currentTip = emptyTips.first!
+                    }
+                }
             }
-        } else {
-#warning("Tip couldn't found.")
-        }
+        } 
         DispatchQueue.main.async {
             self.tableView.reloadData()
+        }
+    }
+    
+    func clearTipViewHistory(tip: Tip) {
+        do {
+            try realm.write {
+                tip.isViewed = 0
+            }
+        } catch {
+            print(error)
         }
     }
     

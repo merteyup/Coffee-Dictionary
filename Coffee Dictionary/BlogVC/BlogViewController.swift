@@ -33,12 +33,20 @@ class BlogViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Observe in app purchases.
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadTableView), name: Notification.Name("purchaseCompleted"), object: nil)
     }
     
     
     // MARK: - Functions
+    
+    @objc func reloadTableView () {
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
     fileprivate func checkInternetConnection() {
-        #warning("This part could be tested in real device.")
         if NetworkMonitor.shared.isConnected {
             getBlogPosts()
         } else {

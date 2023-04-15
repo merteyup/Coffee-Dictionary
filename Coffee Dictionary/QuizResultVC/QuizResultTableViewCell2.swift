@@ -34,9 +34,14 @@ class QuizResultTableViewCell2: UITableViewCell {
         lblQuestionIndex.text = String(indexPath)
         if currentQuestion.isCorrectAnswered != nil {
             if currentQuestion.isCorrectAnswered! {
-                imgResult.image = UIImage(named: "doubletick")
+                if self.traitCollection.userInterfaceStyle == .dark {
+                    imgResult.image = UIImage(systemName: "checkmark")
+                } else {
+                    imgResult.image = UIImage(named: "doubletick")
+                }
+                
             } else {
-                imgResult.image = UIImage(systemName: "xmark.app")
+                imgResult.image = UIImage(systemName: "xmark")
                 imgResult.tintColor = UIColor.red
             }
         }

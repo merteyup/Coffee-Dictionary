@@ -15,6 +15,8 @@ protocol FirstPremiumVcCellDelegate : AnyObject {
     func buyPressed()
     func privacyPressed()
     func termsPressed()
+    func restorePressed()
+
     
 }
 
@@ -101,11 +103,7 @@ class FirstPremiumVcCell: UITableViewCell {
     
     
     @IBAction func productPressed(_ sender: UIButton) {
-        #warning("Product should be selected, test in real device.")
-        
         firstPremiumVcCellDelegate?.productPressed(productTag: sender.tag)
-        
-        
     }
     
     @IBAction func buyPressed(_ sender: UIButton) {
@@ -121,7 +119,12 @@ class FirstPremiumVcCell: UITableViewCell {
     @IBAction func termsPressed(_ sender: UIButton) {
         firstPremiumVcCellDelegate?.termsPressed()
     }
-
+    
+    
+    @IBAction func restorePressed(_ sender: Any) {
+        firstPremiumVcCellDelegate?.restorePressed()
+    }
+    
 }
 
 

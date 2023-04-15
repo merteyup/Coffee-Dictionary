@@ -11,35 +11,39 @@ import RevenueCat
 class FirstPremiumViewController: UIViewController {
 
     // MARK: - Variables
+    var offering: Offering?
+    var package : Package?
+
     
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     
-    
     // MARK: - Statements
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getOfferings()
+
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    
+    // MARK: - Functions
+    fileprivate func getOfferings() {
         Purchases.shared.getOfferings { (offerings, error) in
             if let offerings = offerings {
-                
-                print("CurrentOfferings: \(offerings)")
-
+                self.offering = offerings.current
+                /// For now here's only one package available.
+                if let package = self.offering?.availablePackages.first {
+                    self.package = package
+                    self.tableView.reloadData()
+                }
             } else {
-                print("CurrentNoOfferings:")
-
+                print("Offerings Error: \(error?.localizedDescription)")
             }
         }
-        
-        Purchases.shared.getOfferings { (offerings, error) in
-            if let packages = offerings?.current?.availablePackages {
-
-                print("CurrentOfferings1: \(offerings)")
-
-            }
-        }
-        
-        
     }
 
 }
@@ -57,43 +61,76 @@ extension FirstPremiumViewController : UITableViewDelegate, UITableViewDataSourc
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "FirstPremiumVcCellID", for: indexPath) as! FirstPremiumVcCell
         cell.firstPremiumVcCellDelegate = self
-        
+        /// Set price in current currency.
+        if let price = self.package?.localizedPriceString {
+            cell.lblPrice2.text = "Only: \(price)"
+        }
         return cell
-        
     }
-    
-    
 }
 
 
     // MARK: - CellDelegateExtension
 extension FirstPremiumViewController : FirstPremiumVcCellDelegate {
     func dismissPressed() {
-        print(" FirstPremiumVcCellDelegate DismissPressed: ")
         dismiss(animated: true)
     }
     
+    /// Left in here for future product implementations.
     func productPressed(productTag: Int) {
-        print(" FirstPremiumVcCellDelegate productPressed: \(productTag)")
-#warning("Product should be selected, test in real device.")
     }
     
     func buyPressed() {
-        print(" FirstPremiumVcCellDelegate buyPressed: ")
+        /// - Find the package being selected, and purchase it
+        if let package = package {
+            Purchases.shared.purchase(package: package) { (transaction, purchaserInfo, error, userCancelled) in
+                if let error = error {
+                    let alertbox = UIAlertController(title: "Oopss...", message: "\(error.localizedDescription) Please try again.", preferredStyle: UIAlertController.Style.alert)
+                    let okAction = UIAlertAction(title: "Done", style: UIAlertAction.Style.default) { (result : UIAlertAction) -> Void in
+                    }
+                    alertbox.addAction(okAction)
+                } else {
+                    /// - If the entitlement is active after the purchase completed, dismiss the paywall
+                    if purchaserInfo?.entitlements[Constants.entitlementId]?.isActive == true {
+                        print("Purchase Completed: \(isVipMember)")
+                        /// Set user as premium and send notification to pages for refresh values.
+                        isVipMember = true
+                        NotificationCenter.default.post(name: Notification.Name("purchaseCompleted"), object: nil)
+                        self.dismiss(animated: true)
+                    }
+                }
+            }
+        }
     }
     
     func privacyPressed() {
-        print(" FirstPremiumVcCellDelegate privacyPressed: ")
-#warning("Add privacy policy.")
+        if let url = URL(string: "https://docs.google.com/document/d/1p1rKGxhRknbzE30EVH0AglxpNC85INRicem33FkScYA/edit?usp=sharing") {
+            UIApplication.shared.open(url)
+        }
     }
     
     func termsPressed() {
-        print(" FirstPremiumVcCellDelegate termsPressed: ")
-#warning("Add terms of usage.")
+        if let url = URL(string: "https://docs.google.com/document/d/1ebVGo4uIsJtT7ICY1SB8AugbCqNJzV1attNe0NtzwqM/edit?usp=sharing") {
+            UIApplication.shared.open(url)
+        }
     }
     
-    
-    
-    
-    
+    func restorePressed() {
+        Purchases.shared.restorePurchases { (customerInfo, error) in
+            if customerInfo?.entitlements[Constants.entitlementId]?.isActive == true {
+                isVipMember = true
+                let alertbox = UIAlertController(title: "Thanks", message: "Your premium access granted again", preferredStyle: UIAlertController.Style.alert)
+                let okAction = UIAlertAction(title: "Done", style: UIAlertAction.Style.default) { (result : UIAlertAction) -> Void in
+                    DispatchQueue.main.async {
+                        self.dismiss(animated: true)
+                    }
+                }
+                alertbox.addAction(okAction)
+                DispatchQueue.main.async {
+                    self.present(alertbox, animated: true, completion: nil)
+                    
+                }
+            }
+        }
+    }
 }

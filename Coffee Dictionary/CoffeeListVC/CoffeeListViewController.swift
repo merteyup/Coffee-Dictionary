@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import RevenueCat
 
 class CoffeeListViewController: UIViewController {
     
@@ -25,6 +26,8 @@ class CoffeeListViewController: UIViewController {
     // MARK: - Statements
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Check isVipStatus
+        checkInAppPurchaseStatus()
         // Do any additional setup after loading the view.
         searchBar.searchTextField.leftView?.tintColor = UIColor(named: "appBackgroundColor")
         searchBar.searchTextField.textColor = UIColor(named: "appBackgroundColor")
@@ -37,6 +40,19 @@ class CoffeeListViewController: UIViewController {
     
     
     // MARK: - Actions
+    
+    func checkInAppPurchaseStatus() {
+        
+        Purchases.shared.getCustomerInfo { (customerInfo, error) in
+            if customerInfo?.entitlements.all["coffeemPremium"]?.isActive == true {
+                print("FirstCheckUserPremium")
+                isVipMember = true
+
+            }
+        }
+        
+    }
+    
     @IBAction func filterPressed(_ sender: UIButton) {
         openCoffeeDetailVC(viewController: self)
     }

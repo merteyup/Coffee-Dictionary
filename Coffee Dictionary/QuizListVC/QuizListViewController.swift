@@ -27,7 +27,16 @@ class QuizListViewController: UIViewController {
         // Do any additional setup after loading the view.
         getQuestions()
         playLottieAnimation()
+        // Observe in app purchases.
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionView), name: Notification.Name("purchaseCompleted"), object: nil)
 
+    }
+    
+    @objc func reloadCollectionView () {
+        
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
     }
     
     fileprivate func playLottieAnimation() {

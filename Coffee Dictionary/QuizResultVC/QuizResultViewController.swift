@@ -41,7 +41,7 @@ class QuizResultViewController: UIViewController {
         if interstitial != nil {
             interstitial!.present(fromRootViewController: self)
         } else {
-            print("Ad wasn't ready")
+            self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
         }
     }
     
@@ -74,7 +74,6 @@ extension QuizResultViewController : UITableViewDelegate, UITableViewDataSource 
 extension QuizResultViewController : QuizResultTableViewCell3Delegate {
     
     func dismissPage() {
-        
         if !isVipMember {
             showInterstitial()
         } else {

@@ -95,9 +95,13 @@ extension MoreViewController : UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
             
         } else if indexPath.row == 1 {
-            
+            if let url = URL(string: "https://docs.google.com/document/d/1p1rKGxhRknbzE30EVH0AglxpNC85INRicem33FkScYA/edit?usp=sharing") {
+                UIApplication.shared.open(url)
+            }
         } else if indexPath.row == 2 {
-            
+            if let url = URL(string: "https://docs.google.com/document/d/1ebVGo4uIsJtT7ICY1SB8AugbCqNJzV1attNe0NtzwqM/edit?usp=sharing") {
+                UIApplication.shared.open(url)
+            }
         } else if indexPath.row == 3 {
             askForNotification()
         } else if indexPath.row == 4 {
