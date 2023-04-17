@@ -61,9 +61,10 @@
 		C48E625D29BDFA5F00342E5F /* FirstPremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E625C29BDFA5F00342E5F /* FirstPremiumViewController.swift */; };
 		C48E626129BDFADC00342E5F /* FirstPremiumVcCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E626029BDFADC00342E5F /* FirstPremiumVcCell.swift */; };
 		C48E626429BE8CA000342E5F /* coffee-shop-barista.json in Resources */ = {isa = PBXBuildFile; fileRef = C48E626329BE8CA000342E5F /* coffee-shop-barista.json */; };
+		C48F7B4129EDFE9D00F77981 /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = C48F7B4029EDFE9D00F77981 /* OneSignal */; };
+		C48F7B4329EDFE9D00F77981 /* OneSignalExtension in Frameworks */ = {isa = PBXBuildFile; productRef = C48F7B4229EDFE9D00F77981 /* OneSignalExtension */; };
 		C48F997429EA3BED0063EC71 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F997329EA3BED0063EC71 /* NotificationService.swift */; };
 		C48F997829EA3BED0063EC71 /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C48F997129EA3BED0063EC71 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		C48F997F29EA3DB50063EC71 /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = C48F997E29EA3DB50063EC71 /* OneSignal */; };
 		C4D6CDA329CFDE7400BD3B69 /* default.realm in Resources */ = {isa = PBXBuildFile; fileRef = C4D6CDA229CFDE7400BD3B69 /* default.realm */; };
 		C4D6CDA729D2647C00BD3B69 /* MasterEducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6CDA629D2647C00BD3B69 /* MasterEducationViewController.swift */; };
 		C4F575A629BF543300D7B504 /* SecondPremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F575A529BF543300D7B504 /* SecondPremiumViewController.swift */; };
@@ -171,7 +172,7 @@
 			files = (
 				C48E624E29B3B8C600342E5F /* FirebaseCrashlytics in Frameworks */,
 				C48E625029B3B8C600342E5F /* FirebaseFirestore in Frameworks */,
-				C48F997F29EA3DB50063EC71 /* OneSignal in Frameworks */,
+				C48F7B4129EDFE9D00F77981 /* OneSignal in Frameworks */,
 				C48E624C29B3B8C600342E5F /* FirebaseAnalytics in Frameworks */,
 				C431C62629E6494C0071769E /* StoreKit.framework in Frameworks */,
 				C48E625429B5359E00342E5F /* FirebaseStorage in Frameworks */,
@@ -183,6 +184,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C48F7B4329EDFE9D00F77981 /* OneSignalExtension in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,7 +455,7 @@
 				C48E624D29B3B8C600342E5F /* FirebaseCrashlytics */,
 				C48E624F29B3B8C600342E5F /* FirebaseFirestore */,
 				C48E625329B5359E00342E5F /* FirebaseStorage */,
-				C48F997E29EA3DB50063EC71 /* OneSignal */,
+				C48F7B4029EDFE9D00F77981 /* OneSignal */,
 			);
 			productName = "Coffee Dictionary";
 			productReference = C44A8E89299A50B900F3FDB7 /* Coffee Dictionary.app */;
@@ -472,6 +474,9 @@
 			dependencies = (
 			);
 			name = OneSignalNotificationServiceExtension;
+			packageProductDependencies = (
+				C48F7B4229EDFE9D00F77981 /* OneSignalExtension */,
+			);
 			productName = OneSignalNotificationServiceExtension;
 			productReference = C48F997129EA3BED0063EC71 /* OneSignalNotificationServiceExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -505,7 +510,7 @@
 			mainGroup = C44A8E80299A50B900F3FDB7;
 			packageReferences = (
 				C48E624A29B3B8C600342E5F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				C48F997D29EA3DB50063EC71 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
+				C48F7B3F29EDFE9D00F77981 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
 			);
 			productRefGroup = C44A8E8A299A50B900F3FDB7 /* Products */;
 			projectDirPath = "";
@@ -726,7 +731,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -780,7 +785,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -814,7 +819,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.eyupmert.coffeemapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -847,7 +852,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.eyupmert.coffeemapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -872,7 +877,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.eyupmert.coffeemapp.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -898,7 +903,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.eyupmert.coffeemapp.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -949,7 +954,7 @@
 				minimumVersion = 9.0.0;
 			};
 		};
-		C48F997D29EA3DB50063EC71 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */ = {
+		C48F7B3F29EDFE9D00F77981 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/OneSignal/OneSignal-XCFramework";
 			requirement = {
@@ -981,10 +986,15 @@
 			package = C48E624A29B3B8C600342E5F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
 		};
-		C48F997E29EA3DB50063EC71 /* OneSignal */ = {
+		C48F7B4029EDFE9D00F77981 /* OneSignal */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C48F997D29EA3DB50063EC71 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			package = C48F7B3F29EDFE9D00F77981 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
 			productName = OneSignal;
+		};
+		C48F7B4229EDFE9D00F77981 /* OneSignalExtension */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C48F7B3F29EDFE9D00F77981 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignalExtension;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
