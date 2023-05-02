@@ -17,5 +17,6 @@ struct Constants {
     static let interstitialAdId = "ca-app-pub-2131794878256482/9663986384"
     static let bannerAdTestId = "ca-app-pub-3940256099942544/2934735716"
     static let entitlementId = "coffeemPremium"
+    static let saveLoad = UserDefaults.standard;
 
 }

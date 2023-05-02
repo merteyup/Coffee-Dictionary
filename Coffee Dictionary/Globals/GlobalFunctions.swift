@@ -123,19 +123,21 @@ extension UIViewController {
         self.present(vc, animated: true, completion: nil);
     }
     
-    func openQuizVC(currentQuestionsArray: [Question]) {
+    func openQuizVC(currentQuestionsArray: [Question], quizId: String) {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil);
         let vc: QuizViewController = storyboard.instantiateViewController(withIdentifier: "QuizViewControllerID") as! QuizViewController;
         vc.modalPresentationCapturesStatusBarAppearance = true
         vc.currentQuestionsArray = currentQuestionsArray
+        vc.quizId = quizId
         self.present(vc, animated: true, completion: nil);
     }
     
-    func openQuizResultVC(currentQuestionsArray: [Question]) {
+    func openQuizResultVC(currentQuestionsArray: [Question], quizId: String) {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil);
         let vc: QuizResultViewController = storyboard.instantiateViewController(withIdentifier: "QuizResultViewControllerID") as! QuizResultViewController;
         vc.modalPresentationCapturesStatusBarAppearance = true
         vc.currentQuestionsArray = currentQuestionsArray
+        vc.quizId = quizId
         self.present(vc, animated: true, completion: nil);
     }
     

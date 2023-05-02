@@ -13,3 +13,4 @@ let moreMenuItems = ["Rate us in App Store", "Privacy Policy", "Terms & Conditio
 let moreMenuImages = ["star", "shield", "book", "bell", "arrowshape.turn.up.right.circle", "gift"]
 let paywallInfos = ["Remove all ads, enjoy the app 😉", "Get unlimited blog posts 👩‍💻", "Play unlimited games 🕹️", "Help developers to get cup of coffee ☕️"]
 var isVipMember = false
+

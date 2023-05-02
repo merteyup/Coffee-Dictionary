@@ -23,8 +23,18 @@ class QuizListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        #warning("Check solved amount of quizes and show a badge")
+        
+        if let savedArray = Constants.saveLoad.object(forKey: "earnedBadgesArray") {
+            print("SavedArray: \(savedArray)")
 
-        // Do any additional setup after loading the view.
+            
+        } else {
+            
+        }
+        
+
+
         getQuestions()
         playLottieAnimation()
         // Observe in app purchases.
@@ -63,10 +73,8 @@ class QuizListViewController: UIViewController {
             } else {
 
                 for document in querySnapshot!.documents {
-                    if let quizzes = Question.getQuizzesFromObject(object: document.data()) {
-                        print("CountCount3: \(quizzes)")
+                    if let quizzes = Question.getQuizzesFromObject(object: document.data(), documentId: document.documentID) {
                         self.currentQuizzes.append(quizzes)
-
                     }
                 }
             }
@@ -116,12 +124,13 @@ extension QuizListViewController : UICollectionViewDelegate, UICollectionViewDat
                 openPremiumPage(premiumPageId: 1)
             } else {
                 if let singleQuiz = currentQuizzes[indexPath.row].singleQuiz {
-                    openQuizVC(currentQuestionsArray: singleQuiz)
+                    openQuizVC(currentQuestionsArray: singleQuiz, quizId: currentQuizzes[indexPath.row].id ?? "defaultQuizId")
                 }
             }
         } else {
             if let singleQuiz = currentQuizzes[indexPath.row].singleQuiz {
-                openQuizVC(currentQuestionsArray: singleQuiz)
+                print("SelectedQuiz: \(currentQuizzes[indexPath.row].id)")
+                openQuizVC(currentQuestionsArray: singleQuiz, quizId: currentQuizzes[indexPath.row].id ?? "defaultQuizId")
             }
         }
     }

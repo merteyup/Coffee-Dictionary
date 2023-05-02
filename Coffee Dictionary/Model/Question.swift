@@ -25,35 +25,27 @@ struct Quiz {
 
 struct Question {
     
-    
     var questionText : String?
     var answers : [String]?
     var correctAnswer : String?
     var isAnswered : Bool?
     var isCorrectAnswered : Bool?
     
-    public static func getQuizzesFromObject(object : [String : Any]) -> Quiz? {
+    public static func getQuizzesFromObject(object : [String : Any], documentId: String) -> Quiz? {
         
         var returningQuiz = Quiz()
-        
             
             if let newQuizes = object["questionsArray"] as? [[String : Any]] {
                  let quizTopic = object["quizTopic"] != nil ? object["quizTopic"] as! String : ""
                     
                     let newQuiz = Quiz(singleQuiz: getQuestionFromObject(object: newQuizes),
-                                       id: nil,
+                                       id: documentId,
                                        isSolved: nil,
                                        quizTopic: quizTopic)
                     
                    returningQuiz = newQuiz
-                    
                 
-                
-                    
-                
-
-                print("CountCount1: \(returningQuiz)")
-
+                print("CountCount1: \(returningQuiz.id)")
                 
             }
         

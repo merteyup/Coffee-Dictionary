@@ -9,6 +9,12 @@ import UIKit
 import Lottie
 
 
+protocol QuizResultTableViewCell1Delegate : AnyObject {
+    func saveSolvedQuiz(isSuccess: Bool)
+}
+
+
+
 class QuizResultTableViewCell1: UITableViewCell {
     
     
@@ -17,9 +23,13 @@ class QuizResultTableViewCell1: UITableViewCell {
     @IBOutlet weak var lblScore: UILabel!
     
     @IBOutlet weak var lblResult: UILabel!
+    
+    weak var quizResultTableViewCell1Delegate : QuizResultTableViewCell1Delegate?
     var score = Int()
     var isSuccess = Bool()
     
+
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -29,7 +39,7 @@ class QuizResultTableViewCell1: UITableViewCell {
         score = 0
     }
     
-    func updateCell(currentQuestionArray: [Question]) {
+    func updateCell(currentQuestionArray: [Question], quizId: String) {
         
         for element in currentQuestionArray {
             if element.isCorrectAnswered == true {
@@ -38,15 +48,23 @@ class QuizResultTableViewCell1: UITableViewCell {
                 if score >= 7 {
                     isSuccess = true
                     lblResult.text = "Congratulations!"
+                    /// For now keep only successful results.
+                  
                 } else {
                     lblResult.text = "Give it another try..."
                     isSuccess = false
                 }
+               
                 playLottieAnimation()
-
             }
         }
+        if isSuccess {
+            quizResultTableViewCell1Delegate?.saveSolvedQuiz(isSuccess: isSuccess)
+        }
+                
     }
+    
+    
     
     fileprivate func playLottieAnimation() {
         if isSuccess {

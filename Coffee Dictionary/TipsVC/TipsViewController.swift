@@ -104,6 +104,7 @@ class TipsViewController: UIViewController, AVSpeechSynthesizerDelegate {
     
     func showRewardedAd() {
         guard let rewardedInterstitialAd = rewardedInterstitialAd else {
+            self.loadNewTip()
             return print("Ad wasn't ready.")
         }
         

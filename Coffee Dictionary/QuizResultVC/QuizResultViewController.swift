@@ -12,8 +12,10 @@ class QuizResultViewController: UIViewController {
     
     // MARK: - Variables
     var currentQuestionsArray = [Question]()
+    var quizId = String()
     private var interstitial: GADInterstitialAd?
-    
+    var resultData = [[String: Any]]()
+
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     
@@ -57,7 +59,8 @@ extension QuizResultViewController : UITableViewDelegate, UITableViewDataSource 
         
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "QuizResultTableViewCell1ID", for: indexPath) as! QuizResultTableViewCell1
-            cell.updateCell(currentQuestionArray: currentQuestionsArray)
+            cell.quizResultTableViewCell1Delegate = self
+            cell.updateCell(currentQuestionArray: currentQuestionsArray, quizId: quizId)
             return cell
         } else if indexPath.row > 0 && indexPath.row <= 10 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "QuizResultTableViewCell2ID", for: indexPath) as! QuizResultTableViewCell2
@@ -69,6 +72,15 @@ extension QuizResultViewController : UITableViewDelegate, UITableViewDataSource 
             return cell
         }
     }
+}
+
+extension QuizResultViewController : QuizResultTableViewCell1Delegate {
+    func saveSolvedQuiz(isSuccess: Bool) {
+        let result = ["quizId" : quizId, "result" : isSuccess] as [String : Any]
+        resultData.append(result)
+        Constants.saveLoad.set(resultData, forKey: "earnedBadgesArray")
+    }
+   
 }
 
 extension QuizResultViewController : QuizResultTableViewCell3Delegate {

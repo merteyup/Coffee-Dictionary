@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class MoreViewController: UIViewController {
     
@@ -24,9 +25,27 @@ class MoreViewController: UIViewController {
 
     
     // MARK: - Functions
+    
+        
+        func rateApp() {
+            if #available(iOS 10.3, *) {
+                SKStoreReviewController.requestReview()
+            } else if let url = URL(string: "itms-apps://itunes.apple.com/app/" + "id6447113881") {
+                if #available(iOS 10, *) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+            }
+        }
+        
+
+        
+    
+    
     fileprivate func shareApplication() {
 #warning("Correct this with real appID")
-        let url = URL(string: "https://apps.apple.com/us/app/xxxxxxxxx")!
+        let url = URL(string: "https://apps.apple.com/us/app/coffeem/id6447113881")!
         let activityController = UIActivityViewController(activityItems: [url], applicationActivities: nil)
         let scenes = UIApplication.shared.connectedScenes
         let windowScene = scenes.first as? UIWindowScene
@@ -93,7 +112,7 @@ extension MoreViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.row == 0 {
-            
+            rateApp()
         } else if indexPath.row == 1 {
             if let url = URL(string: "https://docs.google.com/document/d/1p1rKGxhRknbzE30EVH0AglxpNC85INRicem33FkScYA/edit?usp=sharing") {
                 UIApplication.shared.open(url)
