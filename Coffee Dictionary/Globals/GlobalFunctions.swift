@@ -141,6 +141,15 @@ extension UIViewController {
         self.present(vc, animated: true, completion: nil);
     }
     
+    func openBadgeVC(badgeTitle: String, badgeName: String) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil);
+        let vc: BadgesViewController = storyboard.instantiateViewController(withIdentifier: "BadgesViewControllerID") as! BadgesViewController;
+        vc.badgeTitle = badgeTitle
+        vc.badgeName = badgeName
+        vc.modalPresentationCapturesStatusBarAppearance = true
+        self.present(vc, animated: true, completion: nil);
+    }
+    
     
     
     

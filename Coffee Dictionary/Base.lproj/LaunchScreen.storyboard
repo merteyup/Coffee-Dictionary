@@ -1,8 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -11,15 +15,84 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xL9-kD-s5o">
+                                <rect key="frame" x="0.0" y="179" width="393" height="276"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appIcon" translatesAutoresizingMaskIntoConstraints="NO" id="USx-5x-W2e">
+                                        <rect key="frame" x="76" y="20" width="240" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="5hD-0b-V5N"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="5vA-p6-vwX"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="aUu-se-Jjf"/>
+                                            <constraint firstAttribute="height" constant="128" id="rV5-1U-4Gk"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coffeem" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLc-3J-fSh">
+                                        <rect key="frame" x="76" y="156" width="240" height="46"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="46" id="KDH-D8-IrS"/>
+                                            <constraint firstAttribute="height" constant="46" id="f00-3N-jGo"/>
+                                            <constraint firstAttribute="width" constant="240" id="mv1-fv-BXx"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="wFn-Vk-0LY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="35"/>
+                                        <color key="textColor" name="appMainColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your coffee companion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgz-Ub-jJB">
+                                        <rect key="frame" x="8" y="210" width="377" height="47"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="377" id="2z0-Qy-48e"/>
+                                            <constraint firstAttribute="width" constant="377" id="bDJ-IQ-Mg5"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="47" id="ucJ-3u-PAc"/>
+                                            <constraint firstAttribute="height" constant="47" id="zws-GC-meN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                        <color key="textColor" name="appMainColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="393" id="2Bk-72-vQl"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="151" id="2sO-km-diU"/>
+                                    <constraint firstItem="eLc-3J-fSh" firstAttribute="top" secondItem="USx-5x-W2e" secondAttribute="bottom" constant="8" symbolic="YES" id="4k3-S3-taY"/>
+                                    <constraint firstAttribute="trailing" secondItem="sgz-Ub-jJB" secondAttribute="trailing" constant="8" id="BOk-f2-uwL"/>
+                                    <constraint firstAttribute="trailing" secondItem="eLc-3J-fSh" secondAttribute="trailing" constant="77" id="EOC-Cc-G7r"/>
+                                    <constraint firstAttribute="bottom" secondItem="sgz-Ub-jJB" secondAttribute="bottom" constant="19" id="Kae-gL-Ctn"/>
+                                    <constraint firstItem="sgz-Ub-jJB" firstAttribute="leading" secondItem="xL9-kD-s5o" secondAttribute="leading" constant="8" id="Nxp-QX-okx"/>
+                                    <constraint firstAttribute="trailing" secondItem="USx-5x-W2e" secondAttribute="trailing" constant="77" id="UK0-Mt-aNH"/>
+                                    <constraint firstAttribute="bottom" secondItem="USx-5x-W2e" secondAttribute="bottom" constant="128" id="sBp-Io-tdk"/>
+                                    <constraint firstItem="USx-5x-W2e" firstAttribute="top" secondItem="xL9-kD-s5o" secondAttribute="top" constant="20" id="vYf-ZI-6sg"/>
+                                    <constraint firstItem="USx-5x-W2e" firstAttribute="leading" secondItem="xL9-kD-s5o" secondAttribute="leading" constant="76" id="yvq-9F-Puv"/>
+                                    <constraint firstItem="eLc-3J-fSh" firstAttribute="leading" secondItem="xL9-kD-s5o" secondAttribute="leading" constant="76" id="zjf-cz-l3w"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="appMainColor"/>
+                        <constraints>
+                            <constraint firstItem="xL9-kD-s5o" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="4B5-Ei-fMz"/>
+                            <constraint firstItem="xL9-kD-s5o" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Nvf-TG-lYX"/>
+                            <constraint firstItem="xL9-kD-s5o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vEN-5D-4QU"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.671755725190835" y="374.64788732394368"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="appIcon" width="341.33334350585938" height="341.33334350585938"/>
+        <namedColor name="appMainColor">
+            <color red="0.37599998712539673" green="0.42399999499320984" blue="0.2199999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

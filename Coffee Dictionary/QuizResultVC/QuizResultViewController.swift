@@ -14,7 +14,6 @@ class QuizResultViewController: UIViewController {
     var currentQuestionsArray = [Question]()
     var quizId = String()
     private var interstitial: GADInterstitialAd?
-    var resultData = [[String: Any]]()
 
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -76,9 +75,18 @@ extension QuizResultViewController : UITableViewDelegate, UITableViewDataSource 
 
 extension QuizResultViewController : QuizResultTableViewCell1Delegate {
     func saveSolvedQuiz(isSuccess: Bool) {
+        var availableBadgesArray = [[String: Any]]()
         let result = ["quizId" : quizId, "result" : isSuccess] as [String : Any]
-        resultData.append(result)
-        Constants.saveLoad.set(resultData, forKey: "earnedBadgesArray")
+        if let savedBadge = Constants.saveLoad.object(forKey: "earnedBadgesArray") {
+            availableBadgesArray = savedBadge as! [[String : Any]]
+            availableBadgesArray.append(result)
+        } else {
+            availableBadgesArray.append(result)
+        }
+        Constants.saveLoad.set(availableBadgesArray, forKey: "earnedBadgesArray")
+        #warning("Update this part dynamically")
+        openBadgeVC(badgeTitle: "Congratulations! You've earned begginer badge!",
+                    badgeName: "badge1")
     }
    
 }

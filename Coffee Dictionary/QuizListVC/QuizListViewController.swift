@@ -11,35 +11,38 @@ import Lottie
 
 
 class QuizListViewController: UIViewController {
-        
-
+    
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var animationView: LottieAnimationView!
     
     let db = Firestore.firestore()
     
     var currentQuizzes = [Quiz]()
-
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let earnedBadgesArray = Constants.saveLoad.object(forKey: "earnedBadgesArray") {
+            print("EarnedBadgesArray: \(earnedBadgesArray)")
+        } else {
+#warning("Update this part dynamically")
+        openBadgeVC(badgeTitle: "Solve your first quiz, earn beginner badge.",
+                    badgeName: "badge1")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        #warning("Check solved amount of quizes and show a badge")
+
+
         
-        if let savedArray = Constants.saveLoad.object(forKey: "earnedBadgesArray") {
-            print("SavedArray: \(savedArray)")
-
-            
-        } else {
-            
-        }
-        
-
-
         getQuestions()
         playLottieAnimation()
         // Observe in app purchases.
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionView), name: Notification.Name("purchaseCompleted"), object: nil)
-
+        
     }
     
     @objc func reloadCollectionView () {
@@ -62,7 +65,7 @@ class QuizListViewController: UIViewController {
     
     
     fileprivate func getQuestions() {
-      //  openLoadingVC()
+        //  openLoadingVC()
         
         // Add every document to array.
         // Save this array to user defaults.
@@ -71,23 +74,23 @@ class QuizListViewController: UIViewController {
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
-
+                
                 for document in querySnapshot!.documents {
                     if let quizzes = Question.getQuizzesFromObject(object: document.data(), documentId: document.documentID) {
                         self.currentQuizzes.append(quizzes)
                     }
                 }
             }
-
+            
             DispatchQueue.main.async {
-              //  NotificationCenter.default.post(name: Notification.Name("dismissLoadingVC"), object: nil)
+                //  NotificationCenter.default.post(name: Notification.Name("dismissLoadingVC"), object: nil)
                 self.collectionView.reloadData()
             }
         }
     }
     
-
-
+    
+    
 }
 
 
@@ -113,7 +116,7 @@ extension QuizListViewController : UICollectionViewDelegate, UICollectionViewDat
             cell.updateCell(quizTopic: quizTopic)
         }
         
-
+        
         return cell
     }
     

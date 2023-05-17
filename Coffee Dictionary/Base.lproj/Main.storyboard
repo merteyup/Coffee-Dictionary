@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BI1-F0-CtV">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -154,7 +154,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" name="appMainColor"/>
+                        <color key="backgroundColor" name="appBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="YQq-Kx-zJG" firstAttribute="top" secondItem="wvc-ye-1E7" secondAttribute="bottom" id="A1O-0P-AZw"/>
                             <constraint firstItem="wvc-ye-1E7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="4" id="EL0-3a-tHe"/>
@@ -1858,11 +1858,19 @@
                         <color key="tintColor" name="appMainColor"/>
                         <color key="barTintColor" name="appMainColor"/>
                         <color key="selectedImageTintColor" name="appBackgroundColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
+                                <color key="value" name="appBackgroundColor"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" name="AccentColor"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="T3O-Da-oQd"/>
                         <segue destination="lW0-Sm-aXp" kind="relationship" relationship="viewControllers" id="2mZ-cy-ZHj"/>
                         <segue destination="dqU-WC-w0E" kind="relationship" relationship="viewControllers" id="HNa-Gd-2A5"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="T3O-Da-oQd"/>
                         <segue destination="u9w-n2-gWg" kind="relationship" relationship="viewControllers" id="DZj-yO-qnk"/>
                         <segue destination="V52-Yy-BHC" kind="relationship" relationship="viewControllers" id="8Kb-7q-Aaf"/>
                     </connections>
@@ -2767,15 +2775,75 @@ Anytime</string>
             </objects>
             <point key="canvasLocation" x="3038.9312977099235" y="1523.943661971831"/>
         </scene>
+        <!--Badges View Controller-->
+        <scene sceneID="c3o-v2-Azt">
+            <objects>
+                <viewController storyboardIdentifier="BadgesViewControllerID" modalPresentationStyle="overFullScreen" id="xnr-Ug-pbY" customClass="BadgesViewController" customModule="Coffee_Dictionary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZOd-iU-isk">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ad-cJ-i4L">
+                                <rect key="frame" x="16" y="239" width="361" height="375"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badge1" translatesAutoresizingMaskIntoConstraints="NO" id="r2j-aW-HjZ">
+                                        <rect key="frame" x="8" y="8" width="345" height="359"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="359" id="ENd-WT-dUR"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="345" id="gJR-3s-026"/>
+                                            <constraint firstAttribute="width" constant="345" id="nhX-Ud-u8H"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Solve your first quiz, earn beginner badge." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lsv-nr-3ca">
+                                        <rect key="frame" x="36" y="292" width="288" height="49"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="288" id="IAP-El-M7e"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="49" id="c1g-aA-eM2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <color key="textColor" name="appBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="r2j-aW-HjZ" secondAttribute="bottom" constant="8" id="56B-ED-T8N"/>
+                                    <constraint firstItem="r2j-aW-HjZ" firstAttribute="leading" secondItem="4ad-cJ-i4L" secondAttribute="leading" constant="8" id="FKA-ya-UC3"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="361" id="JXf-Sl-jyF"/>
+                                    <constraint firstAttribute="trailing" secondItem="lsv-nr-3ca" secondAttribute="trailing" constant="37" id="Jic-9g-RD5"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="375" id="UzR-Ep-aWc"/>
+                                    <constraint firstItem="lsv-nr-3ca" firstAttribute="leading" secondItem="4ad-cJ-i4L" secondAttribute="leading" constant="36" id="bgK-Sv-GIZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="lsv-nr-3ca" secondAttribute="bottom" constant="34" id="fCK-K8-1tW"/>
+                                    <constraint firstAttribute="trailing" secondItem="r2j-aW-HjZ" secondAttribute="trailing" constant="8" id="lrk-jb-Oxu"/>
+                                    <constraint firstItem="r2j-aW-HjZ" firstAttribute="top" secondItem="4ad-cJ-i4L" secondAttribute="top" constant="8" id="mjJ-cw-bm9"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="l6P-X7-O5f"/>
+                        <color key="backgroundColor" white="0.35044642857142855" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="l6P-X7-O5f" firstAttribute="bottom" secondItem="4ad-cJ-i4L" secondAttribute="bottom" constant="204" id="40G-AJ-MCY"/>
+                            <constraint firstItem="l6P-X7-O5f" firstAttribute="trailing" secondItem="4ad-cJ-i4L" secondAttribute="trailing" constant="16" id="7nm-Zv-5Sd"/>
+                            <constraint firstItem="4ad-cJ-i4L" firstAttribute="top" secondItem="l6P-X7-O5f" secondAttribute="top" constant="180" id="Ums-Gr-W8q"/>
+                            <constraint firstItem="4ad-cJ-i4L" firstAttribute="leading" secondItem="l6P-X7-O5f" secondAttribute="leading" constant="16" id="dKb-uS-Cvm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imgBadge" destination="r2j-aW-HjZ" id="XtY-DI-HEo"/>
+                        <outlet property="lblBadge" destination="lsv-nr-3ca" id="qdt-j1-6c9"/>
+                        <outlet property="outsideView" destination="ZOd-iU-isk" id="fML-YL-vZ8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g2x-gX-tQv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3751.9083969465646" y="2265.4929577464791"/>
+        </scene>
     </scenes>
     <designables>
-        <designable name="7za-iS-N8C"/>
-        <designable name="UXs-zJ-meo"/>
-        <designable name="WLL-N6-7Mj"/>
-        <designable name="ZvM-PS-QwX"/>
         <designable name="ukr-nT-hck"/>
     </designables>
     <resources>
+        <image name="badge1" width="360" height="360"/>
         <image name="bolt.fill" catalog="system" width="100" height="128"/>
         <image name="book" catalog="system" width="128" height="99"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>

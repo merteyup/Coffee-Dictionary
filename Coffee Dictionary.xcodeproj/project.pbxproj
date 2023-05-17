@@ -48,6 +48,7 @@
 		C4534745299D16FD0025BCAB /* CoffeeDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4534744299D16FD0025BCAB /* CoffeeDetailCell.swift */; };
 		C4534747299D96F10025BCAB /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4534746299D96F10025BCAB /* GlobalFunctions.swift */; };
 		C4579BB029DB937E004A63D2 /* QuizTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4579BAF29DB937E004A63D2 /* QuizTableViewCell.swift */; };
+		C45A0FE02A05160F007CE88D /* BadgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45A0FDF2A05160F007CE88D /* BadgesViewController.swift */; };
 		C47D876129E10E5200AC5E1B /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = C47D876029E10E5200AC5E1B /* success.json */; };
 		C48E624129B164B100342E5F /* BlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E624029B164B100342E5F /* BlogViewController.swift */; };
 		C48E624329B164C800342E5F /* BlogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E624229B164C800342E5F /* BlogTableViewCell.swift */; };
@@ -142,6 +143,7 @@
 		C4534744299D16FD0025BCAB /* CoffeeDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeDetailCell.swift; sourceTree = "<group>"; };
 		C4534746299D96F10025BCAB /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
 		C4579BAF29DB937E004A63D2 /* QuizTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTableViewCell.swift; sourceTree = "<group>"; };
+		C45A0FDF2A05160F007CE88D /* BadgesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesViewController.swift; sourceTree = "<group>"; };
 		C47D876029E10E5200AC5E1B /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
 		C48E624029B164B100342E5F /* BlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogViewController.swift; sourceTree = "<group>"; };
 		C48E624229B164C800342E5F /* BlogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogTableViewCell.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 				C4F575AB29C5F9F100D7B504 /* LoadingViewController.swift */,
 				C4D6CDA629D2647C00BD3B69 /* MasterEducationViewController.swift */,
 				C423629529DA5B5E004161F8 /* NetworkMonitor.swift */,
+				C45A0FDF2A05160F007CE88D /* BadgesViewController.swift */,
 			);
 			path = "Coffee Dictionary";
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 				C423629629DA5B5E004161F8 /* NetworkMonitor.swift in Sources */,
 				C4534747299D96F10025BCAB /* GlobalFunctions.swift in Sources */,
 				C41283AB29A4F8A8008830F8 /* FilterBg.swift in Sources */,
+				C45A0FE02A05160F007CE88D /* BadgesViewController.swift in Sources */,
 				C44A8E8F299A50B900F3FDB7 /* SceneDelegate.swift in Sources */,
 				C4534741299BCEAB0025BCAB /* CoffeeDetailViewController.swift in Sources */,
 				C41A90CD29DE34B700414674 /* QuizListCollectionViewCell.swift in Sources */,
@@ -819,7 +823,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.eyupmert.coffeemapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -852,7 +856,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.eyupmert.coffeemapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -877,7 +881,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.eyupmert.coffeemapp.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -903,7 +907,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.eyupmert.coffeemapp.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
