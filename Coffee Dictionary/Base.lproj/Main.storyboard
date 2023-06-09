@@ -1868,8 +1868,8 @@
                         </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
-                        <segue destination="lW0-Sm-aXp" kind="relationship" relationship="viewControllers" id="2mZ-cy-ZHj"/>
                         <segue destination="dqU-WC-w0E" kind="relationship" relationship="viewControllers" id="HNa-Gd-2A5"/>
+                        <segue destination="lW0-Sm-aXp" kind="relationship" relationship="viewControllers" id="2mZ-cy-ZHj"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="T3O-Da-oQd"/>
                         <segue destination="u9w-n2-gWg" kind="relationship" relationship="viewControllers" id="DZj-yO-qnk"/>
                         <segue destination="V52-Yy-BHC" kind="relationship" relationship="viewControllers" id="8Kb-7q-Aaf"/>
@@ -2840,6 +2840,10 @@ Anytime</string>
         </scene>
     </scenes>
     <designables>
+        <designable name="7za-iS-N8C"/>
+        <designable name="UXs-zJ-meo"/>
+        <designable name="WLL-N6-7Mj"/>
+        <designable name="ZvM-PS-QwX"/>
         <designable name="ukr-nT-hck"/>
     </designables>
     <resources>

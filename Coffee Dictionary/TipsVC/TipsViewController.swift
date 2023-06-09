@@ -58,6 +58,7 @@ class TipsViewController: UIViewController, AVSpeechSynthesizerDelegate {
                 if let emptyTips = tips {
                     for tip in emptyTips {
                         clearTipViewHistory(tip: tip)
+                        #warning("This part gives error")
                         currentTip = emptyTips.first!
                     }
                 }
