@@ -158,6 +158,7 @@
 		C48F997329EA3BED0063EC71 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		C48F997529EA3BED0063EC71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C48F998029EA3F5C0063EC71 /* OneSignalNotificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneSignalNotificationServiceExtension.entitlements; sourceTree = "<group>"; };
+		C4B2B1932A34B96400D0194C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C4D6CDA229CFDE7400BD3B69 /* default.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = default.realm; sourceTree = "<group>"; };
 		C4D6CDA629D2647C00BD3B69 /* MasterEducationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterEducationViewController.swift; sourceTree = "<group>"; };
 		C4F575A529BF543300D7B504 /* SecondPremiumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPremiumViewController.swift; sourceTree = "<group>"; };
@@ -272,6 +273,7 @@
 		C44A8E80299A50B900F3FDB7 = {
 			isa = PBXGroup;
 			children = (
+				C4B2B1932A34B96400D0194C /* README.md */,
 				C44A8E8B299A50B900F3FDB7 /* Coffee Dictionary */,
 				C48F997229EA3BED0063EC71 /* OneSignalNotificationServiceExtension */,
 				C44A8E8A299A50B900F3FDB7 /* Products */,
@@ -823,7 +825,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4.1;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.eyupmert.coffeemapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -856,7 +858,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4.1;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.eyupmert.coffeemapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -881,7 +883,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4.1;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.eyupmert.coffeemapp.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -907,7 +909,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4.1;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.eyupmert.coffeemapp.OneSignalNotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
