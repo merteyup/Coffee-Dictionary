@@ -21,18 +21,6 @@ class QuizListViewController: UIViewController {
     var currentQuizzes = [Quiz]()
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        if let earnedBadgesArray = Constants.saveLoad.object(forKey: "earnedBadgesArray") {
-            print("EarnedBadgesArray: \(earnedBadgesArray)")
-        } else {
-#warning("Update this part dynamically")
-        openBadgeVC(badgeTitle: "Solve your first quiz, earn beginner badge.",
-                    badgeName: "badge1")
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,6 +30,9 @@ class QuizListViewController: UIViewController {
         playLottieAnimation()
         // Observe in app purchases.
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionView), name: Notification.Name("purchaseCompleted"), object: nil)
+        
+        
+        
         
     }
     
@@ -62,7 +53,7 @@ class QuizListViewController: UIViewController {
         // 4. Play animation
         animationView.play()
     }
-    
+ 
     
     fileprivate func getQuestions() {
         //  openLoadingVC()
@@ -85,7 +76,20 @@ class QuizListViewController: UIViewController {
             DispatchQueue.main.async {
                 //  NotificationCenter.default.post(name: Notification.Name("dismissLoadingVC"), object: nil)
                 self.collectionView.reloadData()
+                self.checkBadges()
             }
+        }
+    }
+    
+    fileprivate func checkBadges() {
+        if let earnedBadgesArray = Constants.saveLoad.object(forKey: "earnedBadgesArray") {
+            guard let badge = self.currentQuizzes[0].badge else {return}
+            self.openBadgeVC(badge: badge)
+
+        } else {
+#warning("Update this part dynamically")
+            guard let badge = self.currentQuizzes[0].badge else {return}
+            self.openBadgeVC(badge: badge)
         }
     }
     
@@ -127,13 +131,17 @@ extension QuizListViewController : UICollectionViewDelegate, UICollectionViewDat
                 openPremiumPage(premiumPageId: 1)
             } else {
                 if let singleQuiz = currentQuizzes[indexPath.row].singleQuiz {
-                    openQuizVC(currentQuestionsArray: singleQuiz, quizId: currentQuizzes[indexPath.row].id ?? "defaultQuizId")
+                    openQuizVC(currentQuestionsArray: singleQuiz,
+                               quizId: currentQuizzes[indexPath.row].id ?? "defaultQuizId",
+                               currentQuiz: currentQuizzes[indexPath.row])
                 }
             }
         } else {
             if let singleQuiz = currentQuizzes[indexPath.row].singleQuiz {
                 print("SelectedQuiz: \(currentQuizzes[indexPath.row].id)")
-                openQuizVC(currentQuestionsArray: singleQuiz, quizId: currentQuizzes[indexPath.row].id ?? "defaultQuizId")
+                openQuizVC(currentQuestionsArray: singleQuiz,
+                           quizId: currentQuizzes[indexPath.row].id ?? "defaultQuizId",
+                           currentQuiz: currentQuizzes[indexPath.row])
             }
         }
     }

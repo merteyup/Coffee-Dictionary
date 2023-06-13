@@ -123,33 +123,40 @@ extension UIViewController {
         self.present(vc, animated: true, completion: nil);
     }
     
-    func openQuizVC(currentQuestionsArray: [Question], quizId: String) {
+    func openQuizVC(currentQuestionsArray: [Question], quizId: String, currentQuiz: Quiz) {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil);
         let vc: QuizViewController = storyboard.instantiateViewController(withIdentifier: "QuizViewControllerID") as! QuizViewController;
         vc.modalPresentationCapturesStatusBarAppearance = true
         vc.currentQuestionsArray = currentQuestionsArray
         vc.quizId = quizId
+        vc.currentQuiz = currentQuiz
         self.present(vc, animated: true, completion: nil);
     }
     
-    func openQuizResultVC(currentQuestionsArray: [Question], quizId: String) {
+    func openQuizResultVC(currentQuestionsArray: [Question], quizId: String, currentQuiz: Quiz) {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil);
         let vc: QuizResultViewController = storyboard.instantiateViewController(withIdentifier: "QuizResultViewControllerID") as! QuizResultViewController;
         vc.modalPresentationCapturesStatusBarAppearance = true
         vc.currentQuestionsArray = currentQuestionsArray
         vc.quizId = quizId
+        vc.currentQuiz = currentQuiz
         self.present(vc, animated: true, completion: nil);
     }
     
-    func openBadgeVC(badgeTitle: String, badgeName: String) {
+    func openBadgeVC(badge: Badge) {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil);
         let vc: BadgesViewController = storyboard.instantiateViewController(withIdentifier: "BadgesViewControllerID") as! BadgesViewController;
-        vc.badgeTitle = badgeTitle
-        vc.badgeName = badgeName
+        vc.badge = badge
         vc.modalPresentationCapturesStatusBarAppearance = true
         self.present(vc, animated: true, completion: nil);
     }
     
+    func openAvailableBadgesPage() {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil);
+        let vc: AvailableBadgesViewController = storyboard.instantiateViewController(withIdentifier: "AvailableBadgesViewControllerID") as! AvailableBadgesViewController;
+        vc.modalPresentationCapturesStatusBarAppearance = true
+        self.present(vc, animated: true, completion: nil);
+    }
     
     
     

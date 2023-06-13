@@ -13,6 +13,7 @@ class QuizViewController: UIViewController {
     // MARK: - Variables
     var currentQuestionsArray = [Question]()
     var quizId = String()
+    var currentQuiz = Quiz(singleQuiz: nil, id: nil, isSolved: nil, quizTopic: nil, badge: nil)
     
     
     // MARK: - Outlets
@@ -23,7 +24,6 @@ class QuizViewController: UIViewController {
         super.viewDidLoad()
     }
     
-  
     
 }
 
@@ -79,7 +79,7 @@ extension QuizViewController : QuizTableViewCellDelegate {
             /// Quiz finished. Show results
             /// Added one to index for preventing last question to appear twice.
             if index + 1 == currentQuestionsArray.count {
-                openQuizResultVC(currentQuestionsArray: currentQuestionsArray, quizId: quizId)
+                openQuizResultVC(currentQuestionsArray: currentQuestionsArray, quizId: quizId, currentQuiz: currentQuiz)
             }
         }
     }

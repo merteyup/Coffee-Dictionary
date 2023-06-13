@@ -66,6 +66,10 @@
 		C48F7B4329EDFE9D00F77981 /* OneSignalExtension in Frameworks */ = {isa = PBXBuildFile; productRef = C48F7B4229EDFE9D00F77981 /* OneSignalExtension */; };
 		C48F997429EA3BED0063EC71 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F997329EA3BED0063EC71 /* NotificationService.swift */; };
 		C48F997829EA3BED0063EC71 /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C48F997129EA3BED0063EC71 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C4B2B1962A360EC600D0194C /* AvailableBadgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B2B1952A360EC600D0194C /* AvailableBadgesViewController.swift */; };
+		C4B2B1982A360F7300D0194C /* AvailableBadgesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B2B1972A360F7300D0194C /* AvailableBadgesCollectionViewCell.swift */; };
+		C4B2B19A2A3622F200D0194C /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B2B1992A3622F200D0194C /* Badge.swift */; };
+		C4B2B19C2A375CE200D0194C /* BadgeImageRoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B2B19B2A375CE200D0194C /* BadgeImageRoundedCorner.swift */; };
 		C4D6CDA329CFDE7400BD3B69 /* default.realm in Resources */ = {isa = PBXBuildFile; fileRef = C4D6CDA229CFDE7400BD3B69 /* default.realm */; };
 		C4D6CDA729D2647C00BD3B69 /* MasterEducationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D6CDA629D2647C00BD3B69 /* MasterEducationViewController.swift */; };
 		C4F575A629BF543300D7B504 /* SecondPremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F575A529BF543300D7B504 /* SecondPremiumViewController.swift */; };
@@ -158,7 +162,10 @@
 		C48F997329EA3BED0063EC71 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		C48F997529EA3BED0063EC71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C48F998029EA3F5C0063EC71 /* OneSignalNotificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneSignalNotificationServiceExtension.entitlements; sourceTree = "<group>"; };
-		C4B2B1932A34B96400D0194C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C4B2B1952A360EC600D0194C /* AvailableBadgesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableBadgesViewController.swift; sourceTree = "<group>"; };
+		C4B2B1972A360F7300D0194C /* AvailableBadgesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableBadgesCollectionViewCell.swift; sourceTree = "<group>"; };
+		C4B2B1992A3622F200D0194C /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		C4B2B19B2A375CE200D0194C /* BadgeImageRoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeImageRoundedCorner.swift; sourceTree = "<group>"; };
 		C4D6CDA229CFDE7400BD3B69 /* default.realm */ = {isa = PBXFileReference; lastKnownFileType = file; path = default.realm; sourceTree = "<group>"; };
 		C4D6CDA629D2647C00BD3B69 /* MasterEducationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterEducationViewController.swift; sourceTree = "<group>"; };
 		C4F575A529BF543300D7B504 /* SecondPremiumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPremiumViewController.swift; sourceTree = "<group>"; };
@@ -257,6 +264,7 @@
 				C41283B229A62B8B008830F8 /* Tip.swift */,
 				C48E625129B3BA6F00342E5F /* Blog.swift */,
 				C44078C529DB98BF007C4882 /* Question.swift */,
+				C4B2B1992A3622F200D0194C /* Badge.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -273,7 +281,6 @@
 		C44A8E80299A50B900F3FDB7 = {
 			isa = PBXGroup;
 			children = (
-				C4B2B1932A34B96400D0194C /* README.md */,
 				C44A8E8B299A50B900F3FDB7 /* Coffee Dictionary */,
 				C48F997229EA3BED0063EC71 /* OneSignalNotificationServiceExtension */,
 				C44A8E8A299A50B900F3FDB7 /* Products */,
@@ -295,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				C48F996C29EA39F90063EC71 /* Coffee Dictionary.entitlements */,
+				C4B2B1942A360EA700D0194C /* AvailableBadgesVc */,
 				C408D0CA29E0FC0700F1578E /* QuizResultVC */,
 				C4534742299D14870025BCAB /* Medium-drip.json */,
 				C48E626329BE8CA000342E5F /* coffee-shop-barista.json */,
@@ -349,6 +357,7 @@
 				C41283B029A57C85008830F8 /* TipBg.swift */,
 				C41283B629A654C3008830F8 /* NextTipButtonBg.swift */,
 				C44078C729DD0DCC007C4882 /* CircleViewBg.swift */,
+				C4B2B19B2A375CE200D0194C /* BadgeImageRoundedCorner.swift */,
 			);
 			path = CustomizeUI;
 			sourceTree = "<group>";
@@ -415,6 +424,15 @@
 				C48F997529EA3BED0063EC71 /* Info.plist */,
 			);
 			path = OneSignalNotificationServiceExtension;
+			sourceTree = "<group>";
+		};
+		C4B2B1942A360EA700D0194C /* AvailableBadgesVc */ = {
+			isa = PBXGroup;
+			children = (
+				C4B2B1952A360EC600D0194C /* AvailableBadgesViewController.swift */,
+				C4B2B1972A360F7300D0194C /* AvailableBadgesCollectionViewCell.swift */,
+			);
+			path = AvailableBadgesVc;
 			sourceTree = "<group>";
 		};
 		C4F575A329BF540800D7B504 /* FirstPremiumVC */ = {
@@ -611,18 +629,21 @@
 				C41283A329A382A1008830F8 /* FilterRoastCollectionViewCell.swift in Sources */,
 				C4F575A629BF543300D7B504 /* SecondPremiumViewController.swift in Sources */,
 				C44A8E91299A50B900F3FDB7 /* CoffeeListViewController.swift in Sources */,
+				C4B2B19A2A3622F200D0194C /* Badge.swift in Sources */,
 				C44A8E8D299A50B900F3FDB7 /* AppDelegate.swift in Sources */,
 				C453473F299AE5820025BCAB /* CoffeeListTableViewCell.swift in Sources */,
 				C41283A129A2B628008830F8 /* FilterViewController.swift in Sources */,
 				C48E625229B3BA6F00342E5F /* Blog.swift in Sources */,
 				C41283AF29A5769D008830F8 /* TipsTableViewCell.swift in Sources */,
 				C48E625D29BDFA5F00342E5F /* FirstPremiumViewController.swift in Sources */,
+				C4B2B1962A360EC600D0194C /* AvailableBadgesViewController.swift in Sources */,
 				C4D6CDA729D2647C00BD3B69 /* MasterEducationViewController.swift in Sources */,
 				C48E625829B7643600342E5F /* BlogDetailViewController.swift in Sources */,
 				C408D0CC29E0FC1F00F1578E /* QuizResultViewController.swift in Sources */,
 				C41283B129A57C85008830F8 /* TipBg.swift in Sources */,
 				C41A90CB29DE347000414674 /* QuizListViewController.swift in Sources */,
 				C4534745299D16FD0025BCAB /* CoffeeDetailCell.swift in Sources */,
+				C4B2B1982A360F7300D0194C /* AvailableBadgesCollectionViewCell.swift in Sources */,
 				C48E625A29B7645100342E5F /* BlogDetailTableViewCell.swift in Sources */,
 				C44F11D229A784D70041C79A /* Constants.swift in Sources */,
 				C4F575A829BF545400D7B504 /* SecondPremiumVcCell.swift in Sources */,
@@ -639,6 +660,7 @@
 				C408D0D029E1055100F1578E /* QuizResultTableViewCell2.swift in Sources */,
 				C4579BB029DB937E004A63D2 /* QuizTableViewCell.swift in Sources */,
 				C4F575AC29C5F9F100D7B504 /* LoadingViewController.swift in Sources */,
+				C4B2B19C2A375CE200D0194C /* BadgeImageRoundedCorner.swift in Sources */,
 				C48E626129BDFADC00342E5F /* FirstPremiumVcCell.swift in Sources */,
 				C41283BB29A65DAD008830F8 /* MoreTableViewCell.swift in Sources */,
 				C44A8EA1299A575B00F3FDB7 /* Coffee.swift in Sources */,

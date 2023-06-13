@@ -13,6 +13,7 @@ class QuizResultViewController: UIViewController {
     // MARK: - Variables
     var currentQuestionsArray = [Question]()
     var quizId = String()
+    var currentQuiz = Quiz(singleQuiz: nil, id: nil, isSolved: nil, quizTopic: nil, badge: nil)
     private var interstitial: GADInterstitialAd?
 
     // MARK: - Outlets
@@ -83,10 +84,12 @@ extension QuizResultViewController : QuizResultTableViewCell1Delegate {
         } else {
             availableBadgesArray.append(result)
         }
+        currentQuiz.isSolved = true
         Constants.saveLoad.set(availableBadgesArray, forKey: "earnedBadgesArray")
         #warning("Update this part dynamically")
-        openBadgeVC(badgeTitle: "Congratulations! You've earned begginer badge!",
-                    badgeName: "badge1")
+        
+        guard let badge = currentQuiz.badge else {return}
+        openBadgeVC(badge: badge)
     }
    
 }

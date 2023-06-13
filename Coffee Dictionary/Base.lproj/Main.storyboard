@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BI1-F0-CtV">
-    <device id="retina6_12" orientation="portrait" appearance="dark"/>
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -449,6 +449,93 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Fj-ko-P7T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-397.70992366412213" y="1893.661971830986"/>
+        </scene>
+        <!--Available Badges View Controller-->
+        <scene sceneID="rhw-Ox-E7v">
+            <objects>
+                <viewController storyboardIdentifier="AvailableBadgesViewControllerID" id="cxZ-iE-XAX" customClass="AvailableBadgesViewController" customModule="Coffee_Dictionary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aCs-0h-ZbS">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pks-f5-r3M">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RD6-GT-2dv">
+                                    <size key="itemSize" width="200" height="230"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AvailableBadgesCollectionViewCellID" id="NqM-b2-1qk" customClass="AvailableBadgesCollectionViewCell" customModule="Coffee_Dictionary" customModuleProvider="target">
+                                        <rect key="frame" x="96.666666666666671" y="0.0" width="200" height="230"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xRB-g7-vFx">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="230"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badge1" translatesAutoresizingMaskIntoConstraints="NO" id="qMC-tx-jue">
+                                                    <rect key="frame" x="35" y="8" width="130" height="130"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="130" id="9ks-DE-HNe"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="130" id="E7i-9X-VD9"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="WFU-19-sjs"/>
+                                                        <constraint firstAttribute="width" secondItem="qMC-tx-jue" secondAttribute="height" multiplier="1:1" id="bMV-il-hcn"/>
+                                                        <constraint firstAttribute="width" constant="130" id="upX-qP-NdZ"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earned badge with solving 3 tests with 10 questions." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZUa-69-oQn">
+                                                    <rect key="frame" x="16" y="159" width="168" height="63"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="168" id="Btx-iA-u3l"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="63" id="Smw-Ql-2OO"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstItem="ZUa-69-oQn" firstAttribute="leading" secondItem="xRB-g7-vFx" secondAttribute="leading" constant="16" id="4dx-Ap-LcZ"/>
+                                                <constraint firstItem="qMC-tx-jue" firstAttribute="leading" secondItem="xRB-g7-vFx" secondAttribute="leading" constant="35" id="ElV-h1-Hf7"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZUa-69-oQn" secondAttribute="bottom" constant="8" id="QyV-38-l2D"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZUa-69-oQn" secondAttribute="trailing" constant="16" id="TUs-XG-myG"/>
+                                                <constraint firstItem="ZUa-69-oQn" firstAttribute="top" secondItem="qMC-tx-jue" secondAttribute="bottom" constant="21" id="ezE-hi-Buf"/>
+                                                <constraint firstAttribute="trailing" secondItem="qMC-tx-jue" secondAttribute="trailing" constant="35" id="m2M-D4-wf3"/>
+                                                <constraint firstItem="qMC-tx-jue" firstAttribute="top" secondItem="xRB-g7-vFx" secondAttribute="top" constant="8" id="nHH-Ta-3ir"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="200" height="230"/>
+                                        <connections>
+                                            <outlet property="imgBadge" destination="qMC-tx-jue" id="GUm-Ys-OXy"/>
+                                            <outlet property="lblBadge" destination="ZUa-69-oQn" id="VS7-BT-VSu"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="cxZ-iE-XAX" id="o4a-y3-aXH"/>
+                                    <outlet property="delegate" destination="cxZ-iE-XAX" id="f2J-GZ-Ccv"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GHo-qz-UZw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GHo-qz-UZw" firstAttribute="trailing" secondItem="pks-f5-r3M" secondAttribute="trailing" id="GhI-GP-giy"/>
+                            <constraint firstItem="pks-f5-r3M" firstAttribute="leading" secondItem="GHo-qz-UZw" secondAttribute="leading" id="TIY-46-OgL"/>
+                            <constraint firstItem="pks-f5-r3M" firstAttribute="top" secondItem="GHo-qz-UZw" secondAttribute="top" id="UXV-95-4M8"/>
+                            <constraint firstItem="GHo-qz-UZw" firstAttribute="bottom" secondItem="pks-f5-r3M" secondAttribute="bottom" id="sb6-Ap-pgp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="pks-f5-r3M" id="blL-MI-HhN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0lY-H3-Lgr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2333.5877862595421" y="2984.5070422535214"/>
         </scene>
         <!--Filter View Controller-->
         <scene sceneID="zbR-GO-1l4">
@@ -1170,7 +1257,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rbz-Xm-Kz3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1672.5190839694656" y="2493.6619718309862"/>
+            <point key="canvasLocation" x="3205" y="-99"/>
         </scene>
         <!--Learn-->
         <scene sceneID="5c4-qR-JKk">
@@ -1475,7 +1562,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xZu-92-X5k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3039" y="2265"/>
+            <point key="canvasLocation" x="1766" y="-327"/>
         </scene>
         <!--Item-->
         <scene sceneID="qjD-Dw-kGJ">
@@ -2575,7 +2662,7 @@ Anytime</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WYa-62-Gsc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2363" y="2266"/>
+            <point key="canvasLocation" x="3895" y="-327"/>
         </scene>
         <!--Quiz Result View Controller-->
         <scene sceneID="l14-Hh-OLa">
@@ -2773,7 +2860,7 @@ Anytime</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nVD-VT-eWS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3038.9312977099235" y="1523.943661971831"/>
+            <point key="canvasLocation" x="2334" y="2265"/>
         </scene>
         <!--Badges View Controller-->
         <scene sceneID="c3o-v2-Azt">
@@ -2783,60 +2870,80 @@ Anytime</string>
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ad-cJ-i4L">
-                                <rect key="frame" x="16" y="239" width="361" height="375"/>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nSK-IW-aGk" customClass="BadgeImageRoundedCorner" customModule="Coffee_Dictionary" customModuleProvider="target">
+                                <rect key="frame" x="16" y="134" width="361" height="510"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badge1" translatesAutoresizingMaskIntoConstraints="NO" id="r2j-aW-HjZ">
-                                        <rect key="frame" x="8" y="8" width="345" height="359"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r2j-aW-HjZ">
+                                        <rect key="frame" x="0.0" y="73" width="360" height="360"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="359" id="ENd-WT-dUR"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="345" id="gJR-3s-026"/>
-                                            <constraint firstAttribute="width" constant="345" id="nhX-Ud-u8H"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="GOZ-hI-Fwa"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="sMp-V6-rUZ"/>
+                                            <constraint firstAttribute="width" secondItem="r2j-aW-HjZ" secondAttribute="height" multiplier="1:1" id="wkv-Gp-eXQ"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Solve your first quiz, earn beginner badge." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lsv-nr-3ca">
-                                        <rect key="frame" x="36" y="292" width="288" height="49"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Solve the quiz, show off your knowledge, get the badge!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0L-Zx-e36">
+                                        <rect key="frame" x="35" y="8" width="292" height="57"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="292" id="5NF-7V-5ZQ"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="292" id="Etv-Cx-yQt"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="fNG-mR-LD8"/>
+                                            <constraint firstAttribute="height" constant="57" id="tgU-pf-X8L"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <color key="textColor" name="appBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Solve your first quiz, earn beginner badge." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lsv-nr-3ca">
+                                        <rect key="frame" x="15" y="441" width="330" height="49"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="49" id="HHY-R5-pEw"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="288" id="IAP-El-M7e"/>
+                                            <constraint firstAttribute="width" constant="330" id="N17-yj-Db9"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="49" id="c1g-aA-eM2"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
                                         <color key="textColor" name="appBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="appMainColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="r2j-aW-HjZ" secondAttribute="bottom" constant="8" id="56B-ED-T8N"/>
-                                    <constraint firstItem="r2j-aW-HjZ" firstAttribute="leading" secondItem="4ad-cJ-i4L" secondAttribute="leading" constant="8" id="FKA-ya-UC3"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="361" id="JXf-Sl-jyF"/>
-                                    <constraint firstAttribute="trailing" secondItem="lsv-nr-3ca" secondAttribute="trailing" constant="37" id="Jic-9g-RD5"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="375" id="UzR-Ep-aWc"/>
-                                    <constraint firstItem="lsv-nr-3ca" firstAttribute="leading" secondItem="4ad-cJ-i4L" secondAttribute="leading" constant="36" id="bgK-Sv-GIZ"/>
-                                    <constraint firstAttribute="bottom" secondItem="lsv-nr-3ca" secondAttribute="bottom" constant="34" id="fCK-K8-1tW"/>
-                                    <constraint firstAttribute="trailing" secondItem="r2j-aW-HjZ" secondAttribute="trailing" constant="8" id="lrk-jb-Oxu"/>
-                                    <constraint firstItem="r2j-aW-HjZ" firstAttribute="top" secondItem="4ad-cJ-i4L" secondAttribute="top" constant="8" id="mjJ-cw-bm9"/>
+                                    <constraint firstAttribute="trailing" secondItem="lsv-nr-3ca" secondAttribute="trailing" constant="16" id="0yj-LY-q42"/>
+                                    <constraint firstItem="r2j-aW-HjZ" firstAttribute="leading" secondItem="nSK-IW-aGk" secondAttribute="leading" id="9PX-hb-dbj"/>
+                                    <constraint firstItem="e0L-Zx-e36" firstAttribute="top" secondItem="nSK-IW-aGk" secondAttribute="top" constant="8" id="AGJ-av-AfY"/>
+                                    <constraint firstAttribute="bottom" secondItem="lsv-nr-3ca" secondAttribute="bottom" constant="20" id="Dg7-OF-aHe"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="463" id="Gvc-23-UaF"/>
+                                    <constraint firstItem="e0L-Zx-e36" firstAttribute="leading" secondItem="nSK-IW-aGk" secondAttribute="leading" constant="35" id="KdO-Gj-6SH"/>
+                                    <constraint firstAttribute="bottom" secondItem="r2j-aW-HjZ" secondAttribute="bottom" constant="77" id="Kz6-13-NhU"/>
+                                    <constraint firstAttribute="height" constant="510" id="OWs-0t-ODw"/>
+                                    <constraint firstAttribute="trailing" secondItem="e0L-Zx-e36" secondAttribute="trailing" constant="34" id="TO3-Al-1cW"/>
+                                    <constraint firstItem="lsv-nr-3ca" firstAttribute="leading" secondItem="nSK-IW-aGk" secondAttribute="leading" constant="15" id="UEb-Uc-Exs"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="361" id="WOa-gB-re2"/>
+                                    <constraint firstItem="lsv-nr-3ca" firstAttribute="top" secondItem="r2j-aW-HjZ" secondAttribute="bottom" constant="8" id="Yfj-w6-1e1"/>
+                                    <constraint firstAttribute="width" constant="361" id="Zcs-o8-bat"/>
+                                    <constraint firstItem="r2j-aW-HjZ" firstAttribute="top" secondItem="e0L-Zx-e36" secondAttribute="bottom" constant="8" id="he4-TQ-pzw"/>
+                                    <constraint firstAttribute="trailing" secondItem="r2j-aW-HjZ" secondAttribute="trailing" constant="1" id="uL9-6X-rs9"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="l6P-X7-O5f"/>
                         <color key="backgroundColor" white="0.35044642857142855" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="l6P-X7-O5f" firstAttribute="bottom" secondItem="4ad-cJ-i4L" secondAttribute="bottom" constant="204" id="40G-AJ-MCY"/>
-                            <constraint firstItem="l6P-X7-O5f" firstAttribute="trailing" secondItem="4ad-cJ-i4L" secondAttribute="trailing" constant="16" id="7nm-Zv-5Sd"/>
-                            <constraint firstItem="4ad-cJ-i4L" firstAttribute="top" secondItem="l6P-X7-O5f" secondAttribute="top" constant="180" id="Ums-Gr-W8q"/>
-                            <constraint firstItem="4ad-cJ-i4L" firstAttribute="leading" secondItem="l6P-X7-O5f" secondAttribute="leading" constant="16" id="dKb-uS-Cvm"/>
+                            <constraint firstItem="l6P-X7-O5f" firstAttribute="trailing" secondItem="nSK-IW-aGk" secondAttribute="trailing" constant="16" id="Kb7-Io-dsD"/>
+                            <constraint firstItem="nSK-IW-aGk" firstAttribute="leading" secondItem="l6P-X7-O5f" secondAttribute="leading" constant="16" id="hdQ-Gr-ye1"/>
+                            <constraint firstItem="nSK-IW-aGk" firstAttribute="top" secondItem="l6P-X7-O5f" secondAttribute="top" constant="75" id="uMn-HU-3nl"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="imgBadge" destination="r2j-aW-HjZ" id="XtY-DI-HEo"/>
                         <outlet property="lblBadge" destination="lsv-nr-3ca" id="qdt-j1-6c9"/>
                         <outlet property="outsideView" destination="ZOd-iU-isk" id="fML-YL-vZ8"/>
+                        <outlet property="viewBg" destination="nSK-IW-aGk" id="4zu-KO-nHi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g2x-gX-tQv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3751.9083969465646" y="2265.4929577464791"/>
+            <point key="canvasLocation" x="2478.6259541984732" y="-326.05633802816902"/>
         </scene>
     </scenes>
     <designables>

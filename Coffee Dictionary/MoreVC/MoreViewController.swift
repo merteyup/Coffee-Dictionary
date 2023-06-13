@@ -126,6 +126,8 @@ extension MoreViewController : UITableViewDelegate, UITableViewDataSource {
         } else if indexPath.row == 4 {
             shareApplication()
         } else if indexPath.row == 5 {
+            openAvailableBadgesPage()
+        }  else if indexPath.row == 6 {
             openPremiumPage(premiumPageId: 1)
         }
         

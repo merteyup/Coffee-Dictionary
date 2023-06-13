@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
 
 class BadgesViewController: UIViewController {
     
@@ -14,10 +16,16 @@ class BadgesViewController: UIViewController {
     @IBOutlet weak var imgBadge: UIImageView!
     @IBOutlet weak var lblBadge: UILabel!
     @IBOutlet var outsideView: UIView!
+    @IBOutlet weak var viewBg: UIView!
     
+    var badge : Badge?
     
-    var badgeTitle = String()
-    var badgeName = String()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        DispatchQueue.main.async {
+            self.prepareUI()
+        }
+    }
     
     
     // MARK: - Statements
@@ -27,18 +35,26 @@ class BadgesViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         self.outsideView.addGestureRecognizer(tap)
         
-        DispatchQueue.main.async {
-            self.prepareUI()
-        }
 
     }
-    
     
     // MARK: - Functions
     
     func prepareUI() {
-        lblBadge.text = badgeTitle
-        imgBadge.image = UIImage(named: badgeName)
+        guard let badge = self.badge else {return}
+        lblBadge.text = badge.name
+        if let url = URL(string: badge.imageUrl) {
+            imgBadge.af.setImage(withURL: url)
+            UIView.animate(withDuration: 0.5) {
+                self.imgBadge.alpha = 1
+                self.viewBg.alpha = 1
+            }
+        }
+        
+       
+
+        imgBadge.layer.cornerRadius = 10
+        imgBadge.clipsToBounds = true
     }
     
     @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {

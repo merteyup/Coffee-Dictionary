@@ -20,6 +20,7 @@ struct Quiz {
     var id : String?
     var isSolved : Bool?
     var quizTopic : String?
+    var badge : Badge?
     
 }
 
@@ -37,13 +38,31 @@ struct Question {
             
             if let newQuizes = object["questionsArray"] as? [[String : Any]] {
                  let quizTopic = object["quizTopic"] != nil ? object["quizTopic"] as! String : ""
+                if let newBadge = object["badge"] as? [String : Any] {
                     
+                    let newQuiz = Quiz(singleQuiz: getQuestionFromObject(object: newQuizes),
+                                       id: documentId,
+                                       isSolved: nil,
+                                       quizTopic: quizTopic,
+                                       badge: Badge.getBadgeFromObject(object: newBadge))
+                    
+                   returningQuiz = newQuiz
+                    
+                    print("GelenQuiz: \(newQuiz)")
+                } else {
+                    #warning("This is necessery for now. Because currently not all quizes has a badge. Start adding badges to all of them.")
                     let newQuiz = Quiz(singleQuiz: getQuestionFromObject(object: newQuizes),
                                        id: documentId,
                                        isSolved: nil,
                                        quizTopic: quizTopic)
                     
                    returningQuiz = newQuiz
+                }
+                
+                
+                    
+                  
+                  
                 
                 print("CountCount1: \(returningQuiz.id)")
                 
