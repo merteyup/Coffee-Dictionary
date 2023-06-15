@@ -2676,11 +2676,11 @@ Anytime</string>
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <color key="backgroundColor" name="appBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="QuizResultTableViewCell1ID" rowHeight="215" id="tSm-yW-YgT" customClass="QuizResultTableViewCell1" customModule="Coffee_Dictionary" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="215"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="QuizResultTableViewCell1ID" rowHeight="250" id="tSm-yW-YgT" customClass="QuizResultTableViewCell1" customModule="Coffee_Dictionary" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tSm-yW-YgT" id="BfL-Kf-bDN">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="215"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZvM-PS-QwX" customClass="LottieAnimationView" customModule="Lottie">
@@ -2694,8 +2694,18 @@ Anytime</string>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="success"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YCI-nu-4w8">
+                                                    <rect key="frame" x="28" y="152" width="338" height="58"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="58" id="PmE-8G-cVt"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="207" id="lKT-C6-hyq"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKx-Dg-haL">
-                                                    <rect key="frame" x="93" y="183" width="207" height="21"/>
+                                                    <rect key="frame" x="93" y="218" width="207" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="N6t-LQ-SDI"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="207" id="raj-B8-8Xf"/>
@@ -2704,29 +2714,19 @@ Anytime</string>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YCI-nu-4w8">
-                                                    <rect key="frame" x="28" y="152" width="338" height="23"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="PmE-8G-cVt"/>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="207" id="lKT-C6-hyq"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstItem="TKx-Dg-haL" firstAttribute="top" secondItem="YCI-nu-4w8" secondAttribute="bottom" constant="8" symbolic="YES" id="33j-ZX-PwQ"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="YCI-nu-4w8" secondAttribute="trailing" constant="7" id="DJ7-Nd-tas"/>
                                                 <constraint firstItem="YCI-nu-4w8" firstAttribute="leading" secondItem="BfL-Kf-bDN" secondAttribute="leadingMargin" constant="8" id="Ieq-L9-44s"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="ZvM-PS-QwX" secondAttribute="trailing" constant="31" id="OfT-lx-wBz"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="TKx-Dg-haL" secondAttribute="trailing" constant="73" id="SNZ-k2-JKJ"/>
                                                 <constraint firstItem="ZvM-PS-QwX" firstAttribute="leading" secondItem="BfL-Kf-bDN" secondAttribute="leadingMargin" constant="30" id="TMf-XB-iKC"/>
+                                                <constraint firstAttribute="bottom" secondItem="TKx-Dg-haL" secondAttribute="bottom" constant="11" id="awI-hT-Btf"/>
                                                 <constraint firstItem="ZvM-PS-QwX" firstAttribute="top" secondItem="BfL-Kf-bDN" secondAttribute="top" constant="10" id="b3Y-2K-WVb"/>
                                                 <constraint firstItem="YCI-nu-4w8" firstAttribute="top" secondItem="ZvM-PS-QwX" secondAttribute="bottom" constant="14" id="e99-Uf-ZpV"/>
                                                 <constraint firstItem="TKx-Dg-haL" firstAttribute="leading" secondItem="BfL-Kf-bDN" secondAttribute="leadingMargin" constant="73" id="fju-5S-iOO"/>
-                                                <constraint firstAttribute="bottom" secondItem="TKx-Dg-haL" secondAttribute="bottom" constant="11" id="kcK-8P-wgu"/>
+                                                <constraint firstItem="TKx-Dg-haL" firstAttribute="top" secondItem="YCI-nu-4w8" secondAttribute="bottom" constant="8" symbolic="YES" id="j92-Rn-MMw"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="appBackgroundColor"/>
@@ -2737,7 +2737,7 @@ Anytime</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="QuizResultTableViewCell2ID" rowHeight="64" id="Y5N-dG-1JC" customClass="QuizResultTableViewCell2" customModule="Coffee_Dictionary" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="265" width="393" height="64"/>
+                                        <rect key="frame" x="0.0" y="300" width="393" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y5N-dG-1JC" id="Y2b-tY-L2q">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="64"/>
@@ -2805,7 +2805,7 @@ Anytime</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="QuizResultTableViewCell3ID" rowHeight="134" id="d33-bi-3FA" customClass="QuizResultTableViewCell3" customModule="Coffee_Dictionary" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="329" width="393" height="134"/>
+                                        <rect key="frame" x="0.0" y="364" width="393" height="134"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d33-bi-3FA" id="N36-Xj-VBS">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="134"/>
@@ -2860,7 +2860,7 @@ Anytime</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nVD-VT-eWS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2334" y="2265"/>
+            <point key="canvasLocation" x="2333.5877862595421" y="2264.7887323943664"/>
         </scene>
         <!--Badges View Controller-->
         <scene sceneID="c3o-v2-Azt">

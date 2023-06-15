@@ -7,6 +7,8 @@
 
 import UIKit
 import GoogleMobileAds
+import RealmSwift
+import CoreData
 
 class QuizResultViewController: UIViewController {
     
@@ -14,8 +16,11 @@ class QuizResultViewController: UIViewController {
     var currentQuestionsArray = [Question]()
     var quizId = String()
     var currentQuiz = Quiz(singleQuiz: nil, id: nil, isSolved: nil, quizTopic: nil, badge: nil)
-    private var interstitial: GADInterstitialAd?
-
+    private var interstitial : GADInterstitialAd?
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var context : NSManagedObjectContext!
+    
+    
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     
@@ -47,6 +52,28 @@ class QuizResultViewController: UIViewController {
         }
     }
     
+    /// Open badges entity from context
+    func openDatabase() {
+        context = appDelegate.persistentContainer.viewContext
+        guard let entity = NSEntityDescription.entity(forEntityName: Constants.Badge.entityBadges, in: context) else {return}
+        let newBadge = NSManagedObject(entity: entity, insertInto: context)
+        saveData(UserDBObj:newBadge)
+    }
+    
+    
+    /// Save context.
+    func saveData(UserDBObj : NSManagedObject) {
+        UserDBObj.setValue(currentQuiz.badge?.name, forKey: Constants.Badge.name)
+        UserDBObj.setValue(currentQuiz.badge?.subText, forKey: Constants.Badge.subText)
+        UserDBObj.setValue(currentQuiz.badge?.imageUrl, forKey: Constants.Badge.imageUrl)
+        do {
+            try context.save()
+            print("Data stored..")
+        } catch {
+            print("Data storing failed: \(error.localizedDescription)")
+        }
+    }
+    
 }
 
 extension QuizResultViewController : UITableViewDelegate, UITableViewDataSource {
@@ -60,7 +87,7 @@ extension QuizResultViewController : UITableViewDelegate, UITableViewDataSource 
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "QuizResultTableViewCell1ID", for: indexPath) as! QuizResultTableViewCell1
             cell.quizResultTableViewCell1Delegate = self
-            cell.updateCell(currentQuestionArray: currentQuestionsArray, quizId: quizId)
+            cell.updateCell(currentQuestionArray: currentQuestionsArray, quizId: quizId, currentQuiz: currentQuiz)
             return cell
         } else if indexPath.row > 0 && indexPath.row <= 10 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "QuizResultTableViewCell2ID", for: indexPath) as! QuizResultTableViewCell2
@@ -75,23 +102,12 @@ extension QuizResultViewController : UITableViewDelegate, UITableViewDataSource 
 }
 
 extension QuizResultViewController : QuizResultTableViewCell1Delegate {
+    
     func saveSolvedQuiz(isSuccess: Bool) {
-        var availableBadgesArray = [[String: Any]]()
-        let result = ["quizId" : quizId, "result" : isSuccess] as [String : Any]
-        if let savedBadge = Constants.saveLoad.object(forKey: "earnedBadgesArray") {
-            availableBadgesArray = savedBadge as! [[String : Any]]
-            availableBadgesArray.append(result)
-        } else {
-            availableBadgesArray.append(result)
-        }
+        openDatabase()
         currentQuiz.isSolved = true
-        Constants.saveLoad.set(availableBadgesArray, forKey: "earnedBadgesArray")
-        #warning("Update this part dynamically")
-        
-        guard let badge = currentQuiz.badge else {return}
-        openBadgeVC(badge: badge)
     }
-   
+    
 }
 
 extension QuizResultViewController : QuizResultTableViewCell3Delegate {

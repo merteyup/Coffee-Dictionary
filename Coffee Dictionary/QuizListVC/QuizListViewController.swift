@@ -8,40 +8,34 @@
 import UIKit
 import FirebaseFirestore
 import Lottie
+import CoreData
 
 
 class QuizListViewController: UIViewController {
     
-    
+    // MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var animationView: LottieAnimationView!
     
+    // MARK: - Variables
     let db = Firestore.firestore()
-    
     var currentQuizzes = [Quiz]()
+    var availableBadges = [Badge]()
     
     
+    
+    // MARK: - Statements
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
         
         getQuestions()
         playLottieAnimation()
         // Observe in app purchases.
         NotificationCenter.default.addObserver(self, selector: #selector(reloadCollectionView), name: Notification.Name("purchaseCompleted"), object: nil)
         
-        
-        
-        
     }
     
-    @objc func reloadCollectionView () {
-        
-        DispatchQueue.main.async {
-            self.collectionView.reloadData()
-        }
-    }
+   // MARK: - Functions
     
     fileprivate func playLottieAnimation() {
         // 1. Set animation content mode
@@ -53,7 +47,7 @@ class QuizListViewController: UIViewController {
         // 4. Play animation
         animationView.play()
     }
- 
+    
     
     fileprivate func getQuestions() {
         //  openLoadingVC()
@@ -76,26 +70,40 @@ class QuizListViewController: UIViewController {
             DispatchQueue.main.async {
                 //  NotificationCenter.default.post(name: Notification.Name("dismissLoadingVC"), object: nil)
                 self.collectionView.reloadData()
-                self.checkBadges()
+                if let badgesToShow = Badge.fetchCurrentBadges(currentQuizzes: self.currentQuizzes) {
+                    guard let singleBadge = badgesToShow.last else {return}
+                    self.openBadgeVC(badge: singleBadge)
+                }
             }
         }
     }
     
-    fileprivate func checkBadges() {
-        if let earnedBadgesArray = Constants.saveLoad.object(forKey: "earnedBadgesArray") {
-            guard let badge = self.currentQuizzes[0].badge else {return}
-            self.openBadgeVC(badge: badge)
+    
 
-        } else {
-#warning("Update this part dynamically")
-            guard let badge = self.currentQuizzes[0].badge else {return}
-            self.openBadgeVC(badge: badge)
+    
+    @objc func reloadCollectionView () {
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
         }
     }
     
     
+    /*
+     if let earnedBadgesArray = Constants.saveLoad.object(forKey: "earnedBadgesArray") {
+     guard let badge = self.currentQuizzes[0].badge else {return}
+     self.openBadgeVC(badge: badge)
+     
+     } else {
+     #warning("Update this part dynamically")
+     guard let badge = self.currentQuizzes[0].badge else {return}
+     self.openBadgeVC(badge: badge)
+     } */
     
 }
+
+
+
+
 
 
 extension QuizListViewController : UICollectionViewDelegate, UICollectionViewDataSource {

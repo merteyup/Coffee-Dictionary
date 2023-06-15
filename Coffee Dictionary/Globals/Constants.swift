@@ -18,5 +18,14 @@ struct Constants {
     static let bannerAdTestId = "ca-app-pub-3940256099942544/2934735716"
     static let entitlementId = "coffeemPremium"
     static let saveLoad = UserDefaults.standard;
+    
+    
+    struct Badge {
+        static let entityBadges = "Badges"
+        static let id = "id"
+        static let name = "name"
+        static let subText = "subText"
+        static let imageUrl = "imageUrl"
+    }
 
 }

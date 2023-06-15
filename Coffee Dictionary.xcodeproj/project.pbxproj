@@ -66,6 +66,7 @@
 		C48F7B4329EDFE9D00F77981 /* OneSignalExtension in Frameworks */ = {isa = PBXBuildFile; productRef = C48F7B4229EDFE9D00F77981 /* OneSignalExtension */; };
 		C48F997429EA3BED0063EC71 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48F997329EA3BED0063EC71 /* NotificationService.swift */; };
 		C48F997829EA3BED0063EC71 /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C48F997129EA3BED0063EC71 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C4A4B3B92A3AF6AC0062CE47 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C4A4B3B72A3AF6AC0062CE47 /* CoreDataModel.xcdatamodeld */; };
 		C4B2B1962A360EC600D0194C /* AvailableBadgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B2B1952A360EC600D0194C /* AvailableBadgesViewController.swift */; };
 		C4B2B1982A360F7300D0194C /* AvailableBadgesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B2B1972A360F7300D0194C /* AvailableBadgesCollectionViewCell.swift */; };
 		C4B2B19A2A3622F200D0194C /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B2B1992A3622F200D0194C /* Badge.swift */; };
@@ -162,6 +163,7 @@
 		C48F997329EA3BED0063EC71 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		C48F997529EA3BED0063EC71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C48F998029EA3F5C0063EC71 /* OneSignalNotificationServiceExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OneSignalNotificationServiceExtension.entitlements; sourceTree = "<group>"; };
+		C4A4B3B82A3AF6AC0062CE47 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		C4B2B1952A360EC600D0194C /* AvailableBadgesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableBadgesViewController.swift; sourceTree = "<group>"; };
 		C4B2B1972A360F7300D0194C /* AvailableBadgesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableBadgesCollectionViewCell.swift; sourceTree = "<group>"; };
 		C4B2B1992A3622F200D0194C /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
@@ -302,16 +304,18 @@
 			isa = PBXGroup;
 			children = (
 				C48F996C29EA39F90063EC71 /* Coffee Dictionary.entitlements */,
-				C4B2B1942A360EA700D0194C /* AvailableBadgesVc */,
-				C408D0CA29E0FC0700F1578E /* QuizResultVC */,
-				C4534742299D14870025BCAB /* Medium-drip.json */,
-				C48E626329BE8CA000342E5F /* coffee-shop-barista.json */,
-				C408D0D529E1065900F1578E /* failure.json */,
-				C47D876029E10E5200AC5E1B /* success.json */,
-				C408D0C829E0E97C00F1578E /* question-mark.json */,
-				C4F575AD29C5FB5A00D7B504 /* loadingcoffee.json */,
+				C4A4B3B72A3AF6AC0062CE47 /* CoreDataModel.xcdatamodeld */,
 				C44A8E8C299A50B900F3FDB7 /* AppDelegate.swift */,
 				C44A8E8E299A50B900F3FDB7 /* SceneDelegate.swift */,
+				C44A8E92299A50B900F3FDB7 /* Main.storyboard */,
+				C44A8E95299A50B900F3FDB7 /* Assets.xcassets */,
+				C423629329DA596E004161F8 /* GoogleService-Info.plist */,
+				C44A8E97299A50B900F3FDB7 /* LaunchScreen.storyboard */,
+				C4D6CDA229CFDE7400BD3B69 /* default.realm */,
+				C44A8E9A299A50B900F3FDB7 /* Info.plist */,
+				C4A4B3BA2A3AF6D00062CE47 /* Anims */,
+				C4B2B1942A360EA700D0194C /* AvailableBadgesVc */,
+				C408D0CA29E0FC0700F1578E /* QuizResultVC */,
 				C41A90C929DE345300414674 /* QuizListVC */,
 				C48E625B29BDFA2B00342E5F /* PremiumViewControllers */,
 				C41283A629A40402008830F8 /* FilterVC */,
@@ -322,12 +326,6 @@
 				C48E624429B164D000342E5F /* BlogVC */,
 				C48E626229BE877700342E5F /* BlogDetailVC */,
 				C4579BB129DB9383004A63D2 /* QuizVC */,
-				C44A8E92299A50B900F3FDB7 /* Main.storyboard */,
-				C44A8E95299A50B900F3FDB7 /* Assets.xcassets */,
-				C423629329DA596E004161F8 /* GoogleService-Info.plist */,
-				C44A8E97299A50B900F3FDB7 /* LaunchScreen.storyboard */,
-				C4D6CDA229CFDE7400BD3B69 /* default.realm */,
-				C44A8E9A299A50B900F3FDB7 /* Info.plist */,
 				C41283A729A40420008830F8 /* Model */,
 				C44F11CD29A76A4A0041C79A /* Globals */,
 				C44F11CE29A76A590041C79A /* CustomizeUI */,
@@ -424,6 +422,19 @@
 				C48F997529EA3BED0063EC71 /* Info.plist */,
 			);
 			path = OneSignalNotificationServiceExtension;
+			sourceTree = "<group>";
+		};
+		C4A4B3BA2A3AF6D00062CE47 /* Anims */ = {
+			isa = PBXGroup;
+			children = (
+				C4534742299D14870025BCAB /* Medium-drip.json */,
+				C48E626329BE8CA000342E5F /* coffee-shop-barista.json */,
+				C408D0D529E1065900F1578E /* failure.json */,
+				C47D876029E10E5200AC5E1B /* success.json */,
+				C408D0C829E0E97C00F1578E /* question-mark.json */,
+				C4F575AD29C5FB5A00D7B504 /* loadingcoffee.json */,
+			);
+			path = Anims;
 			sourceTree = "<group>";
 		};
 		C4B2B1942A360EA700D0194C /* AvailableBadgesVc */ = {
@@ -653,6 +664,7 @@
 				C423629629DA5B5E004161F8 /* NetworkMonitor.swift in Sources */,
 				C4534747299D96F10025BCAB /* GlobalFunctions.swift in Sources */,
 				C41283AB29A4F8A8008830F8 /* FilterBg.swift in Sources */,
+				C4A4B3B92A3AF6AC0062CE47 /* CoreDataModel.xcdatamodeld in Sources */,
 				C45A0FE02A05160F007CE88D /* BadgesViewController.swift in Sources */,
 				C44A8E8F299A50B900F3FDB7 /* SceneDelegate.swift in Sources */,
 				C4534741299BCEAB0025BCAB /* CoffeeDetailViewController.swift in Sources */,
@@ -1025,6 +1037,20 @@
 			productName = OneSignalExtension;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		C4A4B3B72A3AF6AC0062CE47 /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C4A4B3B82A3AF6AC0062CE47 /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = C4A4B3B82A3AF6AC0062CE47 /* CoreDataModel.xcdatamodel */;
+			name = CoreDataModel.xcdatamodeld;
+			path = QuizListVC/CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C44A8E81299A50B900F3FDB7 /* Project object */;
 }

@@ -11,6 +11,7 @@ import GoogleMobileAds
 import FirebaseCore
 import FirebaseFirestore
 import RevenueCat
+import CoreData
 
 
 import OneSignal
@@ -52,10 +53,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         OneSignal.promptForPushNotifications(userResponse: { accepted in
            print("User accepted notifications: \(accepted)")
          })
-   
+        
         
         
         return true
+    }
+    
+    lazy var persistentContainer: NSPersistentContainer = {
+         let container = NSPersistentContainer(name: "CoreDataModel")
+         container.loadPersistentStores { description, error in
+             if let error = error {
+                 fatalError("Unable to load persistent stores: \(error)")
+             }
+         }
+         return container
+     }()
+    
+    /// Core data saving support
+    func saveContext () {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                let error = error
+                fatalError("Unresolved error \(error.localizedDescription)")
+            }
+        }
+        
+        
     }
     
     func openRealm() {
