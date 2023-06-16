@@ -26,6 +26,14 @@ class QuizResultTableViewCell2: UITableViewCell {
 
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        lblQuestionText.text = nil
+        lblCorrectAnswer.text = nil
+        lblQuestionIndex.text = nil
+        imgResult.image = nil
+    }
+    
     
     func updateCell(currentQuestionArray: [Question], indexPath: Int) {
         let currentQuestion = currentQuestionArray[indexPath-1]

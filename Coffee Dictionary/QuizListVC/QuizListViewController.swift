@@ -140,7 +140,6 @@ extension QuizListViewController : UICollectionViewDelegate, UICollectionViewDat
             } else {
                 if let singleQuiz = currentQuizzes[indexPath.row].singleQuiz {
                     openQuizVC(currentQuestionsArray: singleQuiz,
-                               quizId: currentQuizzes[indexPath.row].id ?? "defaultQuizId",
                                currentQuiz: currentQuizzes[indexPath.row])
                 }
             }
@@ -148,7 +147,6 @@ extension QuizListViewController : UICollectionViewDelegate, UICollectionViewDat
             if let singleQuiz = currentQuizzes[indexPath.row].singleQuiz {
                 print("SelectedQuiz: \(currentQuizzes[indexPath.row].id)")
                 openQuizVC(currentQuestionsArray: singleQuiz,
-                           quizId: currentQuizzes[indexPath.row].id ?? "defaultQuizId",
                            currentQuiz: currentQuizzes[indexPath.row])
             }
         }

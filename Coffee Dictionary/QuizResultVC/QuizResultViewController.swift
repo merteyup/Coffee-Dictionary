@@ -14,7 +14,6 @@ class QuizResultViewController: UIViewController {
     
     // MARK: - Variables
     var currentQuestionsArray = [Question]()
-    var quizId = String()
     var currentQuiz = Quiz(singleQuiz: nil, id: nil, isSolved: nil, quizTopic: nil, badge: nil)
     private var interstitial : GADInterstitialAd?
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -25,8 +24,18 @@ class QuizResultViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: - Statements
+  
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        interstitialAdRequest()
+        
+    }
+    
+    
+    // MARK: - Functions
+    
+    fileprivate func interstitialAdRequest() {
         let request = GADRequest()
         GADInterstitialAd.load(withAdUnitID: Constants.interstitialAdId,
                                request: request,
@@ -39,11 +48,8 @@ class QuizResultViewController: UIViewController {
             interstitial?.fullScreenContentDelegate = self
         }
         )
-        
     }
     
-    
-    // MARK: - Functions
     func showInterstitial() {
         if interstitial != nil {
             interstitial!.present(fromRootViewController: self)
@@ -87,7 +93,7 @@ extension QuizResultViewController : UITableViewDelegate, UITableViewDataSource 
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "QuizResultTableViewCell1ID", for: indexPath) as! QuizResultTableViewCell1
             cell.quizResultTableViewCell1Delegate = self
-            cell.updateCell(currentQuestionArray: currentQuestionsArray, quizId: quizId, currentQuiz: currentQuiz)
+            cell.updateCell(currentQuestionArray: currentQuestionsArray, currentQuiz: currentQuiz)
             return cell
         } else if indexPath.row > 0 && indexPath.row <= 10 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "QuizResultTableViewCell2ID", for: indexPath) as! QuizResultTableViewCell2
@@ -103,9 +109,9 @@ extension QuizResultViewController : UITableViewDelegate, UITableViewDataSource 
 
 extension QuizResultViewController : QuizResultTableViewCell1Delegate {
     
-    func saveSolvedQuiz(isSuccess: Bool) {
-        openDatabase()
+    func saveSolvedQuiz() {
         currentQuiz.isSolved = true
+        openDatabase()
     }
     
 }

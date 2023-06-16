@@ -10,7 +10,7 @@ import Lottie
 
 
 protocol QuizResultTableViewCell1Delegate : AnyObject {
-    func saveSolvedQuiz(isSuccess: Bool)
+    func saveSolvedQuiz()
 }
 
 class QuizResultTableViewCell1: UITableViewCell {
@@ -25,30 +25,42 @@ class QuizResultTableViewCell1: UITableViewCell {
     var score = Int()
     var isSuccess = Bool()
     var successScore = 7
+    var questionCount = 10
 
     // MARK: - Statements
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
+    /// Clear cells for reuse.
     override func prepareForReuse() {
-        score = 0
+        lblScore.text = nil
+        animationView.animation = nil
     }
     
     // MARK: - Functions
-    func updateCell(currentQuestionArray: [Question], quizId: String, currentQuiz: Quiz) {
+    
+    /// This function is responsible for quiz result operations.
+    /// - Parameters:
+    ///   - currentQuestionArray: Solved current questions as an array.
+    ///   - currentQuiz: Current quiz from controller, for showing results.
+    func updateCell(currentQuestionArray: [Question], currentQuiz: Quiz) {
+        /// Filter true values in answers and keep score with that.
+        let score = currentQuestionArray.filter{$0.isCorrectAnswered == true}.count
         for element in currentQuestionArray {
             if element.isCorrectAnswered == true {
-                score += 1
-                lblScore.text = "\(score) / 10"
                 if score >= successScore {
+                    lblScore.text = "\(score) / \(questionCount)"
                     isSuccess = true
                     lblResult.text = "Congratulations! You've earned \(currentQuiz.badge?.name ?? "new") badge."
-                    quizResultTableViewCell1Delegate?.saveSolvedQuiz(isSuccess: isSuccess)
+                    if currentQuiz.isSolved == nil {
+                        quizResultTableViewCell1Delegate?.saveSolvedQuiz()
+                    }
                     playLottieAnimation()
                     return
                 } else {
                     lblResult.text = "Give it another try..."
+                    lblScore.text = "\(score) / \(questionCount)"
                     isSuccess = false
                     playLottieAnimation()
                 }

@@ -2750,7 +2750,7 @@ Anytime</string>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="r2b-Xa-RGl"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FC8-ZD-Kpt">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="FC8-ZD-Kpt">
                                                     <rect key="frame" x="78" y="35" width="245" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="245" id="9rf-vC-3fU"/>
@@ -2871,7 +2871,7 @@ Anytime</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nSK-IW-aGk" customClass="BadgeImageRoundedCorner" customModule="Coffee_Dictionary" customModuleProvider="target">
-                                <rect key="frame" x="16" y="134" width="361" height="510"/>
+                                <rect key="frame" x="16" y="134" width="361" height="471"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r2j-aW-HjZ">
                                         <rect key="frame" x="0.0" y="73" width="360" height="360"/>
@@ -2894,7 +2894,7 @@ Anytime</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Solve your first quiz, earn beginner badge." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lsv-nr-3ca">
-                                        <rect key="frame" x="15" y="441" width="330" height="49"/>
+                                        <rect key="frame" x="15" y="414" width="330" height="49"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="49" id="HHY-R5-pEw"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="288" id="IAP-El-M7e"/>
@@ -2909,19 +2909,17 @@ Anytime</string>
                                 <color key="backgroundColor" name="appMainColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="lsv-nr-3ca" secondAttribute="trailing" constant="16" id="0yj-LY-q42"/>
+                                    <constraint firstAttribute="bottom" secondItem="lsv-nr-3ca" secondAttribute="bottom" constant="8" id="7QV-Cw-u1G"/>
                                     <constraint firstItem="r2j-aW-HjZ" firstAttribute="leading" secondItem="nSK-IW-aGk" secondAttribute="leading" id="9PX-hb-dbj"/>
                                     <constraint firstItem="e0L-Zx-e36" firstAttribute="top" secondItem="nSK-IW-aGk" secondAttribute="top" constant="8" id="AGJ-av-AfY"/>
-                                    <constraint firstAttribute="bottom" secondItem="lsv-nr-3ca" secondAttribute="bottom" constant="20" id="Dg7-OF-aHe"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="463" id="Gvc-23-UaF"/>
                                     <constraint firstItem="e0L-Zx-e36" firstAttribute="leading" secondItem="nSK-IW-aGk" secondAttribute="leading" constant="35" id="KdO-Gj-6SH"/>
-                                    <constraint firstAttribute="bottom" secondItem="r2j-aW-HjZ" secondAttribute="bottom" constant="77" id="Kz6-13-NhU"/>
-                                    <constraint firstAttribute="height" constant="510" id="OWs-0t-ODw"/>
+                                    <constraint firstAttribute="bottom" secondItem="r2j-aW-HjZ" secondAttribute="bottom" constant="38" id="Kz6-13-NhU"/>
                                     <constraint firstAttribute="trailing" secondItem="e0L-Zx-e36" secondAttribute="trailing" constant="34" id="TO3-Al-1cW"/>
                                     <constraint firstItem="lsv-nr-3ca" firstAttribute="leading" secondItem="nSK-IW-aGk" secondAttribute="leading" constant="15" id="UEb-Uc-Exs"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="361" id="WOa-gB-re2"/>
-                                    <constraint firstItem="lsv-nr-3ca" firstAttribute="top" secondItem="r2j-aW-HjZ" secondAttribute="bottom" constant="8" id="Yfj-w6-1e1"/>
-                                    <constraint firstAttribute="width" constant="361" id="Zcs-o8-bat"/>
                                     <constraint firstItem="r2j-aW-HjZ" firstAttribute="top" secondItem="e0L-Zx-e36" secondAttribute="bottom" constant="8" id="he4-TQ-pzw"/>
+                                    <constraint firstItem="lsv-nr-3ca" firstAttribute="top" secondItem="r2j-aW-HjZ" secondAttribute="bottom" constant="-19" id="j7I-dB-NiK"/>
                                     <constraint firstAttribute="trailing" secondItem="r2j-aW-HjZ" secondAttribute="trailing" constant="1" id="uL9-6X-rs9"/>
                                 </constraints>
                             </view>
@@ -2946,13 +2944,6 @@ Anytime</string>
             <point key="canvasLocation" x="2478.6259541984732" y="-326.05633802816902"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="7za-iS-N8C"/>
-        <designable name="UXs-zJ-meo"/>
-        <designable name="WLL-N6-7Mj"/>
-        <designable name="ZvM-PS-QwX"/>
-        <designable name="ukr-nT-hck"/>
-    </designables>
     <resources>
         <image name="badge1" width="360" height="360"/>
         <image name="bolt.fill" catalog="system" width="100" height="128"/>
