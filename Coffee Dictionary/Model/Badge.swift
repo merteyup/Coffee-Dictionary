@@ -10,7 +10,7 @@ import CoreData
 import UIKit
 
 struct Badge : Codable {
-    
+
     let name : String
     let subText : String
     let imageUrl : String
@@ -26,8 +26,10 @@ struct Badge : Codable {
     }
     
     
+    
+    
     /// Get available badges from db and append them in an array.
-    public static func fetchCurrentBadges(currentQuizzes: [Quiz]) -> [Badge]? {
+    public static func fetchCurrentBadges(currentQuizzes: [Quiz]?, isForSingleBadge: Bool) -> [Badge]? {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         var context : NSManagedObjectContext!
         var badgesArray = [Badge]()
@@ -42,39 +44,53 @@ struct Badge : Codable {
                 if result.count != 0 {
                     /// User has at least one badge.
                     for data in result {
-#warning("This part should also check is last quiz")
-                        let name = data.value(forKey: Constants.Badge.name) as! String
-                        let subText = data.value(forKey: Constants.Badge.subText) as! String
-                        let imageUrl = data.value(forKey: Constants.Badge.imageUrl) as! String
-                        /// Create user's badge and append it into array.
-                        let newBadge = Badge(name: name,
-                                             subText: subText,
-                                             imageUrl: imageUrl)
-                        print("Data fetched \(newBadge)")
-                        badgesArray.append(newBadge)
+                        createBadgeFromCoreData(data, &badgesArray)
                     }
-                    /// Check is there one more badge than user has. If yes, show this badge to encourage.
-                    if let nextBadge = currentQuizzes[badgesArray.count].badge {
-                        badgesArray.append(nextBadge)
+                    if isForSingleBadge {
+                        if let currentQuizzes = currentQuizzes {
+                            appendLastBadge(currentQuizzes, &badgesArray)
+                        }
                     }
                     return badgesArray
                 } else {
                     /// There's no available badge found. Show first badge to encourage.
                     print("No data came ")
-                    if let firstBadge = currentQuizzes.first?.badge {
-                        badgesArray.append(firstBadge)
-                    } else {
-                        /// For any case of, create simple default badge.
-                        badgesArray.append(Badge(name: "New badge",
-                                                  subText: "Keep up.",
-                                                  imageUrl: ""))
-                    }
+                    if isForSingleBadge {
+                        if let currentQuizzes = currentQuizzes {
+                            if let firstBadge = currentQuizzes.first?.badge {
+                                badgesArray.append(firstBadge)
+                            } else {
+                                /// For any case of, create simple default badge.
+                                badgesArray.append(Badge(name: "New badge",
+                                                         subText: "Keep up.",
+                                                         imageUrl: ""))
+                            }
+                        }}
                 }
             }
         } catch {
             print("Fetching data Failed: \(error.localizedDescription)")
         }
         return badgesArray
+    }
+    
+    fileprivate static func createBadgeFromCoreData(_ data: NSManagedObject, _ badgesArray: inout [Badge]) {
+        let name = data.value(forKey: Constants.Badge.name) as! String
+        let subText = data.value(forKey: Constants.Badge.subText) as! String
+        let imageUrl = data.value(forKey: Constants.Badge.imageUrl) as! String
+        /// Create user's badge and append it into array.
+        let newBadge = Badge(name: name,
+                             subText: subText,
+                             imageUrl: imageUrl)
+        print("Data fetched \(newBadge)")
+        badgesArray.append(newBadge)
+    }
+    
+    fileprivate static func appendLastBadge(_ currentQuizzes: [Quiz], _ badgesArray: inout [Badge]) {
+        /// Check is there one more badge than user has. If yes, show this badge to encourage.
+        if let nextBadge = currentQuizzes[badgesArray.count].badge {
+            badgesArray.append(nextBadge)
+        }
     }
     
 }

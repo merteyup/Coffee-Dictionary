@@ -616,7 +616,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "70F09774-5AE6-456F-817D-1144A3A3C4B0"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Coffee Dictionary/QuizListVC/QuizListViewController.swift"
@@ -638,8 +638,8 @@
             filePath = "Coffee Dictionary/QuizListVC/QuizListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "getQuestions()"
             landmarkType = "7">
             <Locations>
@@ -680,79 +680,15 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "808A0CCE-85C9-40B4-B48F-1A3E564C7B1D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Coffee Dictionary/Model/Badge.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "fetchCurrentBadges(currentQuizzes:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4A750BAD-9E9D-402D-BE7F-8F8D775C45BC"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Coffee Dictionary/Model/Badge.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "fetchCurrentBadges(currentQuizzes:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "12B58210-4BEB-4630-BFCA-1B62C5D53AC9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Coffee Dictionary/Model/Badge.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "fetchCurrentBadges(currentQuizzes:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E69B26C2-47E4-4A43-AC60-22DA4438F4D0"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Coffee Dictionary/Model/Badge.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "fetchCurrentBadges(currentQuizzes:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "37DF2CB6-0397-461E-B16A-87D5982EA841"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Coffee Dictionary/Model/Badge.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "fetchCurrentBadges(currentQuizzes:)"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "fetchCurrentBadges(currentQuizzes:isForSingleBadge:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -760,15 +696,15 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "D4BC1C8C-4CC1-4DDE-896E-D5164DF0DAFF"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Coffee Dictionary/Model/Badge.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "fetchCurrentBadges(currentQuizzes:)"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "fetchCurrentBadges(currentQuizzes:isForSingleBadge:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -776,7 +712,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "C24C5CD1-A153-4E30-A8D0-FD3163665502"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Coffee Dictionary/QuizListVC/QuizListViewController.swift"
@@ -786,70 +722,6 @@
             endingLineNumber = "74"
             landmarkName = "getQuestions()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6533DD31-3DF1-4488-A8AC-B56EBF122D1E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Coffee Dictionary/Model/Badge.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "fetchCurrentBadges(currentQuizzes:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E9CBEFC3-6A86-4C55-8C52-E639A8779B40"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Coffee Dictionary/Model/Badge.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "fetchCurrentBadges(currentQuizzes:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E9CBEFC3-6A86-4C55-8C52-E639A8779B40 - eb5de7ac58d8f974"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Coffee_Dictionary.Badge.fetchCurrentBadges(currentQuizzes: Swift.Array&lt;Coffee_Dictionary.Quiz&gt;) -&gt; Swift.Optional&lt;Swift.Array&lt;Coffee_Dictionary.Badge&gt;&gt;"
-                  moduleName = "Coffee Dictionary"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/eyupmert/Documents/Coffee-Dictionary/Coffee%20Dictionary/Model/Badge.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "2792">
-               </Location>
-               <Location
-                  uuid = "E9CBEFC3-6A86-4C55-8C52-E639A8779B40 - eb5de7ac58d8f974"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Coffee_Dictionary.Badge.fetchCurrentBadges(currentQuizzes: Swift.Array&lt;Coffee_Dictionary.Quiz&gt;) -&gt; Swift.Optional&lt;Swift.Array&lt;Coffee_Dictionary.Badge&gt;&gt;"
-                  moduleName = "Coffee Dictionary"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/eyupmert/Documents/Coffee-Dictionary/Coffee%20Dictionary/Model/Badge.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "3048">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -958,8 +830,8 @@
             filePath = "Coffee Dictionary/QuizVC/QuizViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "answeredOperations(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -974,8 +846,8 @@
             filePath = "Coffee Dictionary/QuizVC/QuizViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "answeredOperations(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1070,9 +942,25 @@
             filePath = "Coffee Dictionary/QuizVC/QuizViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "answeredOperations(_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BE120120-CA2E-48E5-AE92-463F2321EF17"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Coffee Dictionary/Model/Badge.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "fetchCurrentBadges(currentQuizzes:isForSingleBadge:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

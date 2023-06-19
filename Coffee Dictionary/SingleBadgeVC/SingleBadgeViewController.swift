@@ -9,7 +9,7 @@ import UIKit
 import Alamofire
 import AlamofireImage
 
-class BadgesViewController: UIViewController {
+class SingleBadgeViewController: UIViewController {
     
     
     // MARK: - Outlets

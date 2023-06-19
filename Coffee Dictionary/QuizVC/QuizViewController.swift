@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 
 class QuizViewController: UIViewController {
@@ -13,7 +14,8 @@ class QuizViewController: UIViewController {
     // MARK: - Variables
     var currentQuestionsArray = [Question]()
     var currentQuiz = Quiz(singleQuiz: nil, id: nil, isSolved: nil, quizTopic: nil, badge: nil)
-    
+    var bannerView: GADBannerView!
+
     
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -21,8 +23,8 @@ class QuizViewController: UIViewController {
     // MARK: - Statements
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadBanner()
     }
-    
     
 }
 
@@ -86,4 +88,63 @@ extension QuizViewController : QuizTableViewCellDelegate {
     }
 }
 
+
+extension QuizViewController : GADBannerViewDelegate {
+    
+    fileprivate func loadBanner() {
+        if !isVipMember {
+            bannerView = GADBannerView(adSize: GADAdSizeBanner)
+            bannerView.adUnitID = Constants.bannerAdId2
+            bannerView.rootViewController = self
+            bannerView.load(GADRequest())
+            bannerView.delegate = self
+        }
+    }
+    
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bannerView)
+        view.addConstraints(
+          [NSLayoutConstraint(item: bannerView,
+                              attribute: .bottom,
+                              relatedBy: .equal,
+                              toItem: bottomLayoutGuide,
+                              attribute: .top,
+                              multiplier: 1,
+                              constant: 0),
+           NSLayoutConstraint(item: bannerView,
+                              attribute: .centerX,
+                              relatedBy: .equal,
+                              toItem: view,
+                              attribute: .centerX,
+                              multiplier: 1,
+                              constant: 0)
+          ])
+       }
+    
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+      print("bannerViewDidReceiveAd")
+        addBannerViewToView(bannerView)
+    }
+
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+      print("bannerView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+
+    func bannerViewDidRecordImpression(_ bannerView: GADBannerView) {
+      print("bannerViewDidRecordImpression")
+    }
+
+    func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
+      print("bannerViewWillPresentScreen")
+    }
+
+    func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
+      print("bannerViewWillDIsmissScreen")
+    }
+
+    func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
+      print("bannerViewDidDismissScreen")
+    }
+}
 

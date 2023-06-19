@@ -11,5 +11,6 @@ class AvailableBadgesCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imgBadge: UIImageView!
     @IBOutlet weak var lblBadge: UILabel!
+    @IBOutlet weak var lblBadgeSubText: UILabel!
     
 }

@@ -48,7 +48,7 @@
 		C4534745299D16FD0025BCAB /* CoffeeDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4534744299D16FD0025BCAB /* CoffeeDetailCell.swift */; };
 		C4534747299D96F10025BCAB /* GlobalFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4534746299D96F10025BCAB /* GlobalFunctions.swift */; };
 		C4579BB029DB937E004A63D2 /* QuizTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4579BAF29DB937E004A63D2 /* QuizTableViewCell.swift */; };
-		C45A0FE02A05160F007CE88D /* BadgesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45A0FDF2A05160F007CE88D /* BadgesViewController.swift */; };
+		C45A0FE02A05160F007CE88D /* SingleBadgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45A0FDF2A05160F007CE88D /* SingleBadgeViewController.swift */; };
 		C47D876129E10E5200AC5E1B /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = C47D876029E10E5200AC5E1B /* success.json */; };
 		C48E624129B164B100342E5F /* BlogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E624029B164B100342E5F /* BlogViewController.swift */; };
 		C48E624329B164C800342E5F /* BlogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C48E624229B164C800342E5F /* BlogTableViewCell.swift */; };
@@ -148,7 +148,7 @@
 		C4534744299D16FD0025BCAB /* CoffeeDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeDetailCell.swift; sourceTree = "<group>"; };
 		C4534746299D96F10025BCAB /* GlobalFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalFunctions.swift; sourceTree = "<group>"; };
 		C4579BAF29DB937E004A63D2 /* QuizTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTableViewCell.swift; sourceTree = "<group>"; };
-		C45A0FDF2A05160F007CE88D /* BadgesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesViewController.swift; sourceTree = "<group>"; };
+		C45A0FDF2A05160F007CE88D /* SingleBadgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleBadgeViewController.swift; sourceTree = "<group>"; };
 		C47D876029E10E5200AC5E1B /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
 		C48E624029B164B100342E5F /* BlogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogViewController.swift; sourceTree = "<group>"; };
 		C48E624229B164C800342E5F /* BlogTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogTableViewCell.swift; sourceTree = "<group>"; };
@@ -314,25 +314,25 @@
 				C4D6CDA229CFDE7400BD3B69 /* default.realm */,
 				C44A8E9A299A50B900F3FDB7 /* Info.plist */,
 				C4A4B3BA2A3AF6D00062CE47 /* Anims */,
-				C4B2B1942A360EA700D0194C /* AvailableBadgesVc */,
-				C408D0CA29E0FC0700F1578E /* QuizResultVC */,
-				C41A90C929DE345300414674 /* QuizListVC */,
-				C48E625B29BDFA2B00342E5F /* PremiumViewControllers */,
-				C41283A629A40402008830F8 /* FilterVC */,
-				C41283A529A403EE008830F8 /* CoffeeDetailVC */,
-				C41283A429A403E1008830F8 /* CoffeeListVC */,
-				C44F11CF29A76A640041C79A /* TipsVC */,
-				C44F11D029A76A700041C79A /* MoreVC */,
+				C4B2B1942A360EA700D0194C /* AvailableBadgesVC */,
 				C48E624429B164D000342E5F /* BlogVC */,
 				C48E626229BE877700342E5F /* BlogDetailVC */,
+				C41283A529A403EE008830F8 /* CoffeeDetailVC */,
+				C41283A429A403E1008830F8 /* CoffeeListVC */,
+				C41283A629A40402008830F8 /* FilterVC */,
+				C4F575AB29C5F9F100D7B504 /* LoadingViewController.swift */,
+				C44F11D029A76A700041C79A /* MoreVC */,
+				C48E625B29BDFA2B00342E5F /* PremiumViewControllers */,
+				C4675B1E2A3C86A4003E9930 /* SingleBadgeVC */,
+				C44F11CF29A76A640041C79A /* TipsVC */,
+				C408D0CA29E0FC0700F1578E /* QuizResultVC */,
+				C41A90C929DE345300414674 /* QuizListVC */,
 				C4579BB129DB9383004A63D2 /* QuizVC */,
 				C41283A729A40420008830F8 /* Model */,
 				C44F11CD29A76A4A0041C79A /* Globals */,
 				C44F11CE29A76A590041C79A /* CustomizeUI */,
-				C4F575AB29C5F9F100D7B504 /* LoadingViewController.swift */,
 				C4D6CDA629D2647C00BD3B69 /* MasterEducationViewController.swift */,
 				C423629529DA5B5E004161F8 /* NetworkMonitor.swift */,
-				C45A0FDF2A05160F007CE88D /* BadgesViewController.swift */,
 			);
 			path = "Coffee Dictionary";
 			sourceTree = "<group>";
@@ -387,6 +387,14 @@
 			path = QuizVC;
 			sourceTree = "<group>";
 		};
+		C4675B1E2A3C86A4003E9930 /* SingleBadgeVC */ = {
+			isa = PBXGroup;
+			children = (
+				C45A0FDF2A05160F007CE88D /* SingleBadgeViewController.swift */,
+			);
+			path = SingleBadgeVC;
+			sourceTree = "<group>";
+		};
 		C48E624429B164D000342E5F /* BlogVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -437,13 +445,13 @@
 			path = Anims;
 			sourceTree = "<group>";
 		};
-		C4B2B1942A360EA700D0194C /* AvailableBadgesVc */ = {
+		C4B2B1942A360EA700D0194C /* AvailableBadgesVC */ = {
 			isa = PBXGroup;
 			children = (
 				C4B2B1952A360EC600D0194C /* AvailableBadgesViewController.swift */,
 				C4B2B1972A360F7300D0194C /* AvailableBadgesCollectionViewCell.swift */,
 			);
-			path = AvailableBadgesVc;
+			path = AvailableBadgesVC;
 			sourceTree = "<group>";
 		};
 		C4F575A329BF540800D7B504 /* FirstPremiumVC */ = {
@@ -665,7 +673,7 @@
 				C4534747299D96F10025BCAB /* GlobalFunctions.swift in Sources */,
 				C41283AB29A4F8A8008830F8 /* FilterBg.swift in Sources */,
 				C4A4B3B92A3AF6AC0062CE47 /* CoreDataModel.xcdatamodeld in Sources */,
-				C45A0FE02A05160F007CE88D /* BadgesViewController.swift in Sources */,
+				C45A0FE02A05160F007CE88D /* SingleBadgeViewController.swift in Sources */,
 				C44A8E8F299A50B900F3FDB7 /* SceneDelegate.swift in Sources */,
 				C4534741299BCEAB0025BCAB /* CoffeeDetailViewController.swift in Sources */,
 				C41A90CD29DE34B700414674 /* QuizListCollectionViewCell.swift in Sources */,

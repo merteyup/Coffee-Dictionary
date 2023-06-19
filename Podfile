@@ -15,12 +15,4 @@ target 'Coffee Dictionary' do
   pod 'GradientProgressBar', '~> 3.0'
   pod 'RevenueCat'
 
-
-
- 
-
-
-
-
-
 end

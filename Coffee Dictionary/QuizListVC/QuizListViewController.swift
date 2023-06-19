@@ -51,7 +51,6 @@ class QuizListViewController: UIViewController {
     
     fileprivate func getQuestions() {
         //  openLoadingVC()
-        
         // Add every document to array.
         // Save this array to user defaults.
         // Ask different document from database.
@@ -70,7 +69,8 @@ class QuizListViewController: UIViewController {
             DispatchQueue.main.async {
                 //  NotificationCenter.default.post(name: Notification.Name("dismissLoadingVC"), object: nil)
                 self.collectionView.reloadData()
-                if let badgesToShow = Badge.fetchCurrentBadges(currentQuizzes: self.currentQuizzes) {
+                if let badgesToShow = Badge.fetchCurrentBadges(currentQuizzes: self.currentQuizzes,
+                                                               isForSingleBadge: true) {
                     guard let singleBadge = badgesToShow.last else {return}
                     self.openBadgeVC(badge: singleBadge)
                 }

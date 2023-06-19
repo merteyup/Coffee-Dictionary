@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         openRealm()
         // Realm file location.
-        print("RealmDBLocation: \(Realm.Configuration.defaultConfiguration.fileURL)")
+        print("RealmDBLocation: \(String(describing: Realm.Configuration.defaultConfiguration.fileURL))")
         
         
         

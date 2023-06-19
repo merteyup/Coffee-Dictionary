@@ -50,7 +50,7 @@ class BlogDetailViewController: UIViewController, GADBannerViewDelegate, AVSpeec
           [NSLayoutConstraint(item: bannerView,
                               attribute: .bottom,
                               relatedBy: .equal,
-                              toItem: bottomLayoutGuide,
+                              toItem: view.safeAreaLayoutGuide.bottomAnchor,
                               attribute: .top,
                               multiplier: 1,
                               constant: 0),
@@ -64,30 +64,7 @@ class BlogDetailViewController: UIViewController, GADBannerViewDelegate, AVSpeec
           ])
        }
     
-    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
-      print("bannerViewDidReceiveAd")
-        addBannerViewToView(bannerView)
-    }
-
-    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
-      print("bannerView:didFailToReceiveAdWithError: \(error.localizedDescription)")
-    }
-
-    func bannerViewDidRecordImpression(_ bannerView: GADBannerView) {
-      print("bannerViewDidRecordImpression")
-    }
-
-    func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
-      print("bannerViewWillPresentScreen")
-    }
-
-    func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
-      print("bannerViewWillDIsmissScreen")
-    }
-
-    func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
-      print("bannerViewDidDismissScreen")
-    }
+   
     
     fileprivate func changeButtonAppearance(_ cell: BlogDetailTableViewCell, title: String, imageName: String) {
         cell.btnListenTip.setTitle(title, for: UIControl.State.normal)
