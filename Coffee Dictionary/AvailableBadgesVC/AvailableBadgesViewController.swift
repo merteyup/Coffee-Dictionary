@@ -48,9 +48,18 @@ class AvailableBadgesViewController: UIViewController {
         if checkAvailableBadges()?.count == 16 {
             btnGetNewBadge.isHidden = true
         }
-        
-        
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         if segue.identifier == "toBadgeDetail", let destination = segue.destination as? BadgeDetailViewController {
+             if let cell = sender as? UICollectionViewCell, let indexPath = collectionView.indexPath(for: cell) {
+                guard let badge = availableBadges?[indexPath.row] else {return}
+                destination.currentBadge = badge
+            }
+        }
+    }
+    
+    
     
     // MARK: - Actions
     
@@ -103,6 +112,7 @@ extension AvailableBadgesViewController : UICollectionViewDelegate, UICollection
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
     }
+
     
     
 }
