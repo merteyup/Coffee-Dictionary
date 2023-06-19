@@ -459,7 +459,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pks-f5-r3M">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="702"/>
                                 <color key="backgroundColor" name="appBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="RD6-GT-2dv">
                                     <size key="itemSize" width="362" height="181"/>
@@ -493,7 +493,7 @@
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="ZWh-zL-vDL"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jba-cI-hFE">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jba-cI-hFE">
                                                     <rect key="frame" x="8" y="8" width="133" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="idO-gq-ZCd"/>
@@ -530,17 +530,35 @@
                                     <outlet property="delegate" destination="cxZ-iE-XAX" id="f2J-GZ-Ccv"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rv-On-mh2">
+                                <rect key="frame" x="74" y="783" width="245" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="BRL-cs-fL7"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="245" id="rpd-SY-6qL"/>
+                                </constraints>
+                                <color key="tintColor" name="appBackgroundColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Get new badge"/>
+                                <connections>
+                                    <action selector="getNewBadgePressed:" destination="cxZ-iE-XAX" eventType="touchUpInside" id="dfD-WT-f03"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GHo-qz-UZw"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="appMainColor"/>
                         <constraints>
+                            <constraint firstItem="GHo-qz-UZw" firstAttribute="trailing" secondItem="5rv-On-mh2" secondAttribute="trailing" constant="74" id="8pn-3r-stg"/>
+                            <constraint firstItem="5rv-On-mh2" firstAttribute="leading" secondItem="GHo-qz-UZw" secondAttribute="leading" constant="74" id="CXF-xv-V6s"/>
                             <constraint firstItem="GHo-qz-UZw" firstAttribute="trailing" secondItem="pks-f5-r3M" secondAttribute="trailing" id="GhI-GP-giy"/>
+                            <constraint firstItem="5rv-On-mh2" firstAttribute="top" secondItem="pks-f5-r3M" secondAttribute="bottom" constant="22" id="H0L-av-R8H"/>
                             <constraint firstItem="pks-f5-r3M" firstAttribute="leading" secondItem="GHo-qz-UZw" secondAttribute="leading" id="TIY-46-OgL"/>
                             <constraint firstItem="pks-f5-r3M" firstAttribute="top" secondItem="GHo-qz-UZw" secondAttribute="top" id="UXV-95-4M8"/>
-                            <constraint firstItem="GHo-qz-UZw" firstAttribute="bottom" secondItem="pks-f5-r3M" secondAttribute="bottom" id="sb6-Ap-pgp"/>
+                            <constraint firstItem="5rv-On-mh2" firstAttribute="bottom" secondItem="GHo-qz-UZw" secondAttribute="bottom" id="mEo-hP-8T7"/>
+                            <constraint firstItem="GHo-qz-UZw" firstAttribute="bottom" secondItem="pks-f5-r3M" secondAttribute="bottom" constant="57" id="sb6-Ap-pgp"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnGetNewBadge" destination="5rv-On-mh2" id="7t0-zs-9Sk"/>
                         <outlet property="collectionView" destination="pks-f5-r3M" id="blL-MI-HhN"/>
                     </connections>
                 </viewController>

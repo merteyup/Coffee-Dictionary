@@ -48,7 +48,10 @@ struct Badge : Codable {
                     }
                     if isForSingleBadge {
                         if let currentQuizzes = currentQuizzes {
-                            appendLastBadge(currentQuizzes, &badgesArray)
+#warning("This part should be dynamic. For now it's just working. It's showing still a badge even all quizzes has solved.")
+                            if badgesArray.count != 16 {
+                                appendLastBadge(currentQuizzes, &badgesArray)
+                            }
                         }
                     }
                     return badgesArray
