@@ -14,6 +14,7 @@ class BadgeDetailViewController: UIViewController {
     @IBOutlet weak var imgBadge: UIImageView!
     @IBOutlet weak var lblBadgeSubText: UILabel!
     @IBOutlet weak var btnShare: UIButton!
+    @IBOutlet weak var btnDismiss: UIButton!
     
     // MARK: - Variables
     
@@ -23,11 +24,9 @@ class BadgeDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         DispatchQueue.main.async {
             self.prepareUI(currentBadge: self.currentBadge)
         }
-        
     }
     
     override func viewDidLoad() {
@@ -36,18 +35,39 @@ class BadgeDetailViewController: UIViewController {
     
     
     // MARK: - Actions
+    
+    
+    
+    @IBAction func btnDismissPressed(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
+    
     @IBAction func shareBadgePressed(_ sender: Any) {
         self.btnShare.isHidden = true
-
+        self.btnDismiss.isHidden = true
+        
         DispatchQueue.main.async {
+            
+            
+            
             let bounds = UIScreen.main.bounds
             UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0.0)
             self.view.drawHierarchy(in: bounds, afterScreenUpdates: false)
             let img = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             self.btnShare.isHidden = false
+            self.btnDismiss.isHidden = false
             let activityViewController = UIActivityViewController(activityItems: [img], applicationActivities: nil)
+            if UIDevice.current.userInterfaceIdiom == .pad{
+                let scenes = UIApplication.shared.connectedScenes
+                let windowScene = scenes.first as? UIWindowScene
+                let window = windowScene?.windows.first
+                activityViewController.popoverPresentationController?.sourceView = window
+                activityViewController.popoverPresentationController?.sourceRect = CGRect(x:  UIScreen.main.bounds.width / 3, y:  UIScreen.main.bounds.height / 1.5, width: 400, height: 400)
+            }
+            
             self.present(activityViewController, animated: true, completion: nil)
+            
         }
         
         

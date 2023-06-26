@@ -114,8 +114,7 @@ extension QuizListViewController : UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QuizListCollectionViewCellID", for: indexPath) as! QuizListCollectionViewCell
-        cell.lblQuizIndex.text = "Quiz: \(indexPath.row + 1)"
-        
+       
         if !isVipMember {
             if indexPath.row >= 3 {
                 cell.imgLock.alpha = 0.8
@@ -124,9 +123,9 @@ extension QuizListViewController : UICollectionViewDelegate, UICollectionViewDat
             }
         }
         
-        if let quizTopic = currentQuizzes[indexPath.row].quizTopic {
-            cell.updateCell(quizTopic: quizTopic)
-        }
+        
+        cell.updateCell(currentQuiz: currentQuizzes[indexPath.row], indexPath: indexPath.row)
+
         
         
         return cell

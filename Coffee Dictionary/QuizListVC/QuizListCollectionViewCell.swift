@@ -9,19 +9,11 @@ import UIKit
 
 class QuizListCollectionViewCell: UICollectionViewCell {
     
-    enum QuizType {
-        case brewing
-        case beans
-        case baristaNotes
-        case ingredients
-        case tools
-        case recipes
-    }
-    
     @IBOutlet weak var lblQuizTopic: UILabel!
     @IBOutlet weak var lblQuizIndex: UILabel!
     @IBOutlet weak var bgQuiz: UIView!
     @IBOutlet weak var imgLock: UIImageView!
+    @IBOutlet weak var imgBadge: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,32 +26,25 @@ class QuizListCollectionViewCell: UICollectionViewCell {
     }
     
     
-    func updateCell(quizTopic: String) {
+    func updateCell(currentQuiz: Quiz, indexPath: Int) {
         
+        lblQuizTopic.text = currentQuiz.quizTopic
         
+        if let badge = currentQuiz.badge {
+            lblQuizIndex.text = "Game \(indexPath + 1): \(badge.name)"
+        } else {
+            lblQuizIndex.text = "Game \(indexPath + 1):"
+        }
         
-        getQuizTypes(type: .recipes)
-        
-        lblQuizTopic.text = quizTopic
+        if let image = currentQuiz.badge?.imageUrl {
+            if let url = URL(string: image) {
+                imgBadge.af.setImage(withURL: url)
+            }
+        }
 
     }
     
     
-    func getQuizTypes(type: QuizType) {
-        switch type {
-        case .brewing:
-            print("dislike")
-        case .beans:
-            print("dislike")
-        case .baristaNotes:
-            print("dislike")
-        case .ingredients:
-            print("dislike")
-        case .tools:
-            print("dislike")
-        case .recipes:
-            print("dislike")
-        }
-    }
+   
   
 }
