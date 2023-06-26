@@ -1651,27 +1651,45 @@
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7za-iS-N8C" customClass="LottieAnimationView" customModule="Lottie">
-                                <rect key="frame" x="76" y="99" width="240" height="128"/>
+                                <rect key="frame" x="234" y="101" width="143" height="128"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="Acg-PB-ce8"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="143" id="Acg-PB-ce8"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="bPp-Fr-9fH"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="question-mark"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rD5-K1-lVm">
+                                <rect key="frame" x="29" y="101" width="185" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="2fL-Zf-hAN"/>
+                                    <constraint firstAttribute="height" constant="128" id="bUa-Ey-Ntb"/>
+                                    <constraint firstAttribute="width" constant="185" id="gvo-69-x7a"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="185" id="nRo-UF-meD"/>
+                                </constraints>
+                                <string key="text">This is the place where you can show off your knowledge. 
+Just check out 
+🔹</string>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <color key="textColor" name="appMainColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7rj-59-NYe"/>
                         <color key="backgroundColor" name="appBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="7za-iS-N8C" firstAttribute="leading" secondItem="7rj-59-NYe" secondAttribute="leading" constant="76" id="A6x-Mq-obJ"/>
-                            <constraint firstItem="lpp-eR-57O" firstAttribute="top" secondItem="7za-iS-N8C" secondAttribute="bottom" constant="37" id="CmP-DB-cww"/>
-                            <constraint firstItem="7za-iS-N8C" firstAttribute="top" secondItem="7rj-59-NYe" secondAttribute="top" constant="40" id="LZr-mW-0y1"/>
+                            <constraint firstItem="rD5-K1-lVm" firstAttribute="leading" secondItem="7rj-59-NYe" secondAttribute="leading" constant="29" id="6M9-rm-VeB"/>
+                            <constraint firstItem="lpp-eR-57O" firstAttribute="top" secondItem="7za-iS-N8C" secondAttribute="bottom" constant="35" id="CmP-DB-cww"/>
+                            <constraint firstItem="7za-iS-N8C" firstAttribute="leading" secondItem="rD5-K1-lVm" secondAttribute="trailing" constant="20" id="L7q-jK-IW8"/>
+                            <constraint firstItem="7za-iS-N8C" firstAttribute="top" secondItem="7rj-59-NYe" secondAttribute="top" constant="42" id="LZr-mW-0y1"/>
                             <constraint firstItem="7rj-59-NYe" firstAttribute="trailing" secondItem="lpp-eR-57O" secondAttribute="trailing" id="Txc-Nz-TeC"/>
+                            <constraint firstItem="lpp-eR-57O" firstAttribute="top" secondItem="rD5-K1-lVm" secondAttribute="bottom" constant="35" id="UYR-TP-TM6"/>
                             <constraint firstItem="lpp-eR-57O" firstAttribute="leading" secondItem="7rj-59-NYe" secondAttribute="leading" id="f0g-4d-4MA"/>
                             <constraint firstItem="lpp-eR-57O" firstAttribute="top" secondItem="7rj-59-NYe" secondAttribute="top" constant="205" id="gGE-zr-smK"/>
-                            <constraint firstItem="7rj-59-NYe" firstAttribute="trailing" secondItem="7za-iS-N8C" secondAttribute="trailing" constant="77" id="lFQ-3J-NWJ"/>
+                            <constraint firstItem="rD5-K1-lVm" firstAttribute="top" secondItem="7rj-59-NYe" secondAttribute="top" constant="42" id="kok-df-dO8"/>
+                            <constraint firstItem="7rj-59-NYe" firstAttribute="trailing" secondItem="7za-iS-N8C" secondAttribute="trailing" constant="16" id="lFQ-3J-NWJ"/>
                             <constraint firstItem="7rj-59-NYe" firstAttribute="bottom" secondItem="lpp-eR-57O" secondAttribute="bottom" id="sTQ-fS-IUT"/>
                         </constraints>
                     </view>
