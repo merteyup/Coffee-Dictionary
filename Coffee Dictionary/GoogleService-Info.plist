@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>223116686420-k9ei7o6kriaf77mkj3k1h6dl2237qgmk.apps.googleusercontent.com</string>
+	<string>223116686420-mpuodjmj6fip20pc4kg26udnkrsqhu0n.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.223116686420-k9ei7o6kriaf77mkj3k1h6dl2237qgmk</string>
+	<string>com.googleusercontent.apps.223116686420-mpuodjmj6fip20pc4kg26udnkrsqhu0n</string>
 	<key>API_KEY</key>
 	<string>AIzaSyC7ptDjf7YtzQUwgDGKW9tP482GX1A1C7g</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>mertas</string>
+	<string>com.eyupmert.coffeemapp</string>
 	<key>PROJECT_ID</key>
 	<string>coffee-a0730</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:223116686420:ios:4cee183b95839a2e9069c1</string>
+	<string>1:223116686420:ios:d3d2db0581e6c9e99069c1</string>
+	<key>ADMOB_APP_ID</key>
+	<string>ca-app-pub-2131794878256482~3300735544</string>
 </dict>
 </plist>
